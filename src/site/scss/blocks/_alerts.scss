@@ -1,0 +1,31 @@
+/*
+ * Alert
+ */
+
+.alert-default {
+    background: #f5f5f5;
+    border-color: #e3e3e3;
+
+    > :first-child {
+        margin-left: auto;
+    }
+}
+
+.alert-primary {
+    background: #2572b4;
+    border-color: #143c5f;
+    color: #fff;
+    
+    > :first-child {
+        margin-left: auto;
+    }
+}
+
+.alert-dismissible {
+    position: relative;
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+}

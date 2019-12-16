@@ -1,0 +1,7 @@
+{
+  "buttons": ["html", "formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
+  "plugins": ["video", "table", "specialchars", "inlinestyle", "alignment", "fullscreen", "counter"],
+  "linkNewTab": true,
+  "toolbarFixed": true,
+  "pastePlainText": true
+}

@@ -1,0 +1,20 @@
+# Environment variables
+/.env
+
+# PHPStorm project folder
+/.idea
+
+# Composer dependencies
+/vendor
+
+# IOS generated file
+.DS_Store
+
+# VSCode project folder
+.vscode/
+
+# NPM dependencies
+/node_modules
+
+# Remove license from git
+config/license.key

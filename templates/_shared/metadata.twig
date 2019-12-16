@@ -1,0 +1,66 @@
+{% set seo = getSeoField() %}
+{% set locale = craft.app.locale %}
+{% set locales = craft.app.i18n.siteLocaleIds|without(locale) %}
+{% set language = locale == 'en' ? 'eng' : 'fra' %}
+
+{# Use metadata from entry if set, otherwise default to global config #}
+{% set title = entry.title %}
+{% set description = entry.metadata.description ?? settings.metadata.description %}
+{% set spatial = entry.metadata.spatial ?? settings.metadata.spatial %}
+{% set keywords = entry.metadata.keywords ?? settings.metadata.keywords %}
+{% set creator = entry.metadata.creator ?? settings.metadata.creator %}
+{% set dctype = entry.metadata.dctype ?? settings.metadata.dctype %}
+{% set subject = entry.metadata.subject ?? settings.metadata.subject %}
+{% set source = entry.metadata.source ?? settings.metadata.source %}
+{% set identifier = entry.metadata.identifier ?? settings.metadata.identifier %}
+
+<title>{{ title }} - {{ currentSite.name }}</title>
+
+<meta name="description" content="{{ description }}" />
+<meta name="keywords" content="{{ keywords }}" />
+<meta name="author" content="{{ creator }}" />
+
+<meta name="dcterms.title" content="{{ title }}" />
+<meta name="dcterms.type" content="{{ dctype }}" />
+<meta name="dcterms.description" content="{{ description }}" />
+<meta name="dcterms.subject" title="gccore" content="{{ subject }}" />
+<meta name="dcterms.source" content="{{ source }}" />
+<meta name="dcterms.language" title="ISO639-2/T" content="{{ language }}" />
+<meta name="dcterms.spatial" content="{{ spatial }}" />
+<meta name="dcterms.creator" content="{{ creator }}" />
+<meta name="dcterms.identifier" content="{{ identifier }}" />
+<meta name="dcterms.issued" title="W3CDTF" content="{{ entry.dateCreated|date('Y-m-d') }}" />
+<meta name="dcterms.modified" title="W3CDTF" content="{{ entry.dateUpdated|date('Y-m-d') }}" />
+
+{% set fb = seo.social.facebook -%}
+<meta property="fb:app_id" content="{{ fb.handle }}">
+<meta property="og:url" content="{{ craft.app.request.absoluteUrl }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ fb.title }}" />
+<meta property="og:image" content="{{ craft.seo.facebookImage(fb.image) }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:description" content="{{ fb.description }}" />
+<meta property="og:site_name" content="{{ siteName }}" />
+<meta property="og:locale" content="{{ locale|replace('-', '_') }}" />
+{% for locale in locales -%}
+	<meta property="og:locale:alternate" content="{{ locale|replace('-', '_') }}" />
+{% endfor %}
+
+{% set tw = seo.social.twitter -%}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="{{ tw.handle }}" />
+<meta name="twitter:url" content="{{ craft.app.request.absoluteUrl }}" />
+<meta name="twitter:title" content="{{ tw.title }}" />
+<meta name="twitter:description" content="{{ tw.description }}" />
+<meta name="twitter:image" content="{{ craft.seo.twitterImage(tw.image) }}" />
+
+{% if seo.robots -%}
+	<meta name="robots" content="{{ seo.robots }}" />
+{% endif %}
+{%- if seo.expiry -%}
+	<meta name="robots" content="unavailable_after: {{ seo.expiry }}" />
+{% endif %}
+
+<link rel="home" href="{{ siteUrl }}" />
+<link rel="canonical" href="{{ seo.canonical }}">

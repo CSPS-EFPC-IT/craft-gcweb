@@ -1,0 +1,68 @@
+{#
+ |------------------------------------------------------------------------------
+ | Default Entry
+ |------------------------------------------------------------------------------
+ | This template is automatically included when no other template matches the
+ | section handle.
+ |------------------------------------------------------------------------------
+#}
+
+{% block header %}
+    {# Set defaults from global settings #}
+    {% set showBreadcrumb, showLogin = settings.showBreadcrumbGlobal, settings.showLoginGlobal %}
+
+    {# Local override for showBreadcrumb #}
+    {% if entry is defined and entry.showBreadcrumbLocal != 'default' %}
+        {% set showBreadcrumb = entry.showBreadcrumbLocal.value %}
+    {% endif %}
+
+    {# Local override for showLogin #}
+    {% if entry is defined and entry.showLoginLocal != 'default' %}
+        {% set showLogin = entry.showLoginLocal.value %}
+    {% endif %}
+
+    {# Include the header template #}
+    {% include '_shared/header' with {
+        showAsArchived: entry.showAsArchived ?? null,
+        showBreadcrumb: showBreadcrumb,
+        showLogin:      showLogin
+    } %}
+
+{% endblock %}
+
+{% block main %}
+    <main property="mainContentOfPage" typeof="WebPageElement">
+        {# Include the page builder template #}
+        {% include '_pageBuilder/builder' with {
+            pageBuilder: entry.pageBuilder
+        } %}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {# Set defaults from global settings #}
+    {% set showFeatures, showReportAProblem, showShareThisPage =
+        settings.showFeaturesGlobal, settings.showReportAProblemGlobal, settings.showShareThisPageGlobal %}
+
+    {# Local override for showFeatures #}
+    {% if entry is defined and entry.showFeaturesLocal != 'default' %}
+        {% set showFeatures = entry.showFeaturesLocal.value %}
+    {% endif %}
+
+    {# Local override for showReportAProblem #}
+    {% if entry is defined and entry.showReportAProblemLocal != 'default' %}
+        {% set showReportAProblem = entry.showReportAProblemLocal.value %}
+    {% endif %}
+
+    {# Local override for showShareThisPage #}
+    {% if entry is defined and entry.showShareThisPageLocal != 'default' %}
+        {% set showShareThisPage = entry.showShareThisPageLocal.value %}
+    {% endif %}
+
+    {# Include the footer template #}
+    {% include '_shared/footer' with {
+        showFeatures:       showFeatures,
+        showReportAProblem: showReportAProblem,
+        showShareThisPage:  showShareThisPage
+    } %}
+{% endblock %}

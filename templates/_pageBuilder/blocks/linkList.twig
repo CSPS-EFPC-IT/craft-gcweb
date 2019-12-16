@@ -1,0 +1,59 @@
+{#
+ |------------------------------------------------------------------------------
+ | Link List
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Select the link list style
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = {} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+{% switch block.linkListStyle %}
+    {% case 'default' %}
+
+        <ul{{ utils.attr(defaultAttr, customAttr) }}>
+            {% for link in block.linkListItems.all() %}
+                <li>{{ link.itemLink.link }}</li>
+            {% endfor %}
+        </ul>
+
+    {% case 'inline' %}
+
+        {% set defaultAttr = { class: ['list-inline'] } %}
+
+        <ul{{ utils.attr(defaultAttr, customAttr) }}>
+            {% for link in block.linkListItems.all() %}
+                <li>{{ link.itemLink.link }}</li>
+            {% endfor %}
+        </ul>
+
+    {% case 'list-group' %}
+
+        {% set defaultAttr, linkAttributes = { class: ['list-group'] }, { class: 'list-group-item' } %}
+
+        <div{{ utils.attr(defaultAttr, customAttr) }}>
+            {% for link in block.linkListItems.all() %}
+                {{ link.itemLink.link(linkAttributes) }}
+            {% endfor %}
+        </div>
+
+    {% case 'unstyled' %}
+
+        {% set defaultAttr = { class: ['list-unstyled'] } %}
+
+        <ul{{ utils.attr(defaultAttr, customAttr) }}>
+            {% for link in block.linkListItems.all() %}
+                <li>{{ link.itemLink.link }}</li>
+            {% endfor %}
+        </ul>
+
+{% endswitch %}

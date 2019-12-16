@@ -1,0 +1,23 @@
+{#
+ |------------------------------------------------------------------------------
+ | Login
+ |------------------------------------------------------------------------------
+#}
+
+<section id="wb-so">
+    <h2 class="wb-inv">{{ 'Sign-on information'|t }}</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% if currentUser %}
+                    <span class="mrgn-rght-md">{{ 'Signed in as'|t }} <span class="wb-so-uname">{{ currentUser.friendlyName }}</span></span>
+                    <a href="/admin/myaccount" class="btn btn-default">{{ 'Account settings'|t }}</a>
+                    <a href="/admin/logout" class="btn btn-primary">{{ 'Sign out'|t }}</a>
+                {% else %}
+                    <a href="#" class="btn btn-default">{{ 'Register'|t }}</a>
+                    <a href="/admin/login" class="btn btn-primary">{{ 'Sign in'|t }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

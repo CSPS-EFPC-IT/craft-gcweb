@@ -1,0 +1,34 @@
+{
+  "require": {
+    "craftcms/cms": "3.3.18.2",
+    "craftcms/redactor": "2.4.0",
+    "ether/seo": "3.6.2",
+    "fruitstudios/linkit": "1.1.11",
+    "luwes/craft3-codemirror": "1.0.1",
+    "misterbk/mix": "1.5.2",
+    "spicyweb/craft-fieldlabels": "1.1.8",
+    "spicyweb/craft-neo": "2.5.8",
+    "supercool/tablemaker": "2.0.1",
+    "verbb/field-manager": "2.1.1",
+    "verbb/super-table": "2.3.1",
+    "vlucas/phpdotenv": "^2.4.0",
+    "youandmedigital/breadcrumb": "1.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}

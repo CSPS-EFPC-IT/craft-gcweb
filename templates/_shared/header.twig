@@ -1,0 +1,113 @@
+{#
+ |------------------------------------------------------------------------------
+ | Global Header
+ |------------------------------------------------------------------------------
+ | You can customize the following from the admin area under "Globals":
+ | - Enable/disable the breadcrumb section
+ | - Enable/disable the login section
+ | - Customize the search bar query url
+ | - Point the "Home" crumb and header logo to Canada.ca
+ | - Enable/disable the archived page banner
+ |
+ | @todo Add the ability to enable CDTS
+ | @todo Add the ability to override the default Canada.ca menu
+ |------------------------------------------------------------------------------
+#}
+
+{% if showAsArchived %}
+    <section class="gc-archv wb-inview modal-content show-none bar-demo wb-init wb-inview-inited" data-inview="top-bar" id="wb-auto-2" data-inviewstate="partial">
+        <div class="container">
+            <h2>{{ 'We have archived this page and will not be updating it.'|t }}</h2>
+            <p>{{ 'You can use it for research or reference.'|t }}</p>
+        </div>
+    </section>
+    <section id="top-bar" class="gc-archv wb-overlay modal-content overlay-def wb-bar-t wb-init wb-overlay-inited outside-off" aria-hidden="true">
+        <div class="container">
+            <h2>{{ 'We have archived this page and will not be updating it.'|t }}</h2>
+            <p>{{ 'You can use it for research or reference.'|t }}</p>
+        </div>
+    <button type="button" class="mfp-close overlay-close" title="{{ 'Close overlay'|t }}">×<span class="wb-inv"> {{ 'Close overlay'|t }}</span></button></section>
+{% endif %}
+
+{# Skip links #}
+<ul id="wb-tphp">
+    <li class="wb-slc">
+        <a class="wb-sl" href="#wb-cont">{{ 'Skip to main content'|t }}</a>
+    </li>
+    <li class="wb-slc">
+        <a class="wb-sl" href="#wb-info">{{ 'Skip to "About government"'|t }}</a>
+    </li>
+</ul>
+
+<header>
+    <div id="wb-bnr" class="container">
+        {# Language picker #}
+        <section id="wb-lng" class="text-right">
+            <h2 class="wb-inv">{{ 'Language selection'|t }}</h2>
+            <ul class="list-inline margin-bottom-none">
+                <li>{% include '_shared/language' %}</li>
+            </ul>
+        </section>
+        <div class="row">
+            {# Header logo #}
+            <div class="brand col-xs-5 col-md-4">
+                <a href="{{ SITE_URL }}"><img src="/dist/GCWeb/assets/sig-blk-en.svg" alt=""><span class="wb-inv"> Government of Canada / <span lang="fr">Gouvernement du Canada</span></span></a>
+            </div>
+            {# Search bar #}
+            <section id="wb-srch" class="col-lg-8 text-right">
+                <h2>{{ 'Search'|t }}</h2>
+
+                {% set searchAction, searchLabel = craft.entries.section('search').one().url() ?? null, 'Search this website'|t %}
+                {% if settings.customSearchQueryUrl|length %}
+                    {% set searchLabel = 'Search Canada.ca'|t %}
+                    {% set searchAction = settings.customSearchQueryUrl %}
+                {% endif %}
+
+                <form action="{{ searchAction }}" method="get" name="cse-search-box" role="search" class="form-inline">
+                    <div class="form-group">
+                        <label for="wb-srch-q" class="wb-inv">{{ searchLabel }}</label>
+                        <input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="{{ searchLabel }}">
+                        <datalist id="wb-srch-q-ac"></datalist>
+                    </div>
+                    <div class="form-group submit">
+                        <button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">{{ 'Search'|t }}</span></button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+    {# Primary menu #}
+    <nav class="gcweb-menu" typeof="SiteNavigationElement">
+        <div class="container">
+            <h2 class="wb-inv">{{ 'Menu'|t }}</h2>
+            <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">{{ 'Main'|t }} </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+            <ul role="menu" aria-orientation="vertical" data-ajax-replace="{{ '/dist/site/ajax/sitemenu-v5-en.html'|t }}">
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/jobs.html'|t }}">{{ "Jobs and the workplace"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/immigration-citizenship.html'|t }}">{{ "Immigration and citizenship"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://travel.gc.ca/'|t }}">{{ "Travel and tourism"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/business.html'|t }}">{{ "Business and industry"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/benefits.html'|t }}">{{ "Benefits"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/health.html'|t }}">{{ "Health"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/taxes.html'|t }}">{{ "Taxes"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/environment.html'|t }}">{{ "Environment and natural resources"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/defence.html'|t }}">{{ "National security and defence"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/culture.html'|t }}">{{ "Culture, history and sport"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/policing.html'|t }}">{{ "Policing, justice and emergencies"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/transport.html'|t }}">{{ "Transport and infrastructure"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'http://international.gc.ca/world-monde/index.aspx?lang=eng'|t }}">{{ "Canada and the world"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/finance.html'|t }}">{{ "Money and finances"|t }}</a></li>
+                <li role="presentation"><a role="menuitem" href="{{ 'https://www.canada.ca/en/services/science.html'|t }}">{{ "Science and innovation"|t }}</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {# Breadcrumb section #}
+    {% if showBreadcrumb %}
+        {% include '_shared/breadcrumb' %}
+    {% endif %}
+
+    {# Login section #}
+    {% if showLogin %}
+        {% include '_shared/login' %}
+    {% endif %}
+</header>

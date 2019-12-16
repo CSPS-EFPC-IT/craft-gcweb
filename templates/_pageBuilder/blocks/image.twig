@@ -1,0 +1,38 @@
+{#
+ |------------------------------------------------------------------------------
+ | Image
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Select the image style
+ | - Add custom HTML attributes to the column
+ |
+ | @todo Find a decent way to implement data-picture
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = {} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Get the block image #}
+{% set image = block.image.one() ?? null %}
+
+{# Output the block #}
+{% if image %}
+    {% if block.elementLink|length %}
+    <a href="{{ block.elementLink.url }}" target="{{ block.elementLink.target }}" title="{{ block.elementLink.text }}">
+    {% endif %}
+    <figure{{ utils.attr(defaultAttr, customAttr) }}>
+        <img src="{{ image.url }}" alt="{{ image.title }}" witdh="{{ image.width }}" height="{{ image.height }}" class="img-responsive img-{{ block.imageStyle }}">
+        {% if image.caption|length %}
+            <figcaption>{{ image.caption }}</figcaption>
+        {% endif %}
+    </figure>
+    {% if block.elementLink|length %}
+    </a>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,17 @@
+{% extends '_entries/default' %}
+
+{# IN CONSTRUCTION #}
+
+{% block main %}
+    {% include '_pageBuilder/builder' with {
+        pageBuilder: entry.pageBuilder
+    } %}
+
+    <div class="container">
+        <h1>Search form here...</h1>
+
+        <div class="well">
+            Search results here...
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% block styles %}
+    <!--[if gte IE 9 | !IE ]><!-->
+        <link href="/dist/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="/dist/GCWeb/css/theme.min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/dist/GCWeb/css/messages.min.css">
+    <!--[if lt IE 9]>
+        <link href="/dist/GCWeb/assets/favicon.ico" rel="shortcut icon" />
+        <link rel="stylesheet" href="/dist/GCWeb/css/messages-ie.min.css" />
+        <link rel="stylesheet" href="/dist/GCWeb/css/ie8-theme.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/dist/wet-boew/js/ie8-wet-boew.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]><![endif]-->
+    <noscript><link rel="stylesheet" href="/dist/wet-boew/css/noscript.min.css" /></noscript>
+{% endblock %}
+
+{# Override the default header block and leave it empty for the splash page #}
+{% block header %}{% endblock %}
+
+{% block main %}
+{# Control this stuff from the admin #}
+{% set backgroundImage = entry.image.one() ?? null %}
+<div id="bg">
+    {% if backgroundImage %}
+        <img src="{{ backgroundImage.url }}" alt="">
+    {% else %}
+        <img src="/dist/GCWeb/assets/sp-bg-2.jpg" alt="">
+    {% endif %}
+</div>
+
+<main property="mainContentOfPage" typeof="WebPageElement">
+    <div class="sp-hb">
+        <div class="sp-bx col-xs-12">
+            <h1 property="name" class="wb-inv">CSPS-EFPC.ca</h1>
+            <div class="row">
+                <div class="col-xs-11 col-md-8">
+                    <img src="/dist/GCWeb/assets/sig-spl.svg" width="283" alt="Government of Canada / Gouvernement du Canada">
+                </div>
+            </div>
+            <div class="row">
+                <section class="col-xs-6 text-right">
+                    <h2 class="wb-inv">Canada School of Public Service</h2>
+                    <p><a href="/en" class="btn btn-primary">English</a></p>
+                </section>
+                <section class="col-xs-6" lang="fr">
+                    <h2 class="wb-inv">École de la fonction publique du Canada</h2>
+                    <p><a href="/fr" class="btn btn-primary">Français</a></p>
+                </section>
+            </div>
+        </div>
+        <div class="sp-bx-bt col-xs-12">
+            <div class="row">
+                <div class="col-xs-7 col-md-8">
+                    <a href="https://www.canada.ca/en/transparency/terms.html" class="sp-lk">Terms and conditions</a> <span class="glyphicon glyphicon-asterisk"></span> <a href="https://www.canada.ca/fr/transparence/avis.html" class="sp-lk" lang="fr">Avis</a>
+                </div>
+                <div class="col-xs-5 col-md-4 text-right mrgn-bttm-md">
+                    <img src="/dist/GCWeb/assets/wmms-spl.svg" width="127" alt="Symbol of the Government of Canada / Symbole du gouvernement du Canada">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{# Override the default footer block and leave it empty for the splash page #}
+{% block footer %}{% endblock %}

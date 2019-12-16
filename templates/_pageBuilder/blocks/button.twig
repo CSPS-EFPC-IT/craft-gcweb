@@ -1,0 +1,33 @@
+{#
+ |------------------------------------------------------------------------------
+ | Button
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ | - Select the button size
+ | - Select the button style
+ | - Enable block-level button
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the button block #}
+{% set defaultAttr = {
+    href: block.elementLink.url,
+    class: [
+        "btn",
+        "btn-" ~ block.bootstrapSize,
+        "btn-" ~ block.buttonStyle,
+        (block.blockLevelButton ? "btn-block": "")
+    ],
+    target: block.elementLink.target
+} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the button block #}
+<a{{ utils.attr(defaultAttr, customAttr) }}>
+    {{- block.elementLink.text -}}
+</a>

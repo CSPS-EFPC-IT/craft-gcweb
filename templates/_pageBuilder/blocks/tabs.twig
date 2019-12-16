@@ -1,0 +1,28 @@
+{#
+ |------------------------------------------------------------------------------
+ | Tabs
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = { class: ['wb-tabs'] } %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<div{{ utils.attr(defaultAttr, customAttr) }}>
+    <div class="tabpanels">
+        {% for item in block.items.all() %}
+            <details id="details-panel{{ loop.index }}">
+                <summary>{{ item.itemTitle }}</summary>
+                <div>{{ item.itemContent }}</div>
+            </details>
+        {% endfor %}
+    </div>
+</div>

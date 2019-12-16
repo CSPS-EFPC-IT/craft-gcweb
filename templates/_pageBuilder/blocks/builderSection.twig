@@ -1,0 +1,41 @@
+{#
+ |------------------------------------------------------------------------------
+ | Section
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Equalize child columns height
+ | - Select the desired container width (fluid or fixed)
+ | - Add custom HTML attributes to the section
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set the section default attributes #}
+{% set defaultAttr = {
+    class: [
+        block.containerWidth
+    ]
+} %}
+
+{# Set the section custom attributes #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the section #}
+<div{{ utils.attr(defaultAttr, customAttr) }}>
+    {# Set the row attributes #}
+    {% set rowAttr = {
+        class: [
+            "row",
+            (block.equalizeColumnsHeight ? "wb-eqht" : null)
+        ]
+    } %}
+    {# Output the row #}
+    <div{{ attr(rowAttr) }}>
+        {# Loop through all children page builder blocks #}
+        {% for block in block.children.all() %}
+            {# Include the appropriate page builder template #}
+            {% include "_pageBuilder/blocks/" ~ block.type.handle %}
+        {% endfor %}
+    </div>
+</div>

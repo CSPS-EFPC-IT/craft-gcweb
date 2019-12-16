@@ -1,0 +1,150 @@
+{#
+ |------------------------------------------------------------------------------
+ | Footer
+ |------------------------------------------------------------------------------
+ | You can customize the following from the admin area under "Globals":
+ | - Enable/disable the global features section
+ | - Enable/disable the Report A Problem button
+ | - Enable/disable the Share This Page button
+ | - Customize the global features
+ |
+ | @todo Add the ability to enable CDTS
+ | @todo Refactor the "Report a problem" form
+ | @todo Add the ability to override the first and second footer menu
+ |------------------------------------------------------------------------------
+#}
+
+{# Global features area #}
+{% if showFeatures %}
+    {% include '_pageBuilder/builder' with {
+        pageBuilder: features.pageBuilder
+    } %}
+{% endif %}
+
+{# Morefoot area #}
+<div class="pagedetails container">
+    {% if showReportAProblem or showShareThisPage %}
+    <div class="row">
+        {% if showReportAProblem %}
+        <div class="col-sm-6 col-md-5 col-lg-4">
+            {# @todo: Add control to enable/disable feature from global settings #}
+            <details class="brdr-0">
+                <summary class="btn btn-default text-center">{{ 'Report a problem or mistake on this page'|t }}</summary>
+                <div class="well row">
+                    <div class="gc-rprt-prblm">
+                        <div class="gc-rprt-prblm-frm gc-rprt-prblm-tggl">
+                            {# @todo: Replace with Form Builder entry #}
+                            <form action="#">
+                                <fieldset>
+                                    <legend><span class="field-name">{{ 'Please select all that apply:'|t }}</span></legend>
+                                    <div class="checkbox">
+                                        <label for="problem1"><input type="checkbox" data-reveal="#broken" name="problem" value="{{ 'Something is broken'|t }}" id="problem1">{{ 'Something is broken'|t }}</label>
+                                    </div>
+                                    <div class="form-group hide" id="broken">
+                                        <label for="problem1-detail">{{ 'Provide more details (optional):'|t }}</label>
+                                        <input type="text" class="form-control full-width" id="problem1-detail">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="problem2"><input type="checkbox" data-reveal="#spelling" name="problem" value="{{ 'It has spelling or grammar mistakes'|t }}" id="problem2">{{ 'The page has spelling or grammar mistakes'|t }}</label>
+                                    </div>
+                                    <div class="form-group hide" id="spelling">
+                                        <label for="problem2-detail">{{ 'Provide more details (optional):'|t }}</label>
+                                        <input type="text" class="form-control full-width" id="problem2-detail">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="problem3"><input type="checkbox" data-reveal="#wrong" name="problem" value="{{ 'The information is wrong'|t }}" id="problem3">{{ 'The information is wrong'|t }}</label>
+                                    </div>
+                                    <div class="form-group hide" id="wrong">
+                                        <label for="problem3-detail">{{ 'Provide more details (optional):'|t }}</label>
+                                        <input type="text" class="form-control full-width" id="problem3-detail">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="problem4"><input type="checkbox" data-reveal="#outdated" name="problem" value="{{ 'The information is outdated'|t }}" id="problem4">{{ 'The information is outdated'|t }}</label>
+                                    </div>
+                                    <div class="form-group hide" id="outdated">
+                                        <label for="problem4-detail">{{ 'Provide more details (optional):'|t }}</label>
+                                        <input type="text" class="form-control full-width" id="problem4-detail">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="problem5"><input type="checkbox" data-reveal="#find" name="problem" value="{{ 'I can’t find what I’m looking for'|t }}" id="problem5">{{ 'I can’t find what I’m looking for'|t }}</label>
+                                    </div>
+                                    <div class="form-group hide" id="find">
+                                        <label for="problem5-detail">{{ 'Describe what you’re looking for (optional):'|t }}</label>
+                                        <input type="text" class="form-control full-width" id="problem5-detail">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="problem6"><input type="checkbox" data-reveal="#confusing" name="problem" value="{{ 'It’s confusing'|t }}" id="problem6">{{ 'Other'|t }}</label>
+                                    </div>
+                                    <div class="form-group hide" id="confusing">
+                                        <label for="problem6-detail">{{ 'Provide more details (optional):'|t }}</label>
+                                        <input type="text" class="form-control full-width" id="problem6-detail">
+                                    </div>
+                                </fieldset>
+                                <button type="submit" class="btn btn-primary wb-toggle" data-toggle='{"stateOff": "hide", "stateOn": "show", "selector": ".gc-rprt-prblm-tggl"}'>{{ 'Submit'|t }}</button>
+                            </form>
+                        </div>
+                        <div class="gc-rprt-prblm-thnk gc-rprt-prblm-tggl hide">
+                            <h3>{{ 'Thank you for your help!'|t }}</h3>
+                            <p>{{ 'You will not receive a reply. For enquiries, please <a href="https://www.canada.ca/en/contact.html">contact us</a>.'|t }}</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+        {% endif %}
+        {% if showShareThisPage %}
+            <div class="wb-share col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-5" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div>
+        {% endif %}
+    </div>
+    {% endif %}
+    {# Last modified date #}
+    <dl id="wb-dtmd">
+        <dt>{{ 'Date modified:'|t }}&#32;</dt>
+        <dd><time property="dateModified">{{ entry.dateUpdated | date("Y-m-d") }}</time></dd>
+    </dl>
+</div>
+
+<footer id="wb-info">
+    {# Primary footer menu #}
+    <div class="landscape">
+        <nav class="container wb-navcurr">
+            <h2 class="wb-inv">{{ 'About government'|t }}</h2>
+            <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+                <li><a target="_blank" href="{{ 'https://www.canada.ca/en/contact.html'|t }}">{{ 'Contact us'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'https://www.canada.ca/en/government/dept.html'|t }}">{{ 'Departments and agencies'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'https://www.canada.ca/en/government/publicservice.html'|t }}">{{ 'Public service and military'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'https://www.canada.ca/en/news.html'|t }}">{{ 'News'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'https://www.canada.ca/en/government/system/laws.html'|t }}">{{ 'Treaties, laws and regulations'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'https://www.canada.ca/en/transparency/reporting.html'|t }}">{{ 'Government-wide reporting'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'http://pm.gc.ca/eng'|t }}">{{ 'Prime Minister'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'https://www.canada.ca/en/government/system.html'|t }}">{{ 'How government works'|t }}</a></li>
+                <li><a target="_blank" href="{{ 'http://open.canada.ca/en/'|t }}">{{ 'Open government'|t }}</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="brand">
+        <div class="container">
+            <div class="row">
+                {# Secondary footer menu #}
+                <nav class="col-md-9 col-lg-10 ftr-urlt-lnk">
+                    <h2 class="wb-inv">{{ 'About this site'|t }}</h2>
+                    <ul>
+                        <li><a href="{{ 'https://www.canada.ca/en/social.html'|t }}" target="_blank">{{ 'Social media'|t }}</a></li>
+                        <li><a href="{{ 'https://www.canada.ca/en/mobile.html'|t }}" target="_blank">{{ 'Mobile applications'|t }}</a></li>
+                        <li><a href="{{ 'https://www.canada.ca/en/government/about.html'|t }}" target="_blank">{{ 'About Canada.ca'|t }}</a></li>
+                        <li><a href="{{ 'https://www.canada.ca/en/transparency/terms.html'|t }}" target="_blank">{{ 'Terms and conditions'|t }}</a></li>
+                        <li><a href="{{ 'https://www.canada.ca/en/transparency/privacy.html'|t }}" target="_blank">{{ 'Privacy'|t }}</a></li>
+                    </ul>
+                </nav>
+                {# Mobile back to top arrow #}
+                <div class="col-xs-6 visible-sm visible-xs tofpg">
+                    <a href="#wb-cont">{{ 'Top of Page'|t }} <span class="glyphicon glyphicon-chevron-up"></span></a>
+                </div>
+                {# GoC watermark #}
+                <div class="col-xs-6 col-md-3 col-lg-2 text-right">
+                    <img src="/dist/GCWeb/assets/wmms-blk.svg" alt="{{ 'Symbol of the Government of Canada'|t }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

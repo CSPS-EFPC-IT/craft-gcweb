@@ -1,0 +1,65 @@
+{#
+ |------------------------------------------------------------------------------
+ | Video Player
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = {
+    class: [
+        'wb-mltmd'
+    ]
+} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<figure{{ utils.attr(defaultAttr, customAttr) }}{% if block.enableShare %} data-wb-mltmd='{"shareUrl": "{{ craft.app.request.absoluteUrl }}" }'{% endif %}>
+
+    {% set poster = block.poster.one() ?? null %}
+    <video title="{{- block.elementTitle -}}"{% if poster %} poster="{{ poster.url }}"{% endif %}>
+        {# MP4 Source #}
+        <source src="{{ block.mp4Url }}" type="video/mp4" />
+
+        {# WEBM Source #}
+        {% if block.webmUrl|length %}
+            <source src="{{ block.webmUrl }}" type="video/webm" />
+        {% endif %}
+
+        {# Track (captions) #}
+        {% set track = block.track.one() ?? null %}
+        {% if track %}
+            <track src="{{ track.url }}" kind="captions" data-type="text/html" srclang="{{ LANG }}" label="{{ 'English'|t }}" />
+        {% elseif block.transcript|length %}
+            <track src="#inline-captions-{{ block.id }}" kind="captions" data-type="text/html" srclang="{{ LANG }}" label="{{ 'English'|t }}" />
+        {% endif %}
+    </video>
+
+    {# Cue Points #}
+    {% if block.cuePoints|length %}
+        {% for point in block.cuePoints %}
+            <button class="btn btn-info cuepoint" data-cuepoint="{{ point.cuePoint }}">{{ 'Cue point'|t }} - {{ point.cuePoint }}</button>
+        {% endfor %}
+    {% endif %}
+
+    {# Caption and transcript #}
+    {% if block.mediaCaption|length or block.transcript|length %}
+    <figcaption>
+        {% if block.mediaCaption|length %}
+            {{ block.mediaCaption }}
+        {% endif %}
+        {% if block.transcript|length %}
+            <details id="inline-captions-{{ block.id }}">
+                <summary>{{ 'Transcript'|t }}</summary>
+                {{ block.transcript }}
+            </details>
+        {% endif %}
+    </figcaption>
+    {% endif %}
+</figure>

@@ -1,0 +1,26 @@
+{#
+ |------------------------------------------------------------------------------
+ | Variables
+ |------------------------------------------------------------------------------
+ | Use this file to set global variables available to every child templates
+ | extending the _layouts/master.twig file.
+ |------------------------------------------------------------------------------
+#}
+
+{# Set a short language variable #}
+{% set LANG = currentSite.language|slice(0,2) %}
+
+{# Custom default site url #}
+{% set SITE_URL = siteUrl %}
+{% if settings.pointHomeToCanadaCa %}
+    {% set SITE_URL = 'https://www.canada.ca/' ~ LANG ~ '.html' %}
+{% endif %}
+
+{# Set body class #}
+{% set BODY_CLASS = null %}
+{% if entry is defined and entry.section.handle == 'splash' %}
+    {% set BODY_CLASS = 'splash' %}
+{% endif %}
+
+{# HTML block #}
+{% block html %}{% endblock %}

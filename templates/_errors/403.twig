@@ -1,0 +1,58 @@
+{#
+ |------------------------------------------------------------------------------
+ | Error 404
+ |------------------------------------------------------------------------------
+#}
+
+{% extends '_layouts/default' %}
+
+{% block meta %}
+    <title>Access Denied (Error 403) / Accès refusé (Erreur 403)</title>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+{% endblock %}
+
+{% block styles %}
+    <!--[if gte IE 9 | !IE ]><!-->
+        <link href="/dist/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+        <link rel="stylesheet" href="/dist/GCWeb/css/theme-srv.min.css">
+        <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+        <link href="/dist/GCWeb/assets/favicon.ico" rel="shortcut icon" />
+        <link rel="stylesheet" href="/dist/GCWeb/css/ie8-theme.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/dist/wet-boew/js/ie8-wet-boew.min.js"></script>
+    <![endif]-->
+{% endblock %}
+
+{% block page %}
+<header role="banner" id="wb-bnr" class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <img id="gcwu-sig" src="/dist/GCWeb/assets/sig-blk-en.svg" alt="Government of Canada / Gouvernement du Canada">
+        </div>
+        <div class="col-sm-6">
+            <img id="wmms" src="/dist/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+        </div>
+    </div>
+</header>
+<main property="mainContentOfPage" typeof="WebPageElement" class="container">
+    <div class="row mrgn-tp-lg">
+        <h1 class="wb-inv">Access Denied (Error 403) / <span lang="fr">Accès refusé (Erreur 403)</span></h1>
+        <section class="col-md-6">
+            <h2><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span> Access Denied (Error 403)</h2>
+            <p>You are not allowed to access the page.</p>
+            <ul>
+                <li>Return to the <a href="/en">home page</a></li>
+            </ul>
+        </section>
+        <section class="col-md-6" lang="fr">
+            <h2><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span> Accès refusé (Erreur 403)</h2>
+            <p>Vous n'êtes pas autorisé à accéder à la page.</p>
+            <ul>
+                <li>Retournez à la <a href="/fr">page d'accueil</a></li>
+            </ul>
+        </section>
+    </div>
+</main>
+{% endblock %}

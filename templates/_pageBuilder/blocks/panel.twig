@@ -1,0 +1,38 @@
+{#
+ |------------------------------------------------------------------------------
+ | Panel
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Select the panel style
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = { class: ['panel', 'panel-' ~ block.contextualClass] } %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<div{{ utils.attr(defaultAttr, customAttr) }}>
+
+    {% if block.elementTitle|length %}
+        <header class="panel-heading">
+            <h5 class="panel-title">{{ block.elementTitle }}</h5>
+        </header>
+    {% endif %}
+
+    <div class="panel-body">
+        {{ block.redactor }}
+    </div>
+
+    {% if block.redactorSimple|length %}
+        <footer class="panel-footer">
+            {{ block.redactorSimple }}
+        </footer>
+    {% endif %}
+
+</div>

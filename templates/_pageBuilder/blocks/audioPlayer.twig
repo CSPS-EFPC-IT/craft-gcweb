@@ -1,0 +1,51 @@
+{#
+ |------------------------------------------------------------------------------
+ | Audio Player
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = {
+    class: [
+        'wb-mltmd'
+    ]
+} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<figure{{ utils.attr(defaultAttr, customAttr) }}{% if block.enableShare %} data-wb-mltmd='{"shareUrl": "{{ craft.app.request.absoluteUrl }}" }'{% endif %}>
+    <audio title="{{- block.elementTitle -}}">
+        <source src="{{ block.mp3Url }}" type="audio/mp3">
+        {% if block.oggUrl|length %}
+            <source src="{{ block.oggUrl }}" type="audio/ogg">
+        {% endif %}
+    </audio>
+
+    {# Cue Points #}
+    {% if block.cuePoints|length %}
+        {% for point in block.cuePoints %}
+            <button class="btn btn-info cuepoint" data-cuepoint="{{ point.cuePoint }}">{{ 'Cue point'|t }} - {{ point.cuePoint }}</button>
+        {% endfor %}
+    {% endif %}
+
+    {% if block.mediaCaption|length or block.transcript|length %}
+    <figcaption>
+        {% if block.mediaCaption|length %}
+            {{ block.mediaCaption }}
+        {% endif %}
+        {% if block.transcript|length %}
+            <details>
+                <summary>{{ 'Transcript'|t }}</summary>
+                {{ block.transcript }}
+            </details>
+        {% endif %}
+    </figcaption>
+    {% endif %}
+</figure>

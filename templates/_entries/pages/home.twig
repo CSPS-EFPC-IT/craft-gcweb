@@ -1,0 +1,21 @@
+{% extends '_entries/default' %}
+
+{# IN CONSTRUCTION #}
+
+{% block main %}
+    <div class="container">
+        <div class="well">
+            Banner
+        </div>
+    </div>
+
+    {% include '_pageBuilder/builder' with {
+        pageBuilder: entry.pageBuilder
+    } %}
+
+    <div class="container">
+        <div class="well">
+            Morefoot
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{#
+ |------------------------------------------------------------------------------
+ | Tables
+ |------------------------------------------------------------------------------
+ | Let users define their own table columns. Depends on the Table Maker plugin.
+ |
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = {} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<table{{ utils.attr(defaultAttr, customAttr) }}>
+
+    <thead>
+        <tr>
+        {% for col in block.tableMaker.columns %}
+            <th align="{{ col.align }}" width="{{ col.width }}">{{ col.heading }}</th>
+        {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for row in block.tableMaker.rows %}
+        <tr>
+            {% for cell in row %}
+                <td align="{{ block.tableMaker.columns[loop.index0].align }}">{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>

@@ -1,0 +1,21 @@
+{#
+ |------------------------------------------------------------------------------
+ | Default Template
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = {} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<div{{ utils.attr(defaultAttr, customAttr) }}>
+
+</div>

@@ -1,0 +1,40 @@
+{#
+ |------------------------------------------------------------------------------
+ | Follow Box
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the follow box block #}
+{% set defaultAttr = {
+    class: [
+        "followus"
+    ]
+} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<section{{ utils.attr(defaultAttr, customAttr) }}>
+    <h2>{{ "Follow:"|t }}</h2>
+    {# Query all the block items #}
+    {% set followBoxItems = block.followBoxItems.all() ?? null %}
+    {# Check if we have something #}
+    {% if followBoxItems|length %}
+    <ul>
+        {# Loop through result set and output links#}
+        {% for item in followBoxItems %}
+            <li>
+                <a href="{{ item.destination.url }}" class="{{ item.icon }}" rel="external">
+                    <span class="wb-inv">{{ item.icon|capitalize }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>

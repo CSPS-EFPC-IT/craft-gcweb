@@ -1,0 +1,62 @@
+{#
+ |------------------------------------------------------------------------------
+ | Carousel
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |
+ | @todo Enable video in carousel
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the block #}
+{% set defaultAttr = {
+    class: [
+        'wb-tabs',
+        block.carouselStyle,
+        block.carouselSpeed,
+        block.carouselExcludePlay ? 'exclude-play' : '',
+        block.carouselAutoplay ? 'playing' : ''
+    ]
+} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<div{{ utils.attr(defaultAttr, customAttr) }}>
+    <ul role="tablist">
+        {% for item in block.carouselItems.all() %}
+            <li{% if loop.first %} class="active"{% endif %}>
+                <a href="#carousel{{ block.id }}-tabpanel{{ loop.index }}">{{ 'Tab'|t }} {{ loop.index }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="tabpanels">
+        {% for item in block.carouselItems.all() %}
+            <div role="tabpanel"
+                id="carousel{{ block.id }}-tabpanel{{ loop.index }}"
+                class="{{ loop.first ? 'in':'out' }} {{ block.carouselTransition }}">
+                {% if item.destination|length %}
+                <a href="{{ item.destination.url }}" target="{{ item.destination.target }}">
+                {% endif %}
+                    <figure>
+                        {% set image = item.image.one() ?? null %}
+                        {% if image %}
+                            <img src="{{ image.url }}" alt="Panel {{ loop.index }}">
+                        {% endif %}
+                        {% if item.caption|length %}
+                            <figcaption>
+                                <p>{{ item.caption }}</p>
+                            </figcaption>
+                        {% endif %}
+                    </figure>
+                {% if item.destination|length %}
+                </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

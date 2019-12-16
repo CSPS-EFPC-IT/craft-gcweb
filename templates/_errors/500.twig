@@ -1,0 +1,58 @@
+{#
+ |------------------------------------------------------------------------------
+ | Error 404
+ |------------------------------------------------------------------------------
+#}
+
+{% extends '_layouts/default' %}
+
+{% block meta %}
+    <title>Internal Serveur Error (Error 500) / Erreur du serveur (Erreur 500)</title>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+{% endblock %}
+
+{% block styles %}
+    <!--[if gte IE 9 | !IE ]><!-->
+        <link href="/dist/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+        <link rel="stylesheet" href="/dist/GCWeb/css/theme-srv.min.css">
+        <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+        <link href="/dist/GCWeb/assets/favicon.ico" rel="shortcut icon" />
+        <link rel="stylesheet" href="/dist/GCWeb/css/ie8-theme.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/dist/wet-boew/js/ie8-wet-boew.min.js"></script>
+    <![endif]-->
+{% endblock %}
+
+{% block page %}
+<header role="banner" id="wb-bnr" class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <img id="gcwu-sig" src="/dist/GCWeb/assets/sig-blk-en.svg" alt="Government of Canada / Gouvernement du Canada">
+        </div>
+        <div class="col-sm-6">
+            <img id="wmms" src="/dist/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+        </div>
+    </div>
+</header>
+<main property="mainContentOfPage" typeof="WebPageElement" class="container">
+    <div class="row mrgn-tp-lg">
+        <h1 class="wb-inv">Internal Serveur Error (Error 500) / <span lang="fr">Erreur du serveur (Erreur 500)</span></h1>
+        <section class="col-md-6">
+            <h2><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span> Internal Serveur Error (Error 500)</h2>
+            <p>Strange... The website can not display this page. The site may be undergoing maintenance or a programming error has occurred.</p>
+            <ul>
+                <li>Return to the <a href="/en">home page</a></li>
+            </ul>
+        </section>
+        <section class="col-md-6" lang="fr">
+            <h2><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span> Erreur du serveur (Erreur 500)</h2>
+            <p>Étrange... Le site web ne parvient pas à afficher cette page. Il se peut que le site soit en cours de maintenance ou qu'une erreur de programmation se soit produite.</p>
+            <ul>
+                <li>Retournez à la <a href="/fr">page d'accueil</a></li>
+            </ul>
+        </section>
+    </div>
+</main>
+{% endblock %}

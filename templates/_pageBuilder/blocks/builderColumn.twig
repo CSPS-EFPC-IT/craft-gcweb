@@ -1,0 +1,56 @@
+{#
+ |------------------------------------------------------------------------------
+ | Column
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Select the column width
+ | - Select the column offset
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Concatenate column width classes #}
+{% set columnWidthClasses = "col-md-12" %}
+{% if block.columnWidth|length %}
+    {% set columnWidthClasses = "" %}
+    {% for option in block.columnWidth %}
+        {% set columnWidthClasses = columnWidthClasses ~ option.value %}
+        {% if not loop.last %}
+            {% set columnWidthClasses = columnWidthClasses ~ " " %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{# Concatenate column offset classes #}
+{% set columnOffsetClasses = null %}
+{% if block.columnOffset|length %}
+    {% set columnOffsetClasses = "" %}
+    {% for option in block.columnOffset %}
+        {% set columnOffsetClasses = columnOffsetClasses ~ option.value %}
+        {% if not loop.last %}
+            {% set columnOffsetClasses = columnOffsetClasses ~ " " %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{# Set default html attributes for the column #}
+{% set defaultAttr = {
+    class: [
+        columnWidthClasses,
+        columnOffsetClasses
+    ]
+} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the column block #}
+<div{{ utils.attr(defaultAttr, customAttr) }}>
+    {# Loop through all children page builder blocks #}
+    {% for block in block.children.all() %}
+        {# Include the appropriate page builder template #}
+        {% include "_pageBuilder/blocks/" ~ block.type.handle %}
+    {% endfor %}
+</div>

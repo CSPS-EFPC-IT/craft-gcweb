@@ -1,0 +1,27 @@
+{#
+ |------------------------------------------------------------------------------
+ | Accordion
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set the default and custom attributes for the block #}
+{% set defaultAttr, customAttr = { class: ["accordion"] }, block.customAttributes.all() %}
+
+{# Output the accordion block #}
+<div{{ utils.attr(defaultAttr, customAttr) }}>
+    {# Loop through all the accordion items #}
+    {% for item in block.accordionItems.all() %}
+        {# Set the accordion state attribute (open or close) #}
+        {% set accordionState = item.itemState ? " open" : "" %}
+        {# Output the accordion items #}
+        <details class="acc-group"{{ accordionState }}>
+            <summary class="wb-toggle tgl-tab">{{- item.itemTitle -}}</summary>
+            <div class="tgl-panel">{{- item.itemContent -}}</div>
+        </details>
+    {% endfor %}
+</div>

@@ -1,0 +1,32 @@
+{#
+ |------------------------------------------------------------------------------
+ | Heading
+ |------------------------------------------------------------------------------
+ | You can customize the following from the block "Settings" tab:
+ | - Add custom HTML attributes to the column
+ | - Select the heading size
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/utils" as utils %}
+
+{# Set default html attributes for the heading block #}
+{% set defaultAttr = {} %}
+
+{# Set the custom attributes for the block #}
+{% set customAttr = block.customAttributes.all() ?? null %}
+
+{# Output the block #}
+<{{ block.headingSize }}{{ utils.attr(defaultAttr, customAttr) }}>
+    {%- if block.elementLinkSimple -%}
+        {# Output title link #}
+        <a href="{{ block.elementLinkSimple.url }}"
+            target="{{ block.elementLinkSimple.target }}">
+            {# Override title text with fallback #}
+            {{- block.elementTitle -}}
+        </a>
+    {%- else -%}
+        {# Output title text only #}
+        {{- block.elementTitle -}}
+    {%- endif -%}
+</{{ block.headingSize }}>

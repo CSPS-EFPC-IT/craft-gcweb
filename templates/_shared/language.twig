@@ -1,0 +1,46 @@
+{#
+ |------------------------------------------------------------------------------
+ | Language switcher template
+ | Displays a link for the current entry in the alternate locale.
+ |------------------------------------------------------------------------------
+#}
+
+{# Query all other sites without the current #}
+{% set sites = craft.app.sites.getAllSites()|without(currentSite) %}
+{% for site in sites %}
+    {# Exclude 'nglxp' site because it is only used for the landing page #}
+    {% if site.handle != 'default' %}
+
+        {# Set the locale label #}
+        {% set label = (site.language == 'en') ? 'English' : 'Français' %}
+
+        {# Set the homepage as the default url #}
+        {% set url = alias(site.baseUrl) %}
+
+        {# Entry is defined #}
+        {% if entry is defined %}
+
+            {# Check if that entry exists in the other site #}
+            {% set entryForOtherSite = craft.entries.id(entry.id).site(site).one() %}
+            {% if entryForOtherSite %}
+                {# Set the other site entry url #}
+                {% set url = entryForOtherSite.url %}
+            {% endif %}
+
+        {# Category is defined #}
+        {% elseif category is defined %}
+
+            {# Check if that category exists in the other site #}
+            {% set categoryForOtherSite = craft.categories.id(category.id).site(site).one() %}
+                {% if categoryForOtherSite %}
+                {# Set the other site category url #}
+                {% set url = categoryForOtherSite.url %}
+            {% endif %}
+
+        {% endif %}
+
+        {# Output the other language link #}
+        <a id="language-selection" href="{{ url }}" lang="{{ site.language }}">{{ label }}</a>
+
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,49 @@
+{#
+ |------------------------------------------------------------------------------
+ | Breadcrumb
+ |------------------------------------------------------------------------------
+ | Generate a simple breadcrumb from a URL. It's a good fit for websites that
+ | have descriptive and meaningful URLs. The home page link can be overwritten
+ | with Canada.ca URL from the settings page in the Globals area.
+ |
+ | @see https://plugins.craftcms.com/breadcrumb
+ |------------------------------------------------------------------------------
+#}
+
+{% set breadcrumb = craft.breadcrumb.config %}
+
+{% if breadcrumb %}
+<nav id="wb-bc"  property="breadcrumb">
+    <h2 class="wb-inv">{{ 'You are here:'|t }}</h2>
+    <div class="container">
+        <ol class='breadcrumb'>
+            {% for crumb in breadcrumb  %}
+                {% set crumbTitle, crumbUrl = crumb.title, crumb.url %}
+                {% if crumb.title == 'Home' %}
+                    {# Send back to Canada.ca website #}
+                    {% if settings.pointHomeToCanadaCa %}
+                        {% set crumbUrl = 'https://www.canada.ca/' ~ LANG ~ '.html' %}
+                    {% endif %}
+                    {# Fix breadcrumb plugin label for french locale #}
+                    {% if LANG == 'fr' %}
+                        {% set crumbTitle = 'Accueil' %}
+                    {% endif %}
+                {% endif %}
+                <li class="c-breadcrumb__item">
+                    <a class="c-breadcrumb__link" href="{{ crumbUrl }}">
+                        <span>{{ crumbTitle }}</span>
+                    </a>
+                </li>
+                {# Add current site homepage link if the home link is overwritten #}
+                {% if settings.pointHomeToCanadaCa and loop.first %}
+                <li class="c-breadcrumb__item">
+                    <a class="c-breadcrumb__link" href="{{ siteUrl }}">
+                        <span>{{ siteName }}</span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+</nav>
+{% endif %}

@@ -1,0 +1,15 @@
+{#
+ |------------------------------------------------------------------------------
+ | Index
+ |------------------------------------------------------------------------------
+#}
+
+{% extends '_layouts/default' %}
+
+{% block page %}
+    {% include [
+        '_entries/' ~ entry.section.handle ~ '/' ~ entry.type,
+        '_entries/' ~ entry.section.handle ~ '/default',
+        '_entries/default'
+    ] %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{#
+ |------------------------------------------------------------------------------
+ | Page Builder
+ |------------------------------------------------------------------------------
+#}
+
+{% for block in pageBuilder.level(1).all() %}
+    {% include [
+        '_pageBuilder/blocks/' ~ block.type.handle,
+        '_pageBuilder/blocks/default'
+    ] %}
+{% endfor %}
