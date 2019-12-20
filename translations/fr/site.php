@@ -8,6 +8,7 @@ return [
 
     // Header
     "Language selection" => "Sélection de la langue",
+    "Search" => "Recherche",
     "Search Canada.ca" => "Rechercher dans Canada.ca",
     "Search this website" => "Rechercher dans ce site web",
     "Skip to main content" => "Passer au contenu principal",
