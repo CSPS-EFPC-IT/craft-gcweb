@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1576531195
+dateModified: 1576852559
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -67,11 +67,25 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
+  0f66e378-414c-4f3e-9677-c4be7df148fe:
+    field: 065ac092-3471-4177-8fe8-3172f0e19b74
+    fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
+    name: 'Show Breadcrumb'
+    instructions: null
+    hideName: false
+    hideInstructions: false
   18545502-4f11-4206-9514-8a006e32cd9d:
     field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
     fieldLayout: e8f5123c-a8d8-45a1-834c-6e3109cce226
     name: 'Media Title'
     instructions: 'Add the media title.'
+    hideName: false
+    hideInstructions: false
+  1c8889a3-46e5-4c8b-ad92-f31821d92d10:
+    field: d596f3b3-de66-40cd-a902-6080a701cc39
+    fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
+    name: 'Show Report A Problem'
+    instructions: null
     hideName: false
     hideInstructions: false
   1db48a58-d4be-44f2-af25-ad6b5392c4b6:
@@ -256,17 +270,10 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  8f5e0c98-d894-496a-8495-c9af534b16a4:
+  8f0e4e1d-893f-4f6f-9f51-cf376b1720f9:
     field: 9f06a8fd-2861-49d4-8622-cf4a97e95214
-    fieldLayout: 74cd52cd-e98f-4a08-9d16-e804ecb43e00
+    fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
     name: 'Show Login'
-    instructions: null
-    hideName: false
-    hideInstructions: false
-  96af6593-afba-48f8-ab52-51ede3f6a45e:
-    field: 973d2cfb-ed67-4851-a082-b54bd259e734
-    fieldLayout: 74cd52cd-e98f-4a08-9d16-e804ecb43e00
-    name: 'Show Features'
     instructions: null
     hideName: false
     hideInstructions: false
@@ -282,13 +289,6 @@ fieldlabels:
     fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
     name: Title
     instructions: 'Fill the title text field below.'
-    hideName: false
-    hideInstructions: false
-  98a91dd9-da48-488e-ae3b-81963d86a9cc:
-    field: 065ac092-3471-4177-8fe8-3172f0e19b74
-    fieldLayout: 74cd52cd-e98f-4a08-9d16-e804ecb43e00
-    name: 'Show Breadcrumb'
-    instructions: null
     hideName: false
     hideInstructions: false
   996191b6-613f-46b2-b1e7-0fade8923305:
@@ -317,13 +317,6 @@ fieldlabels:
     fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
     name: Header
     instructions: 'Add the panel header title.'
-    hideName: false
-    hideInstructions: false
-  b13fb3f3-3432-4030-8f7a-068253a43848:
-    field: d596f3b3-de66-40cd-a902-6080a701cc39
-    fieldLayout: 74cd52cd-e98f-4a08-9d16-e804ecb43e00
-    name: 'Show Report A Problem'
-    instructions: null
     hideName: false
     hideInstructions: false
   b2238e9f-b57a-4133-bc15-76d0b0e56fde:
@@ -438,13 +431,6 @@ fieldlabels:
     instructions: 'Build the features displayed above the footer area.'
     hideName: false
     hideInstructions: false
-  e732d3b7-3fa9-4c60-93a8-610b9fb2210a:
-    field: cbb1fdcd-7843-45df-b514-778dabc00c38
-    fieldLayout: 74cd52cd-e98f-4a08-9d16-e804ecb43e00
-    name: 'Show Share This Page'
-    instructions: null
-    hideName: false
-    hideInstructions: false
   eca8a096-7707-4db6-b3ac-4739516c49ca:
     field: 92a1a689-113a-4579-be6f-d4c00ef293e7
     fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
@@ -463,6 +449,20 @@ fieldlabels:
     field: 23c028d6-eb8f-4d24-ac6c-0b05ca057912
     fieldLayout: 532b2199-4b05-4e5f-a2a8-a380e1a2e56c
     name: Style
+    instructions: null
+    hideName: false
+    hideInstructions: false
+  f83cde1c-56bd-4678-8b8e-b2cad1645657:
+    field: cbb1fdcd-7843-45df-b514-778dabc00c38
+    fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
+    name: 'Show Share This Page'
+    instructions: null
+    hideName: false
+    hideInstructions: false
+  f9da0a22-8414-4b6f-bfd0-c8b7b93e91f9:
+    field: 973d2cfb-ed67-4851-a082-b54bd259e734
+    fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
+    name: 'Show Features'
     instructions: null
     hideName: false
     hideInstructions: false
@@ -3284,6 +3284,70 @@ sections:
                   d596f3b3-de66-40cd-a902-6080a701cc39:
                     required: false
                     sortOrder: 4
+  8f5eb16d-e554-4a77-895e-f6470e1ff274:
+    name: Home
+    handle: home
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      40e085ce-64f0-41b2-83d5-18219817da5e:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: ''
+      c9d485ad-7b3d-4d00-a41d-b6673509e6fc:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: ''
+    entryTypes:
+      e2acb9be-e64d-4fd9-a4d0-c1c9003db9eb:
+        name: Home
+        handle: home
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          5891fc89-c4da-48e9-93ec-e8b2a5fff119:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  b57c758b-2835-41f8-b8dd-4d5f7a071e5c:
+                    required: false
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  1cd1f161-0c3c-4d9c-ade7-461dc507a396:
+                    required: false
+                    sortOrder: 1
+                  6b7b9db6-bef6-4937-91b0-9e2528fc7795:
+                    required: false
+                    sortOrder: 2
+              -
+                name: Settings
+                sortOrder: 3
+                fields:
+                  065ac092-3471-4177-8fe8-3172f0e19b74:
+                    required: false
+                    sortOrder: 1
+                  973d2cfb-ed67-4851-a082-b54bd259e734:
+                    required: false
+                    sortOrder: 3
+                  9f06a8fd-2861-49d4-8622-cf4a97e95214:
+                    required: false
+                    sortOrder: 2
+                  cbb1fdcd-7843-45df-b514-778dabc00c38:
+                    required: false
+                    sortOrder: 5
+                  d596f3b3-de66-40cd-a902-6080a701cc39:
+                    required: false
+                    sortOrder: 4
   aaf8bfaa-5c9a-4fe5-91df-551eb29bdfe5:
     name: Splash
     handle: splash
@@ -3369,55 +3433,6 @@ sections:
                   6b7b9db6-bef6-4937-91b0-9e2528fc7795:
                     required: false
                     sortOrder: 3
-              -
-                name: Settings
-                sortOrder: 3
-                fields:
-                  065ac092-3471-4177-8fe8-3172f0e19b74:
-                    required: false
-                    sortOrder: 1
-                  351b22d1-1e22-4069-9d0c-587f76e4506a:
-                    required: false
-                    sortOrder: 6
-                  973d2cfb-ed67-4851-a082-b54bd259e734:
-                    required: false
-                    sortOrder: 3
-                  9f06a8fd-2861-49d4-8622-cf4a97e95214:
-                    required: false
-                    sortOrder: 2
-                  cbb1fdcd-7843-45df-b514-778dabc00c38:
-                    required: false
-                    sortOrder: 5
-                  d596f3b3-de66-40cd-a902-6080a701cc39:
-                    required: false
-                    sortOrder: 4
-      f27f917d-52a5-4963-ab94-e1135f9cdd9d:
-        name: Home
-        handle: home
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: ''
-        sortOrder: 2
-        fieldLayouts:
-          74cd52cd-e98f-4a08-9d16-e804ecb43e00:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  b57c758b-2835-41f8-b8dd-4d5f7a071e5c:
-                    required: false
-                    sortOrder: 1
-              -
-                name: SEO
-                sortOrder: 2
-                fields:
-                  1cd1f161-0c3c-4d9c-ade7-461dc507a396:
-                    required: false
-                    sortOrder: 1
-                  6b7b9db6-bef6-4937-91b0-9e2528fc7795:
-                    required: false
-                    sortOrder: 2
               -
                 name: Settings
                 sortOrder: 3
