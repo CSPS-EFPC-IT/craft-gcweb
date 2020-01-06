@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1576852559
+dateModified: 1576876520
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -3238,9 +3238,9 @@ sections:
       55e4686d-9639-400d-ab58-e9681929b6ee:
         name: Search
         handle: search
-        hasTitleField: true
+        hasTitleField: false
         titleLabel: Title
-        titleFormat: '{section.name|raw}'
+        titleFormat: '{section.name|t|raw}'
         sortOrder: 1
         fieldLayouts:
           d4b2f764-60c1-419f-9b75-39a5145ce926:
@@ -3305,9 +3305,9 @@ sections:
       e2acb9be-e64d-4fd9-a4d0-c1c9003db9eb:
         name: Home
         handle: home
-        hasTitleField: true
+        hasTitleField: false
         titleLabel: Title
-        titleFormat: ''
+        titleFormat: '{section.name|t|raw}'
         sortOrder: 1
         fieldLayouts:
           5891fc89-c4da-48e9-93ec-e8b2a5fff119:
