@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1576876520
+dateModified: 1578585493
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -771,33 +771,6 @@ fields:
           default: ''
     contentColumnType: string
     fieldGroup: 9862421f-d993-47d3-9ca8-21832c7faddb
-  29fbff9e-394b-478e-831d-176a9920987f:
-    name: 'Featured Image'
-    handle: featuredImage
-    instructions: 'The featured image is used for dynamic entry listing.'
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Assets
-    settings:
-      useSingleFolder: ''
-      defaultUploadLocationSource: 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
-      defaultUploadLocationSubpath: ''
-      singleUploadLocationSource: 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
-      singleUploadLocationSubpath: ''
-      restrictFiles: '1'
-      allowedKinds:
-        - image
-      sources: '*'
-      source: null
-      targetSiteId: null
-      viewMode: list
-      limit: '1'
-      selectionLabel: 'Add an image'
-      localizeRelations: ''
-      validateRelatedElements: ''
-    contentColumnType: string
-    fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
   2bfe488a-9a8f-4e52-a748-132e9f741d3c:
     name: 'Contextual Class'
     handle: contextualClass
@@ -2053,18 +2026,6 @@ fields:
     settings:
       mode: javascript
     contentColumnType: text
-    fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
-  d33846ad-33df-49ab-b72b-74fc60194b96:
-    name: State
-    handle: elementState
-    instructions: 'Default On/Off state field.'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Lightswitch
-    settings:
-      default: ''
-    contentColumnType: boolean
     fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
   d4f93719-8677-4073-95bf-7595b8ee93ae:
     name: 'Exclude Play'
