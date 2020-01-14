@@ -26,7 +26,8 @@
             <h2>{{ 'We have archived this page and will not be updating it.'|t }}</h2>
             <p>{{ 'You can use it for research or reference.'|t }}</p>
         </div>
-    <button type="button" class="mfp-close overlay-close" title="{{ 'Close overlay'|t }}">×<span class="wb-inv"> {{ 'Close overlay'|t }}</span></button></section>
+        <button type="button" class="mfp-close overlay-close" title="{{ 'Close overlay'|t }}">×<span class="wb-inv"> {{ 'Close overlay'|t }}</span></button>
+    </section>
 {% endif %}
 
 {# Skip links #}
@@ -111,3 +112,13 @@
         {% include '_shared/login' %}
     {% endif %}
 </header>
+
+{# Global header features #}
+{% set features = features.headerFeatures.all() %}
+{% if showHeaderFeatures and features|length %}
+    {% for feature in features %}
+        {% include '_pageBuilder/builder' with {
+            pageBuilder: feature.pageBuilder
+        } %}
+    {% endfor %}
+{% endif %}

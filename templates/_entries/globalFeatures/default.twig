@@ -1,0 +1,30 @@
+{# Make sure we don't index global feature pages #}
+{% header "X-Robots-Tag: noindex" %}
+
+{% block header %}
+    {# Include the header template #}
+    {% include '_shared/header' with {
+        showAsArchived:     false,
+        showBreadcrumb:     false,
+        showLogin:          false,
+        showHeaderFeatures: false
+    } %}
+{% endblock %}
+
+{% block main %}
+    <main property="mainContentOfPage" typeof="WebPageElement">
+        {# Include the page builder template #}
+        {% include '_pageBuilder/builder' with {
+            pageBuilder: entry.pageBuilder
+        } %}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {# Include the footer template #}
+    {% include '_shared/footer' with {
+        showFooterFeatures: false,
+        showReportAProblem: false,
+        showShareThisPage:  false
+    } %}
+{% endblock %}

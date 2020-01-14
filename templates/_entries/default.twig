@@ -21,11 +21,17 @@
         {% set showLogin = entry.showLoginLocal.value %}
     {% endif %}
 
+    {# Local override for showHeaderFeatures #}
+    {% if entry is defined %}
+        {% set showHeaderFeatures = entry.showHeaderFeatures ?? true %}
+    {% endif %}
+
     {# Include the header template #}
     {% include '_shared/header' with {
-        showAsArchived: entry.showAsArchived ?? null,
-        showBreadcrumb: showBreadcrumb,
-        showLogin:      showLogin
+        showAsArchived:     entry.showAsArchived ?? null,
+        showBreadcrumb:     showBreadcrumb,
+        showLogin:          showLogin,
+        showHeaderFeatures: showHeaderFeatures
     } %}
 
 {% endblock %}
@@ -41,12 +47,12 @@
 
 {% block footer %}
     {# Set defaults from global settings #}
-    {% set showFeatures, showReportAProblem, showShareThisPage =
-        settings.showFeaturesGlobal, settings.showReportAProblemGlobal, settings.showShareThisPageGlobal %}
+    {% set showReportAProblem, showShareThisPage =
+        settings.showReportAProblemGlobal, settings.showShareThisPageGlobal %}
 
-    {# Local override for showFeatures #}
-    {% if entry is defined and entry.showFeaturesLocal != 'default' %}
-        {% set showFeatures = entry.showFeaturesLocal.value %}
+    {# Local override for showFooterFeatures #}
+    {% if entry is defined %}
+        {% set showFooterFeatures = entry.showFooterFeatures ?? true %}
     {% endif %}
 
     {# Local override for showReportAProblem #}
@@ -61,7 +67,7 @@
 
     {# Include the footer template #}
     {% include '_shared/footer' with {
-        showFeatures:       showFeatures,
+        showFooterFeatures: showFooterFeatures,
         showReportAProblem: showReportAProblem,
         showShareThisPage:  showShareThisPage
     } %}
