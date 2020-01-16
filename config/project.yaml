@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1579020212
+dateModified: 1579208953
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -476,7 +476,7 @@ fields:
       viewMode: null
       limit: ''
       selectionLabel: 'Add Feature Content'
-      localizeRelations: '1'
+      localizeRelations: ''
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
@@ -1020,7 +1020,7 @@ fields:
       viewMode: null
       limit: ''
       selectionLabel: 'Add Feature Content'
-      localizeRelations: '1'
+      localizeRelations: ''
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
