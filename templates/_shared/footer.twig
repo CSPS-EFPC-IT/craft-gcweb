@@ -14,11 +14,14 @@
  |------------------------------------------------------------------------------
 #}
 
-{# Global features area #}
-{% if showFeatures %}
-    {% include '_pageBuilder/builder' with {
-        pageBuilder: features.pageBuilder
-    } %}
+{# Global footer features #}
+{% set features = features.footerFeatures.all() %}
+{% if showFooterFeatures and features|length %}
+    {% for feature in features %}
+        {% include '_pageBuilder/builder' with {
+            pageBuilder: feature.pageBuilder
+        } %}
+    {% endfor %}
 {% endif %}
 
 {# Morefoot area #}

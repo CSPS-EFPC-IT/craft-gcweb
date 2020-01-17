@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1578585493
+dateModified: 1579208953
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -37,6 +37,8 @@ fieldGroups:
     name: 'Page Builder'
   9b468c02-c000-419a-898c-e57403477097:
     name: Players
+  b02488ea-d46d-4999-8d4c-8523d17793cc:
+    name: 'Global Features'
   c4665fa7-f0b6-442f-a69a-1c4df8f04751:
     name: Common
   db9c7d97-808c-45f3-b3cf-bd25c37baed9:
@@ -107,13 +109,6 @@ fieldlabels:
     fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
     name: Title
     instructions: 'Add the image box title below.'
-    hideName: false
-    hideInstructions: false
-  20d40bb3-abdc-4ba6-860e-446ca06a07c1:
-    field: 973d2cfb-ed67-4851-a082-b54bd259e734
-    fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
-    name: 'Show Features'
-    instructions: null
     hideName: false
     hideInstructions: false
   234a09c6-4d84-435a-a697-cc9cd1d0b8c1:
@@ -247,13 +242,6 @@ fieldlabels:
     fieldLayout: eb22934c-c5aa-49ff-b2b0-c5b92c1c5056
     name: 'Accordion Items'
     instructions: 'Click the "Add an item" button below to add content to your accordion block.'
-    hideName: false
-    hideInstructions: false
-  88747bb2-1d62-4d6c-9f9b-2db06b9f46a8:
-    field: 973d2cfb-ed67-4851-a082-b54bd259e734
-    fieldLayout: d4b2f764-60c1-419f-9b75-39a5145ce926
-    name: 'Show Features'
-    instructions: null
     hideName: false
     hideInstructions: false
   8a4eb422-e07b-4d40-bb0f-3b77b105ce56:
@@ -410,13 +398,6 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  de5edf0c-537f-4ea5-a493-9cbe1b6e6175:
-    field: 0d1441e7-505e-4c34-9274-4de523549fc0
-    fieldLayout: 879dbba6-db25-4bf1-be76-f6ad623a6fb0
-    name: 'Show Features'
-    instructions: null
-    hideName: false
-    hideInstructions: false
   e2dde3dc-646c-46d6-8be8-7b4cc1d9551c:
     field: d596f3b3-de66-40cd-a902-6080a701cc39
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -459,13 +440,6 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  f9da0a22-8414-4b6f-bfd0-c8b7b93e91f9:
-    field: 973d2cfb-ed67-4851-a082-b54bd259e734
-    fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
-    name: 'Show Features'
-    instructions: null
-    hideName: false
-    hideInstructions: false
   fccd12c0-d84e-47df-ba16-d8955e9309e2:
     field: 0ae291e1-1bb5-4b45-adf6-05df7e8ae743
     fieldLayout: 152ec3af-4acc-43f0-9521-a0d594c7efac
@@ -486,6 +460,26 @@ fields:
       default: '1'
     contentColumnType: boolean
     fieldGroup: 5307297a-3699-496a-a207-4658515902f4
+  01e9a1fe-b10e-4d95-a2f1-8080fc602f64:
+    name: 'Header Features'
+    handle: headerFeatures
+    instructions: 'Select a global feature entry that you would like to display at the top of every pages.'
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:dd2e481d-9a68-4708-ad4c-868d145c11a1'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: 'Add Feature Content'
+      localizeRelations: ''
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
   06502cfb-94fe-468d-8a8f-5db996e85eae:
     name: 'HTML Attributes'
     handle: customAttributes
@@ -600,18 +594,6 @@ fields:
           default: ''
     contentColumnType: string
     fieldGroup: 9862421f-d993-47d3-9ca8-21832c7faddb
-  0d1441e7-505e-4c34-9274-4de523549fc0:
-    name: 'Show Features (Global)'
-    handle: showFeaturesGlobal
-    instructions: 'Globally enable/disable the featured content section above the page footer.'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Lightswitch
-    settings:
-      default: '1'
-    contentColumnType: boolean
-    fieldGroup: 5307297a-3699-496a-a207-4658515902f4
   118f3d2b-33d9-4966-b835-7f7270b19762:
     name: 'OGG URL'
     handle: oggUrl
@@ -1022,6 +1004,26 @@ fields:
           default: ''
     contentColumnType: text
     fieldGroup: f59b0921-c501-47da-9319-824555ec98c9
+  33ec7f73-5f7b-46b9-b44a-678217c63a17:
+    name: 'Footer Features'
+    handle: footerFeatures
+    instructions: 'Select a global feature entry that you would like to display at the bottom of every pages.'
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:dd2e481d-9a68-4708-ad4c-868d145c11a1'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: 'Add Feature Content'
+      localizeRelations: ''
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
   351b22d1-1e22-4069-9d0c-587f76e4506a:
     name: 'Show As Archived'
     handle: showAsArchived
@@ -1667,6 +1669,18 @@ fields:
           default: ''
     contentColumnType: string
     fieldGroup: f59b0921-c501-47da-9319-824555ec98c9
+  900e0771-e897-4f9e-8bc0-2dcac207c01c:
+    name: 'Show Header Features'
+    handle: showHeaderFeatures
+    instructions: 'Whether or not the global header features area should be displayed.'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: '1'
+    contentColumnType: boolean
+    fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
   92a1a689-113a-4579-be6f-d4c00ef293e7:
     name: Link
     handle: elementLink
@@ -1747,31 +1761,6 @@ fields:
     settings:
       default: '1'
     contentColumnType: boolean
-    fieldGroup: 5307297a-3699-496a-a207-4658515902f4
-  973d2cfb-ed67-4851-a082-b54bd259e734:
-    name: 'Show Features (Local)'
-    handle: showFeaturesLocal
-    instructions: 'Locally enable/disable the featured content section above the page footer.'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Dropdown
-    settings:
-      optgroups: true
-      options:
-        -
-          label: Default
-          value: default
-          default: '1'
-        -
-          label: Show
-          value: '1'
-          default: ''
-        -
-          label: Hide
-          value: '0'
-          default: ''
-    contentColumnType: string
     fieldGroup: 5307297a-3699-496a-a207-4658515902f4
   9f06a8fd-2861-49d4-8622-cf4a97e95214:
     name: 'Show Login (Local)'
@@ -2133,6 +2122,18 @@ fields:
       allowTarget: '1'
     contentColumnType: text
     fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
+  df073578-a0ff-4b83-9d96-c396375d7eb2:
+    name: 'Show Footer Features'
+    handle: showFooterFeatures
+    instructions: 'Whether or not the global footer features area should be displayed.'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: '1'
+    contentColumnType: boolean
+    fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
   e7915740-ecce-4124-8d54-14a9bf2299d4:
     name: 'Point Home to Canada.ca'
     handle: pointHomeToCanadaCa
@@ -2305,9 +2306,6 @@ globalSets:
             name: Footer
             sortOrder: 3
             fields:
-              0d1441e7-505e-4c34-9274-4de523549fc0:
-                required: false
-                sortOrder: 3
               41b7a218-d38a-4b71-b0e5-cd4b038ef56c:
                 required: false
                 sortOrder: 2
@@ -2340,9 +2338,12 @@ globalSets:
             name: Content
             sortOrder: 1
             fields:
-              b57c758b-2835-41f8-b8dd-4d5f7a071e5c:
+              01e9a1fe-b10e-4d95-a2f1-8080fc602f64:
                 required: false
                 sortOrder: 1
+              33ec7f73-5f7b-46b9-b44a-678217c63a17:
+                required: false
+                sortOrder: 2
 imageTransforms:
   4f8f849e-da10-4f9a-b0f1-f5b58b83fe8b:
     format: null
@@ -3230,10 +3231,7 @@ sections:
                   065ac092-3471-4177-8fe8-3172f0e19b74:
                     required: false
                     sortOrder: 1
-                  351b22d1-1e22-4069-9d0c-587f76e4506a:
-                    required: false
-                    sortOrder: 6
-                  973d2cfb-ed67-4851-a082-b54bd259e734:
+                  900e0771-e897-4f9e-8bc0-2dcac207c01c:
                     required: false
                     sortOrder: 3
                   9f06a8fd-2861-49d4-8622-cf4a97e95214:
@@ -3245,6 +3243,9 @@ sections:
                   d596f3b3-de66-40cd-a902-6080a701cc39:
                     required: false
                     sortOrder: 4
+                  df073578-a0ff-4b83-9d96-c396375d7eb2:
+                    required: false
+                    sortOrder: 6
   8f5eb16d-e554-4a77-895e-f6470e1ff274:
     name: Home
     handle: home
@@ -3297,7 +3298,7 @@ sections:
                   065ac092-3471-4177-8fe8-3172f0e19b74:
                     required: false
                     sortOrder: 1
-                  973d2cfb-ed67-4851-a082-b54bd259e734:
+                  900e0771-e897-4f9e-8bc0-2dcac207c01c:
                     required: false
                     sortOrder: 3
                   9f06a8fd-2861-49d4-8622-cf4a97e95214:
@@ -3309,6 +3310,9 @@ sections:
                   d596f3b3-de66-40cd-a902-6080a701cc39:
                     required: false
                     sortOrder: 4
+                  df073578-a0ff-4b83-9d96-c396375d7eb2:
+                    required: false
+                    sortOrder: 6
   aaf8bfaa-5c9a-4fe5-91df-551eb29bdfe5:
     name: Splash
     handle: splash
@@ -3346,6 +3350,41 @@ sections:
                   6b7b9db6-bef6-4937-91b0-9e2528fc7795:
                     required: false
                     sortOrder: 2
+  dd2e481d-9a68-4708-ad4c-868d145c11a1:
+    name: 'Global Features'
+    handle: globalFeatures
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      40e085ce-64f0-41b2-83d5-18219817da5e:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'global-features/{slug}'
+        template: ''
+      c9d485ad-7b3d-4d00-a41d-b6673509e6fc:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'global-features/{slug}'
+        template: ''
+    entryTypes:
+      f1f9b2a3-eab5-4c41-809d-30a29fdb544f:
+        name: 'Global Features'
+        handle: globalFeatures
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          1ba1c869-8ebb-4207-b48f-23ed0ff8cd8d:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  b57c758b-2835-41f8-b8dd-4d5f7a071e5c:
+                    required: false
+                    sortOrder: 1
   ddf6106c-f60d-401c-885f-4825a894f8ef:
     name: Pages
     handle: pages
@@ -3393,29 +3432,32 @@ sections:
                     sortOrder: 1
                   6b7b9db6-bef6-4937-91b0-9e2528fc7795:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 2
               -
                 name: Settings
                 sortOrder: 3
                 fields:
                   065ac092-3471-4177-8fe8-3172f0e19b74:
                     required: false
-                    sortOrder: 1
+                    sortOrder: 2
                   351b22d1-1e22-4069-9d0c-587f76e4506a:
                     required: false
-                    sortOrder: 6
-                  973d2cfb-ed67-4851-a082-b54bd259e734:
-                    required: false
-                    sortOrder: 3
-                  9f06a8fd-2861-49d4-8622-cf4a97e95214:
-                    required: false
-                    sortOrder: 2
-                  cbb1fdcd-7843-45df-b514-778dabc00c38:
-                    required: false
-                    sortOrder: 5
-                  d596f3b3-de66-40cd-a902-6080a701cc39:
+                    sortOrder: 1
+                  900e0771-e897-4f9e-8bc0-2dcac207c01c:
                     required: false
                     sortOrder: 4
+                  9f06a8fd-2861-49d4-8622-cf4a97e95214:
+                    required: false
+                    sortOrder: 3
+                  cbb1fdcd-7843-45df-b514-778dabc00c38:
+                    required: false
+                    sortOrder: 6
+                  d596f3b3-de66-40cd-a902-6080a701cc39:
+                    required: false
+                    sortOrder: 5
+                  df073578-a0ff-4b83-9d96-c396375d7eb2:
+                    required: false
+                    sortOrder: 7
 siteGroups:
   6831e458-ffef-46f7-8c27-99741a416193:
     name: 'Craft GCWeb'
