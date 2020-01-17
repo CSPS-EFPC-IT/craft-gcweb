@@ -1,14 +1,5 @@
 {#
  |------------------------------------------------------------------------------
- | Simple twig var_dump() with a <pre> wrapper.
- |------------------------------------------------------------------------------
-#}
-{% macro d(data) %}
-    <pre>{{ dump(data) }}</pre>
-{% endmacro %}
-
-{#
- |------------------------------------------------------------------------------
  | Format customAttributes Super Table field to a multidimensional array for the
  | CraftCMS Twig attr() function.
  |
