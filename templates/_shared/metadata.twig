@@ -11,8 +11,8 @@
 {% set creator = entry.metadata.creator ?? settings.metadata.creator %}
 {% set dctype = entry.metadata.dctype ?? settings.metadata.dctype %}
 {% set subject = entry.metadata.subject ?? settings.metadata.subject %}
-{% set source = entry.metadata.source ?? settings.metadata.source %}
-{% set identifier = entry.metadata.identifier ?? settings.metadata.identifier %}
+{% set issued = entry.metadata.issued ?? entry.dateCreated %}
+{% set modified = entry.metadata.modified ?? entry.dateUpdated %}
 
 <title>{{ title }} - {{ currentSite.name }}</title>
 
@@ -24,13 +24,11 @@
 <meta name="dcterms.type" content="{{ dctype }}" />
 <meta name="dcterms.description" content="{{ description }}" />
 <meta name="dcterms.subject" title="gccore" content="{{ subject }}" />
-<meta name="dcterms.source" content="{{ source }}" />
 <meta name="dcterms.language" title="ISO639-2/T" content="{{ language }}" />
 <meta name="dcterms.spatial" content="{{ spatial }}" />
 <meta name="dcterms.creator" content="{{ creator }}" />
-<meta name="dcterms.identifier" content="{{ identifier }}" />
-<meta name="dcterms.issued" title="W3CDTF" content="{{ entry.dateCreated|date('Y-m-d') }}" />
-<meta name="dcterms.modified" title="W3CDTF" content="{{ entry.dateUpdated|date('Y-m-d') }}" />
+<meta name="dcterms.issued" title="W3CDTF" content="{{ issued|date('Y-m-d') }}" />
+<meta name="dcterms.modified" title="W3CDTF" content="{{ modified|date('Y-m-d') }}" />
 
 {% if seo is not null %}
 	{% set fb = seo.social.facebook -%}

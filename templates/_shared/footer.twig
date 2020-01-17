@@ -101,9 +101,10 @@
     </div>
     {% endif %}
     {# Last modified date #}
+    {% set modified = entry.metadata.modified ?? entry.dateUpdated %}
     <dl id="wb-dtmd">
         <dt>{{ 'Date modified:'|t }}&#32;</dt>
-        <dd><time property="dateModified">{{ entry.dateUpdated | date("Y-m-d") }}</time></dd>
+        <dd><time property="dateModified">{{ modified | date("Y-m-d") }}</time></dd>
     </dl>
 </div>
 

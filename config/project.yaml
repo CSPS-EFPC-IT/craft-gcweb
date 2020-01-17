@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1579208953
+dateModified: 1579280038
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -651,19 +651,23 @@ fields:
       propagationMethod: all
       staticField: '1'
       columns:
-        38b94d3a-e33c-4f59-902e-480b2b27814f:
+        0d332d6d-a791-4303-8f61-3a2ff500a23b:
           width: ''
-        452a6146-4ff3-46f8-934c-b6d547b3a736:
+        122065db-9dbe-4429-a7a5-0b03b32f9133:
           width: ''
-        7fcccf31-88c4-4d86-8050-bdc067590706:
+        12d2d3c5-7b0b-4037-a0f3-c6f32cf24e20:
           width: ''
-        9c5df7c9-b417-43b4-a002-a661db1ebce1:
+        251f343b-f4aa-449b-9e67-c1887d2219d2:
           width: ''
-        d9062fd0-9309-4f1e-84f7-8f55f83b9f9d:
+        3743ab45-e4bc-42df-a9ea-0a9db658e1e2:
           width: ''
-        dbf17ef1-c97a-4c18-8546-000294f23ce1:
+        4e702965-ff7d-40e5-83f7-01ce44769796:
           width: ''
-        f8394b20-3bc6-4959-88d8-9f5b21f2f3e7:
+        5ecf2774-792e-438e-8808-e442356073ca:
+          width: ''
+        602f720f-c363-4983-8988-a29dc2dda858:
+          width: ''
+        c50acbc3-6651-40e2-bea4-a3dc0d250c4d:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -3424,18 +3428,22 @@ sections:
                     required: false
                     sortOrder: 1
               -
-                name: SEO
+                name: Metadata
                 sortOrder: 2
                 fields:
                   1cd1f161-0c3c-4d9c-ade7-461dc507a396:
                     required: false
                     sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 3
+                fields:
                   6b7b9db6-bef6-4937-91b0-9e2528fc7795:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 1
               -
                 name: Settings
-                sortOrder: 3
+                sortOrder: 4
                 fields:
                   065ac092-3471-4177-8fe8-3172f0e19b74:
                     required: false
@@ -3757,7 +3765,7 @@ superTableBlockTypes:
       0d332d6d-a791-4303-8f61-3a2ff500a23b:
         name: Creator
         handle: creator
-        instructions: 'Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.'
+        instructions: "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.\r\n\r\nThis value will populate both the **author** and **dcterms.creator** metadata tags."
         searchable: false
         translationMethod: site
         translationKeyFormat: null
@@ -3808,7 +3816,7 @@ superTableBlockTypes:
       251f343b-f4aa-449b-9e67-c1887d2219d2:
         name: Description
         handle: description
-        instructions: 'Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.'
+        instructions: "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.\r\n\r\nThis value will populate both the **description** and **dcterms.description** metadata tags."
         searchable: false
         translationMethod: site
         translationKeyFormat: null
@@ -3822,10 +3830,24 @@ superTableBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
-      39897b66-fd96-4eac-ab28-1531604571f3:
-        name: Identifier
-        handle: identifier
-        instructions: 'Recommended best practice is to identify the resource by means of a string conforming to a formal identification system.'
+      3743ab45-e4bc-42df-a9ea-0a9db658e1e2:
+        name: Issued
+        handle: issued
+        instructions: 'Date of formal issuance (e.g., publication) of the resource. If not set, will be automatically populated by the system.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Date
+        settings:
+          showDate: true
+          showTime: false
+          minuteIncrement: '30'
+        contentColumnType: datetime
+        fieldGroup: null
+      4e702965-ff7d-40e5-83f7-01ce44769796:
+        name: Publisher
+        handle: publisher
+        instructions: 'An entity responsible for making the resource available.'
         searchable: false
         translationMethod: site
         translationKeyFormat: null
@@ -3843,23 +3865,6 @@ superTableBlockTypes:
         name: Subject
         handle: subject
         instructions: 'Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary.'
-        searchable: true
-        translationMethod: site
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      7c8aa9af-70a0-4fee-903b-6848cce0f86e:
-        name: Source
-        handle: source
-        instructions: 'The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.'
         searchable: false
         translationMethod: site
         translationKeyFormat: null
@@ -3873,10 +3878,24 @@ superTableBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      602f720f-c363-4983-8988-a29dc2dda858:
+        name: Modified
+        handle: modified
+        instructions: 'Date on which the resource was changed. If not set, will be automatically populated by the system.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Date
+        settings:
+          showDate: true
+          showTime: false
+          minuteIncrement: '30'
+        contentColumnType: datetime
+        fieldGroup: null
       c50acbc3-6651-40e2-bea4-a3dc0d250c4d:
         name: Keywords
         handle: keywords
-        instructions: ' Describe the content shortly and concisely, separated with a comma.'
+        instructions: 'Describe the content shortly and concisely, separated with a comma.'
         searchable: false
         translationMethod: site
         translationKeyFormat: null
@@ -3899,28 +3918,31 @@ superTableBlockTypes:
             fields:
               0d332d6d-a791-4303-8f61-3a2ff500a23b:
                 required: false
-                sortOrder: 7
+                sortOrder: 3
               122065db-9dbe-4429-a7a5-0b03b32f9133:
                 required: false
                 sortOrder: 8
               12d2d3c5-7b0b-4037-a0f3-c6f32cf24e20:
                 required: false
-                sortOrder: 4
+                sortOrder: 7
               251f343b-f4aa-449b-9e67-c1887d2219d2:
                 required: false
-                sortOrder: 3
-              39897b66-fd96-4eac-ab28-1531604571f3:
+                sortOrder: 2
+              3743ab45-e4bc-42df-a9ea-0a9db658e1e2:
                 required: false
                 sortOrder: 5
+              4e702965-ff7d-40e5-83f7-01ce44769796:
+                required: false
+                sortOrder: 9
               5ecf2774-792e-438e-8808-e442356073ca:
                 required: false
-                sortOrder: 1
-              7c8aa9af-70a0-4fee-903b-6848cce0f86e:
+                sortOrder: 4
+              602f720f-c363-4983-8988-a29dc2dda858:
                 required: false
                 sortOrder: 6
               c50acbc3-6651-40e2-bea4-a3dc0d250c4d:
                 required: false
-                sortOrder: 2
+                sortOrder: 1
   e9581456-dac8-490b-b6c2-c2c8c1f70316:
     field: eefb0a7c-6c02-4b1f-8e48-631f818ff3bd
     fields:
