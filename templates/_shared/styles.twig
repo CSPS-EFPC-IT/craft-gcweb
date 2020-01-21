@@ -1,0 +1,43 @@
+<!--[if gte IE 9 | !IE ]><!-->
+<link href="/dist/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/dist/GCWeb/css/theme.min.css">
+<link rel="stylesheet" href="{{ mix('css/main.css') }}">
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<link href="/dist/GCWeb/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/dist/GCWeb/css/ie8-theme.min.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/dist/wet-boew/js/ie8-wet-boew.min.js"></script>
+<![endif]-->
+<noscript><link rel="stylesheet" href="/dist/wet-boew/css/noscript.min.css" /></noscript>
+
+{# External CSS files  #}
+{% set externalFiles = customCode.cssExternalFiles.all() %}
+{% if entry is defined and entry.cssExternalFiles is not null %}
+    {% set externalFiles = externalFiles|merge(entry.cssExternalFiles.all()) %}
+{% endif %}
+
+{% if externalFiles|length %}
+    {% for file in externalFiles %}
+        <link rel="stylesheet" href="{{ file.fileUrl }}">
+    {% endfor %}
+{% endif %}
+
+{# Internal CSS files  #}
+{% set internalFiles = customCode.cssFiles.all() %}
+{% if entry is defined and entry.cssFiles is not null %}
+    {% set internalFiles = internalFiles|merge(entry.cssFiles.all()) %}
+{% endif %}
+
+{% if internalFiles|length %}
+    {% for file in internalFiles %}
+        <link rel="stylesheet" href="{{ file.url }}">
+    {% endfor %}
+{% endif %}
+
+{# Custom CSS  #}
+{% set customCss = customCode.customCss %}
+{% if entry is defined and entry.customCss is not null %}
+    {% set customCss = customCss ~ entry.customCss %}
+{% endif %}
+{% css %} {{- customCss|raw -}} {% endcss %}
