@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1579280038
+dateModified: 1579624404
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -673,6 +673,27 @@ fields:
       selectionLabel: ''
     contentColumnType: string
     fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
+  1d5dbd8c-30e2-4382-afd2-ffda1236a64a:
+    name: 'Javascript External Files'
+    handle: javascriptExternalFiles
+    instructions: 'Add javascript files hosted on an external site. '
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_javascriptexternalfiles}}'
+      propagationMethod: all
+      staticField: ''
+      columns:
+        6ec70ef4-6c40-45af-af4e-031ce9f8ccd3:
+          width: ''
+      fieldLayout: row
+      selectionLabel: 'Add File'
+    contentColumnType: string
+    fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
   1f3b17f0-0877-4d0f-9e59-b3c6634ae9bc:
     name: Code
     handle: code
@@ -1271,12 +1292,40 @@ fields:
     handle: customCss
     instructions: 'Add custom CSS to your site. Do not add the <style> tag. WARNING! This can break the site if not used properly.'
     searchable: true
-    translationMethod: language
+    translationMethod: none
     translationKeyFormat: null
     type: luwes\codemirror\fields\CodeMirrorField
     settings:
       mode: css
     contentColumnType: text
+    fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
+  592c69d5-9a10-462a-8705-3073d7ca9d71:
+    name: 'CSS Files'
+    handle: cssFiles
+    instructions: 'Add CSS files that will be appended to the head tag of the page.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
+      defaultUploadLocationSubpath: js
+      singleUploadLocationSource: 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
+      singleUploadLocationSubpath: css
+      restrictFiles: '1'
+      allowedKinds:
+        - stylesheet
+      sources:
+        - 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: ''
+      selectionLabel: 'Add File'
+      localizeRelations: ''
+      validateRelatedElements: ''
+    contentColumnType: string
     fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
   5cd5bdac-a71e-4f97-964f-f3a801c4d153:
     name: 'MP3 URL'
@@ -1580,6 +1629,27 @@ fields:
       maxLength: '255'
     contentColumnType: string(255)
     fieldGroup: 9b468c02-c000-419a-898c-e57403477097
+  82fdfe64-2249-40b9-9879-853a0e2c93f7:
+    name: 'CSS External Files'
+    handle: cssExternalFiles
+    instructions: 'Add CSS files hosted on an external site. '
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_cssexternalfiles}}'
+      propagationMethod: all
+      staticField: ''
+      columns:
+        c148ec45-d730-4398-b997-9ddf936873a9:
+          width: ''
+      fieldLayout: row
+      selectionLabel: 'Add File'
+    contentColumnType: string
+    fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
   8803baf1-b7f8-4aa9-9ade-56413194814c:
     name: 'Equalize Columns Height'
     handle: equalizeColumnsHeight
@@ -1852,6 +1922,34 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 9b468c02-c000-419a-898c-e57403477097
+  abf07447-d7d6-4859-a37b-6cd2df18a27d:
+    name: 'Javascript Files'
+    handle: javascriptFiles
+    instructions: 'Add self-contained javascript files that will be executed once the page is loaded.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
+      defaultUploadLocationSubpath: js
+      singleUploadLocationSource: 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
+      singleUploadLocationSubpath: js
+      restrictFiles: '1'
+      allowedKinds:
+        - javascript
+      sources:
+        - 'volume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: ''
+      selectionLabel: 'Add File'
+      localizeRelations: ''
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
   b060d78a-870c-49d5-a80c-d59a833db114:
     name: 'Redactor Simple'
     handle: redactorSimple
@@ -2323,15 +2421,31 @@ globalSets:
       6a8c6dbd-b9db-4d8d-b7dc-ec6808ceb7fd:
         tabs:
           -
-            name: Code
+            name: CSS
             sortOrder: 1
             fields:
               56fb65b5-4d2f-49ff-ab11-6779663d92fe:
                 required: false
                 sortOrder: 1
-              ccfce70a-e414-4fff-906f-a4b96c839366:
+              592c69d5-9a10-462a-8705-3073d7ca9d71:
+                required: false
+                sortOrder: 3
+              82fdfe64-2249-40b9-9879-853a0e2c93f7:
                 required: false
                 sortOrder: 2
+          -
+            name: Javascript
+            sortOrder: 2
+            fields:
+              1d5dbd8c-30e2-4382-afd2-ffda1236a64a:
+                required: false
+                sortOrder: 2
+              abf07447-d7d6-4859-a37b-6cd2df18a27d:
+                required: false
+                sortOrder: 3
+              ccfce70a-e414-4fff-906f-a4b96c839366:
+                required: false
+                sortOrder: 1
   88bb6b3a-44ac-4232-bdaf-e503d3407018:
     name: Features
     handle: features
@@ -3219,7 +3333,7 @@ sections:
                     required: false
                     sortOrder: 1
               -
-                name: SEO
+                name: Metadata
                 sortOrder: 2
                 fields:
                   1cd1f161-0c3c-4d9c-ade7-461dc507a396:
@@ -3229,8 +3343,34 @@ sections:
                     required: false
                     sortOrder: 2
               -
-                name: Settings
+                name: CSS
                 sortOrder: 3
+                fields:
+                  56fb65b5-4d2f-49ff-ab11-6779663d92fe:
+                    required: false
+                    sortOrder: 1
+                  592c69d5-9a10-462a-8705-3073d7ca9d71:
+                    required: false
+                    sortOrder: 3
+                  82fdfe64-2249-40b9-9879-853a0e2c93f7:
+                    required: false
+                    sortOrder: 2
+              -
+                name: Javascript
+                sortOrder: 4
+                fields:
+                  1d5dbd8c-30e2-4382-afd2-ffda1236a64a:
+                    required: false
+                    sortOrder: 2
+                  abf07447-d7d6-4859-a37b-6cd2df18a27d:
+                    required: false
+                    sortOrder: 3
+                  ccfce70a-e414-4fff-906f-a4b96c839366:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Settings
+                sortOrder: 5
                 fields:
                   065ac092-3471-4177-8fe8-3172f0e19b74:
                     required: false
@@ -3286,7 +3426,7 @@ sections:
                     required: false
                     sortOrder: 1
               -
-                name: SEO
+                name: Metadata
                 sortOrder: 2
                 fields:
                   1cd1f161-0c3c-4d9c-ade7-461dc507a396:
@@ -3296,8 +3436,34 @@ sections:
                     required: false
                     sortOrder: 2
               -
-                name: Settings
+                name: CSS
                 sortOrder: 3
+                fields:
+                  56fb65b5-4d2f-49ff-ab11-6779663d92fe:
+                    required: false
+                    sortOrder: 1
+                  592c69d5-9a10-462a-8705-3073d7ca9d71:
+                    required: false
+                    sortOrder: 3
+                  82fdfe64-2249-40b9-9879-853a0e2c93f7:
+                    required: false
+                    sortOrder: 2
+              -
+                name: Javascript
+                sortOrder: 4
+                fields:
+                  1d5dbd8c-30e2-4382-afd2-ffda1236a64a:
+                    required: false
+                    sortOrder: 2
+                  abf07447-d7d6-4859-a37b-6cd2df18a27d:
+                    required: false
+                    sortOrder: 3
+                  ccfce70a-e414-4fff-906f-a4b96c839366:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Settings
+                sortOrder: 5
                 fields:
                   065ac092-3471-4177-8fe8-3172f0e19b74:
                     required: false
@@ -3434,16 +3600,38 @@ sections:
                   1cd1f161-0c3c-4d9c-ade7-461dc507a396:
                     required: false
                     sortOrder: 1
+                  6b7b9db6-bef6-4937-91b0-9e2528fc7795:
+                    required: false
+                    sortOrder: 2
               -
-                name: SEO
+                name: CSS
                 sortOrder: 3
                 fields:
-                  6b7b9db6-bef6-4937-91b0-9e2528fc7795:
+                  56fb65b5-4d2f-49ff-ab11-6779663d92fe:
+                    required: false
+                    sortOrder: 1
+                  592c69d5-9a10-462a-8705-3073d7ca9d71:
+                    required: false
+                    sortOrder: 3
+                  82fdfe64-2249-40b9-9879-853a0e2c93f7:
+                    required: false
+                    sortOrder: 2
+              -
+                name: Javascript
+                sortOrder: 4
+                fields:
+                  1d5dbd8c-30e2-4382-afd2-ffda1236a64a:
+                    required: false
+                    sortOrder: 2
+                  abf07447-d7d6-4859-a37b-6cd2df18a27d:
+                    required: false
+                    sortOrder: 3
+                  ccfce70a-e414-4fff-906f-a4b96c839366:
                     required: false
                     sortOrder: 1
               -
                 name: Settings
-                sortOrder: 4
+                sortOrder: 5
                 fields:
                   065ac092-3471-4177-8fe8-3172f0e19b74:
                     required: false
@@ -3567,6 +3755,32 @@ superTableBlockTypes:
               dbf17ef1-c97a-4c18-8546-000294f23ce1:
                 required: true
                 sortOrder: 1
+  74358737-6f85-492d-ad84-7918c307074e:
+    field: 82fdfe64-2249-40b9-9879-853a0e2c93f7
+    fields:
+      c148ec45-d730-4398-b997-9ddf936873a9:
+        name: URL
+        handle: fileUrl
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Url
+        settings:
+          placeholder: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
+          maxLength: '255'
+        contentColumnType: string(255)
+        fieldGroup: null
+    fieldLayouts:
+      9dbd8723-78f2-44b0-845e-54353efa21d2:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              c148ec45-d730-4398-b997-9ddf936873a9:
+                required: false
+                sortOrder: 1
   8d7a0bda-fe2e-4762-b1d9-45e500c953f3:
     field: 48c84a8c-3d97-463b-9630-24e04a503bf1
     fields:
@@ -3648,6 +3862,32 @@ superTableBlockTypes:
             fields:
               25f3cd88-4631-4e2c-8c91-6e9c2f764358:
                 required: true
+                sortOrder: 1
+  a538f50a-c11f-4261-9387-135849bb0d88:
+    field: 1d5dbd8c-30e2-4382-afd2-ffda1236a64a
+    fields:
+      6ec70ef4-6c40-45af-af4e-031ce9f8ccd3:
+        name: URL
+        handle: fileUrl
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Url
+        settings:
+          placeholder: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'
+          maxLength: '255'
+        contentColumnType: string(255)
+        fieldGroup: null
+    fieldLayouts:
+      b1044bff-3d6e-4a96-a118-01f37b26664d:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              6ec70ef4-6c40-45af-af4e-031ce9f8ccd3:
+                required: false
                 sortOrder: 1
   a6dc61bc-9856-443f-b8dd-7972a4b1a9cd:
     field: 06502cfb-94fe-468d-8a8f-5db996e85eae

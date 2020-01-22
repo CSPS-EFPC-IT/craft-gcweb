@@ -1,0 +1,41 @@
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script src="/dist/wet-boew/js/wet-boew.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="/dist/wet-boew/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<script src="/dist/GCWeb/js/theme.min.js"></script>
+<script src="{{ mix('js/main.js') }}"></script>
+
+{# External javascript files #}
+{% set externalFiles = customCode.javascriptExternalFiles.all() %}
+{% if entry is defined and entry.javascriptExternalFiles is not null %}
+    {% set externalFiles = externalFiles|merge(entry.javascriptExternalFiles.all()) %}
+{% endif %}
+
+{% if externalFiles|length %}
+    {% for file in externalFiles %}
+        <script src="{{ file.fileUrl }}"></script>
+    {% endfor %}
+{% endif %}
+
+{# Internal javascript files #}
+{% set internalFiles = customCode.javascriptFiles.all() %}
+{% if entry is defined and entry.javascriptFiles is not null %}
+    {% set internalFiles = internalFiles|merge(entry.javascriptFiles.all()) %}
+{% endif %}
+
+{% if internalFiles|length %}
+    {% for file in internalFiles %}
+        <script src="{{ file.url }}"></script>
+    {% endfor %}
+{% endif %}
+
+{# Custom javascript #}
+{% set customJavascript = customCode.customJavascript %}
+{% if entry is defined and entry.customJavascript is not null %}
+    {% set customJavascript = customJavascript ~ entry.customJavascript %}
+{% endif %}
+
+{% js %} {{- customJavascript|raw -}} {% endjs %}

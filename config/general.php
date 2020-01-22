@@ -30,8 +30,16 @@ return [
         // Path to error templates
         'errorTemplatePrefix' => '_errors/',
 
-        // Allow XML file upload in assets
-        'extraAllowedFileExtensions' => 'xml',
+        // Allow extra file types to be uploaded in assets
+        'extraAllowedFileExtensions' => ['xml', 'css'],
+
+        // List of additional file types Craft should support
+        'extraFileKinds' => [
+            'stylesheet' => [
+                'label' => 'CSS',
+                'extensions' => ['css'],
+            ],
+        ],
 
         // Aliases
         'aliases' => [
