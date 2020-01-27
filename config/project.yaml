@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1579624404
+dateModified: 1579720519
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -452,7 +452,7 @@ fields:
     name: 'Show Breadcrumb (Global)'
     handle: showBreadcrumbGlobal
     instructions: 'Globally enable/disable the breadcrumb trail below the main menu bar.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -484,7 +484,7 @@ fields:
     name: 'HTML Attributes'
     handle: customAttributes
     instructions: 'Define custom HTML attributes. WARNING! This field can break the site layout if not used properly.'
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: verbb\supertable\fields\SuperTableField
@@ -495,9 +495,9 @@ fields:
       propagationMethod: all
       staticField: ''
       columns:
-        218bc7f4-79b1-4737-8696-94c74c2748a0:
+        7fcccf31-88c4-4d86-8050-bdc067590706:
           width: ''
-        2199194a-e702-409b-841d-ba29525754d5:
+        f8394b20-3bc6-4959-88d8-9f5b21f2f3e7:
           width: ''
       fieldLayout: row
       selectionLabel: 'Add an attribute'
@@ -507,7 +507,7 @@ fields:
     name: 'Show Breadcrumb (Local)'
     handle: showBreadcrumbLocal
     instructions: 'Locally enable/disable the breadcrumb trail below the main menu bar.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -570,7 +570,7 @@ fields:
     name: 'Link List Style'
     handle: linkListStyle
     instructions: 'Choose one of the following link list style.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\RadioButtons
@@ -598,7 +598,7 @@ fields:
     name: 'OGG URL'
     handle: oggUrl
     instructions: 'Add the audio OGG URL.'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: craft\fields\Url
@@ -611,7 +611,7 @@ fields:
     name: Autoplay
     handle: carouselAutoplay
     instructions: 'Enable carousel autoplay on page load.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -677,7 +677,7 @@ fields:
     name: 'Javascript External Files'
     handle: javascriptExternalFiles
     instructions: 'Add javascript files hosted on an external site. '
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: verbb\supertable\fields\SuperTableField
@@ -698,7 +698,7 @@ fields:
     name: Code
     handle: code
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: luwes\codemirror\fields\CodeMirrorField
@@ -710,7 +710,7 @@ fields:
     name: 'Follow Box Items'
     handle: followBoxItems
     instructions: 'Add links to various social media pages.'
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: verbb\supertable\fields\SuperTableField
@@ -721,9 +721,9 @@ fields:
       propagationMethod: all
       staticField: ''
       columns:
-        b3812fb5-1952-43f8-91fb-c6567aac02cb:
+        38b94d3a-e33c-4f59-902e-480b2b27814f:
           width: ''
-        b57c758b-2835-41f8-b8dd-4d5f7a071e5c:
+        d9062fd0-9309-4f1e-84f7-8f55f83b9f9d:
           width: ''
       fieldLayout: row
       selectionLabel: 'Add a link'
@@ -733,7 +733,7 @@ fields:
     name: Style
     handle: carouselStyle
     instructions: 'Choose one of the two carousel styles.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\RadioButtons
@@ -753,7 +753,7 @@ fields:
     name: 'Image Style'
     handle: imageStyle
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -819,7 +819,7 @@ fields:
     name: 'Column Offset'
     handle: columnOffset
     instructions: 'Add column offset class(es). [Learn more about the grid system](https://wet-boew.github.io/wet-boew-styleguide/design/grids-en.html)'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\MultiSelect
@@ -1053,7 +1053,7 @@ fields:
     name: 'Show As Archived'
     handle: showAsArchived
     instructions: 'Locally enable/disable the archived page stick banner above the page header.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -1065,7 +1065,7 @@ fields:
     name: Speed
     handle: carouselSpeed
     instructions: 'Choose between the two following carousel speed options.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\RadioButtons
@@ -1085,7 +1085,7 @@ fields:
     name: Poster
     handle: poster
     instructions: 'Add a poster for the video (default video image).'
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: craft\fields\Assets
@@ -1112,7 +1112,7 @@ fields:
     name: 'Custom Search Query Url'
     handle: customSearchQueryUrl
     instructions: 'Redirect search queries to a custom URL of your choice. Leave blank to use the default search result page.'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: craft\fields\Url
@@ -1125,7 +1125,7 @@ fields:
     name: 'Show Share This Page (Global)'
     handle: showShareThisPageGlobal
     instructions: 'Globally enable/disable the "Share this page" button above the page footer.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -1223,7 +1223,7 @@ fields:
     name: 'Button Style'
     handle: buttonStyle
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -1264,7 +1264,7 @@ fields:
     name: Image
     handle: image
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: craft\fields\Assets
@@ -1291,7 +1291,7 @@ fields:
     name: 'Custom CSS'
     handle: customCss
     instructions: 'Add custom CSS to your site. Do not add the <style> tag. WARNING! This can break the site if not used properly.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: luwes\codemirror\fields\CodeMirrorField
@@ -1303,7 +1303,7 @@ fields:
     name: 'CSS Files'
     handle: cssFiles
     instructions: 'Add CSS files that will be appended to the head tag of the page.'
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: craft\fields\Assets
@@ -1331,7 +1331,7 @@ fields:
     name: 'MP3 URL'
     handle: mp3Url
     instructions: 'Add the audio MP3 URL.'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: craft\fields\Url
@@ -1344,7 +1344,7 @@ fields:
     name: 'YouTube URL'
     handle: youtubeUrl
     instructions: 'Add the link to the YouTube video.'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: craft\fields\Url
@@ -1357,7 +1357,7 @@ fields:
     name: 'Search Engine Optimization'
     handle: seo
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: ether\seo\fields\SeoField
@@ -1406,7 +1406,7 @@ fields:
     name: 'Column Width'
     handle: columnWidth
     instructions: 'Add column width class(es). [Learn more about the grid system](https://wet-boew.github.io/wet-boew-styleguide/design/grids-en.html)'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\MultiSelect
@@ -1620,7 +1620,7 @@ fields:
     name: 'WEBM URL'
     handle: webmUrl
     instructions: 'Add the video WEBM URL.'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: craft\fields\Url
@@ -1633,7 +1633,7 @@ fields:
     name: 'CSS External Files'
     handle: cssExternalFiles
     instructions: 'Add CSS files hosted on an external site. '
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: verbb\supertable\fields\SuperTableField
@@ -1666,7 +1666,7 @@ fields:
     name: Track
     handle: track
     instructions: 'Select a track for the video to add captions.'
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: craft\fields\Assets
@@ -1726,7 +1726,7 @@ fields:
     name: 'Container Width'
     handle: containerWidth
     instructions: 'Choose between a fixed width grid layout or a full width layout. [Learn more about the grid system](https://wet-boew.github.io/wet-boew-styleguide/design/grids-en.html)'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -1828,7 +1828,7 @@ fields:
     name: 'Show Report A Problem (Global)'
     handle: showReportAProblemGlobal
     instructions: 'Globally enable/disable the "Report a problem" button above the page footer.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -1840,7 +1840,7 @@ fields:
     name: 'Show Login (Local)'
     handle: showLoginLocal
     instructions: 'Locally enable/disable the sign in/sign out controls below the main menu bar.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -1902,7 +1902,7 @@ fields:
     name: 'Cue Points'
     handle: cuePoints
     instructions: 'Add cue points in the media. Specify the cue point in seconds (ex. 75s) or time notation (01:15).'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: craft\fields\Table
@@ -1926,7 +1926,7 @@ fields:
     name: 'Javascript Files'
     handle: javascriptFiles
     instructions: 'Add self-contained javascript files that will be executed once the page is loaded.'
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: craft\fields\Assets
@@ -1987,7 +1987,7 @@ fields:
     name: 'Gallery Items'
     handle: galleryItems
     instructions: 'Add images to the lightbox gallery.'
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: verbb\supertable\fields\SuperTableField
@@ -1998,9 +1998,9 @@ fields:
       propagationMethod: all
       staticField: ''
       columns:
-        cbb1fdcd-7843-45df-b514-778dabc00c38:
+        04d44960-4b2d-46d6-9516-571cd872fba8:
           width: ''
-        ccfce70a-e414-4fff-906f-a4b96c839366:
+        ba5bfcda-feee-4286-9ad6-0c020499c4da:
           width: ''
       fieldLayout: row
       selectionLabel: 'Add an item'
@@ -2010,7 +2010,7 @@ fields:
     name: Items
     handle: items
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: verbb\supertable\fields\SuperTableField
@@ -2021,9 +2021,9 @@ fields:
       propagationMethod: all
       staticField: ''
       columns:
-        4d38f112-d27a-4bb5-aaa9-fd2477a93e73:
+        6c652585-7a9f-4f73-a399-06e19ea28db6:
           width: ''
-        5167d3b3-8938-426b-923c-562dbbf8aaab:
+        99e5ed17-f052-475e-84f8-50112b533b55:
           width: ''
       fieldLayout: row
       selectionLabel: 'Add an item'
@@ -2048,7 +2048,7 @@ fields:
     name: 'MP4 URL'
     handle: mp4Url
     instructions: 'Add the video MP4 URL.'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: craft\fields\Url
@@ -2061,7 +2061,7 @@ fields:
     name: 'Show Login (Global)'
     handle: showLoginGlobal
     instructions: 'Globally enable/disable the sign in/sign out controls below the main menu bar.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -2073,7 +2073,7 @@ fields:
     name: 'Element Dismissable'
     handle: elementDismissable
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -2085,7 +2085,7 @@ fields:
     name: 'Show Share This Page (Local)'
     handle: showShareThisPageLocal
     instructions: 'Locally enable/disable the "Share this page" button above the page footer.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -2110,7 +2110,7 @@ fields:
     name: 'Custom JavaScript'
     handle: customJavascript
     instructions: 'Add custom JavaScript to your site. Do not add the <script> tag. WARNING! This can break the site if not used properly.'
-    searchable: true
+    searchable: false
     translationMethod: language
     translationKeyFormat: null
     type: luwes\codemirror\fields\CodeMirrorField
@@ -2122,7 +2122,7 @@ fields:
     name: 'Exclude Play'
     handle: carouselExcludePlay
     instructions: 'Exclude the play button from the carousel output.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -2134,7 +2134,7 @@ fields:
     name: 'Show Report A Problem (Local)'
     handle: showReportAProblemLocal
     instructions: 'Locally enable/disable the "Report a problem" button above the page footer.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -2240,7 +2240,7 @@ fields:
     name: 'Point Home to Canada.ca'
     handle: pointHomeToCanadaCa
     instructions: 'Override the default site URL to point to Canada.ca website.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Lightswitch
@@ -2264,7 +2264,7 @@ fields:
     name: 'Image Box Style'
     handle: imageBoxStyle
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\RadioButtons
@@ -2325,7 +2325,7 @@ fields:
     name: Transition
     handle: carouselTransition
     instructions: 'Choose one of the following carousel transition.'
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\RadioButtons
@@ -2349,7 +2349,7 @@ fields:
     name: 'Bootstrap Size'
     handle: bootstrapSize
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Dropdown
@@ -3973,7 +3973,7 @@ superTableBlockTypes:
         name: Caption
         handle: caption
         instructions: ''
-        searchable: false
+        searchable: true
         translationMethod: language
         translationKeyFormat: null
         type: craft\fields\PlainText
@@ -4322,7 +4322,7 @@ superTableBlockTypes:
         name: Title
         handle: itemTitle
         instructions: ''
-        searchable: false
+        searchable: true
         translationMethod: language
         translationKeyFormat: null
         type: craft\fields\PlainText
@@ -4339,7 +4339,7 @@ superTableBlockTypes:
         name: Content
         handle: itemContent
         instructions: ''
-        searchable: false
+        searchable: true
         translationMethod: language
         translationKeyFormat: null
         type: craft\redactor\Field
