@@ -1,0 +1,79 @@
+<div class="col-sm-6 col-md-5 col-lg-4">
+    <details class="brdr-0">
+        <summary class="btn btn-default text-center">{{ 'Report a problem or mistake on this page'|t }}</summary>
+        <div class="well row">
+            <div class="gc-rprt-prblm">
+                <div class="gc-rprt-prblm-tggl">
+                    <form role="form" action="#" id="report-problem" class="ovrflw-hddn">
+                        <!-- Report problem options -->
+                        <fieldset>
+                            <legend><span class="field-name">{{ 'Please select all that apply:'|t }}</span></legend>
+                            <div class="checkbox">
+                                <label for="problem-1">
+                                    <input type="checkbox" name="problems[]" id="problem-1" value="{{ 'Something is broken'|t }}">
+                                    <span class="field-name">{{ 'Something is broken'|t }}</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="problem-2">
+                                    <input type="checkbox" name="problems[]" id="problem-2" value="{{ 'Spelling or grammar mistake'|t }}">
+                                    <span class="field-name">{{ 'Spelling or grammar mistake'|t }}</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="problem-3">
+                                    <input type="checkbox" name="problems[]" id="problem-3" value="{{ 'Information is missing'|t }}">
+                                    <span class="field-name">{{ 'Information is missing'|t }}</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="problem-4">
+                                    <input type="checkbox" name="problems[]" id="problem-4" value="{{ 'Information is outdated or wrong'|t }}">
+                                    <span class="field-name">{{ 'Information is outdated or wrong'|t }}</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="problem-5">
+                                    <input type="checkbox" name="problems[]" id="problem-5" value="{{ 'I can’t find what I’m looking for'|t }}">
+                                    <span class="field-name">{{ 'I can’t find what I’m looking for'|t }}</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="problem-6">
+                                    <input type="checkbox" name="problems[]" id="problem-6" value="{{ 'Other'|t }}">
+                                    <span class="field-name">{{ 'Other'|t }}</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Report problem additional information -->
+                        <fieldset id="report-problem-extra" class="hide mrgn-tp-md mrgn-bttm-md">
+                            <legend><span class="field-name">{{ 'Additional information:'|t }}</span></legend>
+                            <div class="form-group">
+                                <label for="more-details">{{ 'Provide more details'|t }}</label>
+                                <textarea id="more-details" name="more-details" class="form-control full-width" rows="4" required="required"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="follow-up-email">{{ 'Email address (for follow-up)'|t }}</label>
+                                <input type="email" id="follow-up-email" name="follow-up-email" class="full-width form-control" placeholder="{{ 'Enter your email'|t }}" required="required" />
+                            </div>
+                            <button type="submit" class="btn btn-primary mrgn-tp-md">{{ 'Send'|t }}</button>
+                            <div class="spinner hide"><p class="wb-inv">{{ 'Please wait...'|t}}</p></div>
+                        </fieldset>
+
+                        <input type="hidden" name="page" value="{{ craft.app.request.absoluteUrl }}" />
+                        <input type="hidden" name="{{ craft.app.config.general.csrfTokenName }}" value="{{ craft.app.request.csrfToken }}" />
+                    </form>
+                </div>
+                <div id="report-problem-success" class="hide alert alert-success mrgn-bttm-0">
+                    <h3>{{ 'Thank you for your help!'|t }}</h3>
+                    <p>{{ 'We will get back to you shortly if required.'|t }}</p>
+                </div>
+                <div id="report-problem-error" class="hide alert alert-danger mrgn-bttm-0">
+                    <h3>{{ 'Oops, an error occured...'|t }}</h3>
+                    <p>{{ 'Please try again later.'|t }}</p>
+                </div>
+            </div>
+        </div>
+    </details>
+</div>
