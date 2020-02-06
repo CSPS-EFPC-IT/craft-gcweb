@@ -102,6 +102,24 @@ return [
     // Follow Box Block
     "Follow:" => "Suivez :",
 
+    // Report Problem Form
+    "Please select all that apply:" => "Veuillez choisir toutes les options qui s'appliquent :",
+    "Something is broken" => "Quelque chose ne fonctionne pas",
+    "Spelling or grammar mistake" => "Une erreur d'orthographe ou de grammaire",
+    "Information is missing" => "Les renseignements sont incomplets",
+    "Information is outdated or wrong" => "L'information n'est plus à jour ou est erronée",
+    "I can’t find what I’m looking for" => "Je ne trouve pas ce que je cherche",
+    "Other" => "Autre",
+    "Additional information:" => "Information additionnelle :",
+    "Provide more details" => "Veuillez fournir plus de détails",
+    "Email address (for follow-up)" => "Adresse courriel (pour un suivi)",
+    "Enter your email" => "Entrez votre adresse courriel",
+    "Please wait..." => "Veuillez patienter",
+    "Thank you for your help!" => "Merci pour votre aide!",
+    "We will get back to you shortly if required." => "Nous vous contacterons bientôt si nécessaire.",
+    "Oops, an error occured..." => "Oups, une erreur est survenue...",
+    "Please try again later." => "Veuillez ré-essayer plus tard.",
+
     // Media Player Blocks
     "Transcript" => "Transcription",
     "Cue point" => "Marqueur temporel",

@@ -18,15 +18,19 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1579720519
+dateModified: 1580757509
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
   template: ''
-  transportType: craft\mail\transportadapters\Gmail
+  transportType: craft\mail\transportadapters\Smtp
   transportSettings:
+    host: $SYSTEM_EMAIL_HOST_NAME
+    port: $SYSTEM_EMAIL_PORT
+    useAuthentication: '1'
     username: $SYSTEM_EMAIL_USERNAME
     password: $SYSTEM_EMAIL_PASSWORD
+    encryptionMethod: tls
     timeout: '10'
 fieldGroups:
   5307297a-3699-496a-a207-4658515902f4:

@@ -19,7 +19,7 @@
 
 return [
     'modules' => [
-        'my-module' => \modules\Module::class,
+        'craftgcweb' => \modules\craftgcweb\CraftGCWeb::class,
     ],
-    //'bootstrap' => ['my-module'],
+    'bootstrap' => ['craftgcweb'],
 ];

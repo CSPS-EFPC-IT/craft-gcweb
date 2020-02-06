@@ -1,0 +1,26 @@
+<h1>An issue has been reported on {{ siteName }}</h1>
+
+<h2>The problem was reported on the following page:</h2>
+<p>{{ formData.page }}</p>
+
+<h2>The problem was identified as:</h2>
+<ul>
+    {% for problem in formData.problems %}
+        <li>{{ problem }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Additional information provided by the user:</h2>
+<p>{{ formData['more-details'] }}</p>
+
+<h2>Follow-up email:</h2>
+<p>{{ formData['follow-up-email'] }}</p>
+
+<h2>Additional troubleshooting information:</h2>
+<ul>
+    <li>Date and time: {{ now|date("Y-m-d H:i") }}</li>
+    <li>Client OS: {{ clientOs }}</li>
+    <li>User agent: {{ userAgent }}</li>
+    <li>Mobile browser: {{ isMobileBrowser }}</li>
+    <li>User IP: {{ userIP }}</li>
+</ul>
