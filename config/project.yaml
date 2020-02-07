@@ -18,7 +18,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1581043192
+dateModified: 1581043836
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -52,17 +52,10 @@ fieldGroups:
   f59b0921-c501-47da-9319-824555ec98c9:
     name: 'Grid System'
 fieldlabels:
-  044b8655-8aa3-4de1-b84f-df314aa80633:
-    field: ecc57eef-63b0-46b5-b100-32ff374fba68
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    name: Style
-    instructions: 'Select one of the following image box style.'
-    hideName: false
-    hideInstructions: false
-  0d01d64b-ec89-4af4-9cb4-d4dc79b5db16:
-    field: 0cc58fb5-1c9b-4c27-8b4f-d9523f657fc0
-    fieldLayout: 29d10a13-b00e-4179-923b-24f606827ac8
-    name: Style
+  022fa44f-c4e5-4854-b060-33acb86789ef:
+    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
+    fieldLayout: 532b2199-4b05-4e5f-a2a8-a380e1a2e56c
+    name: Destination
     instructions: null
     hideName: false
     hideInstructions: false
@@ -80,11 +73,18 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  18545502-4f11-4206-9514-8a006e32cd9d:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: e8f5123c-a8d8-45a1-834c-6e3109cce226
-    name: 'Media Title'
-    instructions: 'Add the media title.'
+  1498ca71-4ae4-4e81-9038-5c6b25865313:
+    field: 1427d166-f002-4ebd-85c4-8f616db21c31
+    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
+    name: null
+    instructions: 'Use to identify the content author.'
+    hideName: false
+    hideInstructions: false
+  18d16796-11bd-471a-8adc-9a6fe2c7e88b:
+    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
+    fieldLayout: e1b4eeda-c69f-48f1-a17a-74a26ba30a6f
+    name: 'Text Editor'
+    instructions: 'Add content using the rich text editor below.'
     hideName: false
     hideInstructions: false
   1c8889a3-46e5-4c8b-ad92-f31821d92d10:
@@ -108,21 +108,21 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  1f973e44-0a11-454d-9047-316ff72fac7e:
+  230be7d1-f9b5-46e2-b26f-7eb9310038f2:
     field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
+    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
     name: Title
-    instructions: 'Add the image box title below.'
+    instructions: 'Fill the title text field below.'
     hideName: false
     hideInstructions: false
-  234a09c6-4d84-435a-a697-cc9cd1d0b8c1:
-    field: b060d78a-870c-49d5-a80c-d59a833db114
-    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
-    name: Quote
-    instructions: 'Add the blockquote content in the textarea below.'
+  23688c4a-0d7b-4481-bd64-7601aceefc44:
+    field: ecc57eef-63b0-46b5-b100-32ff374fba68
+    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
+    name: Style
+    instructions: 'Select one of the following image box style.'
     hideName: false
     hideInstructions: false
-  27823803-84dc-4710-8ab6-a8eacb8dc187:
+  2cd30e65-0bc0-40be-9d0b-72e22f0e716b:
     field: 2bfe488a-9a8f-4e52-a748-132e9f741d3c
     fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
     name: Style
@@ -136,32 +136,18 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  3c648fd8-71f7-4fe4-901f-c25e6dc67147:
-    field: dd8f4ad3-4b7c-4c14-a437-8e88a6671091
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    name: Destination
-    instructions: 'Turn the image box into a link.'
+  400eb55a-8231-4618-8e32-45e1f4c8ef00:
+    field: 218bc7f4-79b1-4737-8696-94c74c2748a0
+    fieldLayout: 0e08a904-e337-4ab8-a042-3ceff5cc0802
+    name: Items
+    instructions: null
     hideName: false
     hideInstructions: false
-  47368354-87a8-4d0e-882a-6e716bb3724c:
-    field: f9a5fcd0-1509-423c-a64e-010bddbc39bd
-    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
-    name: Size
-    instructions: 'Select one of the following button sizes.'
-    hideName: false
-    hideInstructions: false
-  495a76ec-e23d-49ff-9048-1d6a12b0e367:
-    field: 8ba38a42-f127-4c91-b255-996270788f99
-    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
-    name: null
-    instructions: 'Use to identify the title of the source.'
-    hideName: false
-    hideInstructions: false
-  4f066762-d433-4df2-bfec-56f1737b639c:
-    field: 53af1a35-330a-4416-90db-2f0a579f880a
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    name: null
-    instructions: 'Select the image box asset below.'
+  4a146945-61c7-4179-bb92-48dfa6007a03:
+    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
+    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
+    name: Header
+    instructions: 'Add the panel header title.'
     hideName: false
     hideInstructions: false
   51ec4085-8cd7-4726-b069-7ee63e9b2e2e:
@@ -171,25 +157,25 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  5c741e84-fdc9-467b-a994-e358dcf13ebe:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    name: Destination
-    instructions: 'Turn the heading into a link. You may override the title text with this link text.'
-    hideName: false
-    hideInstructions: false
-  62fd7705-2dd6-4296-a44d-779dd871b605:
-    field: b060d78a-870c-49d5-a80c-d59a833db114
-    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
-    name: Footer
-    instructions: 'Add content to the panel footer.'
-    hideName: false
-    hideInstructions: false
-  6f1e8699-6116-4e58-a55e-32f65f1e1cb9:
+  538ee53a-eccc-4298-8bcd-cabfbdded985:
     field: 5167d3b3-8938-426b-923c-562dbbf8aaab
     fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
     name: Style
     instructions: 'Select one of the following button styles.'
+    hideName: false
+    hideInstructions: false
+  5dacb85b-6769-43bc-8fc0-d28e356af368:
+    field: dd8f4ad3-4b7c-4c14-a437-8e88a6671091
+    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
+    name: Destination
+    instructions: 'Turn the heading into a link.'
+    hideName: false
+    hideInstructions: false
+  65ec5960-e446-447c-8bb8-fd5909c5d32b:
+    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
+    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
+    name: Destination
+    instructions: 'Turn the heading into a link. You may override the title text with this link text.'
     hideName: false
     hideInstructions: false
   70775d4b-da7a-4fc0-b520-94b13b89b634:
@@ -199,39 +185,39 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  7156609f-aab2-4c77-86e1-d712a9ab9e18:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    name: Destination
-    instructions: 'Select the image box link. You may override the title text with this link text.'
-    hideName: false
-    hideInstructions: false
-  726e87a5-c7b9-4cfc-8132-7069ad94f957:
-    field: b354614e-8a9f-4dfc-b6af-7ab6c6961564
-    fieldLayout: 4c9d47be-8ec8-4464-8e5a-f1a4ba122d0d
-    name: 'Carousel Items'
-    instructions: 'The carousel allows you to create a slider of images.'
-    hideName: false
-    hideInstructions: false
-  773d9151-88f5-44d2-881c-aecf061653a5:
-    field: 1f3b17f0-0877-4d0f-9e59-b3c6634ae9bc
-    fieldLayout: ee47b993-c8a7-4caa-a9e6-f558ec1045d4
-    name: 'HTML Editor'
-    instructions: 'Add custom HTML or JavaScript. WARNING! This field can break the site layout if not used properly.'
-    hideName: false
-    hideInstructions: false
-  792b9bd7-2999-4e3e-893c-5e0aecca82b3:
+  713abdd9-f467-4e94-b1c7-8f334ed59bd7:
     field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: efff9f96-046d-4372-bc6d-83a346ad1332
+    fieldLayout: e8f5123c-a8d8-45a1-834c-6e3109cce226
     name: 'Media Title'
     instructions: 'Add the media title.'
     hideName: false
     hideInstructions: false
-  7aae1f9c-d801-41d8-941c-c32c347589a2:
-    field: 2bfe488a-9a8f-4e52-a748-132e9f741d3c
+  73cb2dbc-c43a-4c50-adb0-f6de17700040:
+    field: b2ec5dbc-fac5-4c97-ba4a-71d69b2bb548
+    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
+    name: 'Enable Full Width'
+    instructions: 'Enable to make the button fill the parent container width.'
+    hideName: false
+    hideInstructions: false
+  744a3425-6228-4107-927c-a8ba0d1ade42:
+    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
     fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
-    name: 'Alert Style'
-    instructions: 'Select one of the alert style below.'
+    name: Content
+    instructions: 'Add the alert box content.'
+    hideName: false
+    hideInstructions: false
+  762b18b0-97d0-4856-9272-80a725b0d5c2:
+    field: f9a5fcd0-1509-423c-a64e-010bddbc39bd
+    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
+    name: Size
+    instructions: 'Select one of the following button sizes.'
+    hideName: false
+    hideInstructions: false
+  7b897101-9e1a-43dc-8878-57e691dfce7b:
+    field: b060d78a-870c-49d5-a80c-d59a833db114
+    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
+    name: Quote
+    instructions: 'Add the blockquote content in the textarea below.'
     hideName: false
     hideInstructions: false
   7d24a549-7c05-481e-ae00-d1feb7be9eb9:
@@ -241,18 +227,46 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  7d6d4265-4fcf-4222-8929-96846101cdd6:
-    field: b3812fb5-1952-43f8-91fb-c6567aac02cb
-    fieldLayout: eb22934c-c5aa-49ff-b2b0-c5b92c1c5056
-    name: 'Accordion Items'
-    instructions: 'Click the "Add an item" button below to add content to your accordion block.'
+  7d31688d-be9a-43ad-9b4d-a82a872260ce:
+    field: b060d78a-870c-49d5-a80c-d59a833db114
+    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
+    name: Content
+    instructions: 'Add the image box content below.'
     hideName: false
     hideInstructions: false
-  8a4eb422-e07b-4d40-bb0f-3b77b105ce56:
-    field: a0eca15e-2867-4cd0-8bde-da408d7616cb
-    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    name: Size
-    instructions: 'Select the heading size (H1, H2, H3, etc).'
+  7d5b67e4-8230-40bf-b72f-e7a227b8269d:
+    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
+    fieldLayout: a3547ca6-c068-4262-94fe-d17555ddcfc1
+    name: 'Media Title'
+    instructions: 'Add the media title.'
+    hideName: false
+    hideInstructions: false
+  817e8a4e-5d1b-4be2-9eca-708d21b25063:
+    field: 0ae291e1-1bb5-4b45-adf6-05df7e8ae743
+    fieldLayout: 152ec3af-4acc-43f0-9521-a0d594c7efac
+    name: null
+    instructions: 'Define a container for tabular data.'
+    hideName: false
+    hideInstructions: false
+  867cf580-29fd-4a43-9f83-31512f4ebcff:
+    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
+    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
+    name: Destination
+    instructions: 'Select the image box link. You may override the title text with this link text.'
+    hideName: false
+    hideInstructions: false
+  87448d03-2d7c-40c6-bea8-c9a0358488e2:
+    field: dd8f4ad3-4b7c-4c14-a437-8e88a6671091
+    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
+    name: Destination
+    instructions: 'Turn the image box into a link.'
+    hideName: false
+    hideInstructions: false
+  895d6008-d224-4c1f-8236-19077a374ba6:
+    field: b060d78a-870c-49d5-a80c-d59a833db114
+    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
+    name: Footer
+    instructions: 'Add content to the panel footer.'
     hideName: false
     hideInstructions: false
   8aeb41f5-9538-42eb-b5b8-c2b1399dbe4b:
@@ -276,39 +290,32 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  984675e9-490c-4537-a531-794f14089718:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
+  a299a64d-5dd6-41fa-87d5-fa9f0f7f10a6:
+    field: b3812fb5-1952-43f8-91fb-c6567aac02cb
+    fieldLayout: 5f96beb8-6dc7-45c0-927a-309b3fa13c9c
+    name: 'Tab Items'
+    instructions: 'Divide your content into tabs horizontally.'
+    hideName: false
+    hideInstructions: false
+  abf171ba-778b-4951-8a0e-075e57e3d3b3:
+    field: a0eca15e-2867-4cd0-8bde-da408d7616cb
     fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    name: Title
-    instructions: 'Fill the title text field below.'
+    name: Size
+    instructions: 'Select the heading size (H1, H2, H3, etc).'
     hideName: false
     hideInstructions: false
-  996191b6-613f-46b2-b1e7-0fade8923305:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: a3547ca6-c068-4262-94fe-d17555ddcfc1
-    name: 'Media Title'
-    instructions: 'Add the media title.'
+  ac155685-60b3-449e-9e0f-5685432c1eab:
+    field: 2bfe488a-9a8f-4e52-a748-132e9f741d3c
+    fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
+    name: 'Alert Style'
+    instructions: 'Select one of the alert style below.'
     hideName: false
     hideInstructions: false
-  9a6ddce4-1394-45fb-ba6f-121c5ad4f345:
-    field: b060d78a-870c-49d5-a80c-d59a833db114
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    name: Content
-    instructions: 'Add the image box content below.'
-    hideName: false
-    hideInstructions: false
-  a5c31ebe-9c51-43e7-870e-113f5ee7fdde:
-    field: 48c84a8c-3d97-463b-9630-24e04a503bf1
-    fieldLayout: 29d10a13-b00e-4179-923b-24f606827ac8
-    name: Links
-    instructions: 'Create an easy-to-manage list of links.'
-    hideName: false
-    hideInstructions: false
-  ae33ec6c-c45d-47cf-b7e9-10061b4c860e:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
-    name: Header
-    instructions: 'Add the panel header title.'
+  b1d54c68-5d68-42f4-936d-08898942bac2:
+    field: b3812fb5-1952-43f8-91fb-c6567aac02cb
+    fieldLayout: eb22934c-c5aa-49ff-b2b0-c5b92c1c5056
+    name: 'Accordion Items'
+    instructions: 'Click the "Add an item" button below to add content to your accordion block.'
     hideName: false
     hideInstructions: false
   b2238e9f-b57a-4133-bc15-76d0b0e56fde:
@@ -318,25 +325,11 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  b2a0dcbc-5a57-4995-bdce-f121a67f97b1:
-    field: 1427d166-f002-4ebd-85c4-8f616db21c31
-    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
-    name: null
-    instructions: 'Use to identify the content author.'
-    hideName: false
-    hideInstructions: false
-  b2ed7a15-8f1c-472f-b376-54ce9688b442:
-    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
-    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
-    name: Content
-    instructions: 'Add content to the panel body.'
-    hideName: false
-    hideInstructions: false
-  b370798e-45e8-48ff-9520-424665bf2575:
-    field: dd8f4ad3-4b7c-4c14-a437-8e88a6671091
-    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    name: Destination
-    instructions: 'Turn the heading into a link.'
+  bb2c47d4-daac-4aa4-833f-a47749c26d04:
+    field: b354614e-8a9f-4dfc-b6af-7ab6c6961564
+    fieldLayout: 4c9d47be-8ec8-4464-8e5a-f1a4ba122d0d
+    name: 'Carousel Items'
+    instructions: 'The carousel allows you to create a slider of images.'
     hideName: false
     hideInstructions: false
   bc0c9106-6cfe-4bea-a734-f0e0283c1a94:
@@ -353,39 +346,39 @@ fieldlabels:
     instructions: 'Customize the Splash page background image.'
     hideName: false
     hideInstructions: false
-  cb7d4256-549b-4dd0-88a5-cf41e260f36d:
-    field: b3812fb5-1952-43f8-91fb-c6567aac02cb
-    fieldLayout: 5f96beb8-6dc7-45c0-927a-309b3fa13c9c
-    name: 'Tab Items'
-    instructions: 'Divide your content into tabs horizontally.'
+  c1b30797-d9e6-47c8-bfb5-86dc5577adfe:
+    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
+    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
+    name: Title
+    instructions: 'Add the image box title below.'
     hideName: false
     hideInstructions: false
-  d33664eb-ad2d-4601-82b1-da4f27fbdcb1:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 532b2199-4b05-4e5f-a2a8-a380e1a2e56c
-    name: Destination
+  cf41063c-ae97-493c-b4b9-129138b669b4:
+    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
+    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
+    name: Content
+    instructions: 'Add content to the panel body.'
+    hideName: false
+    hideInstructions: false
+  d19e99eb-7c63-4ea3-a184-4f1164f7dac1:
+    field: 0cc58fb5-1c9b-4c27-8b4f-d9523f657fc0
+    fieldLayout: 29d10a13-b00e-4179-923b-24f606827ac8
+    name: Style
     instructions: null
     hideName: false
     hideInstructions: false
-  d358ceee-2979-4c73-bbd7-f3cc3c3c1ab1:
-    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
-    fieldLayout: e1b4eeda-c69f-48f1-a17a-74a26ba30a6f
-    name: 'Text Editor'
-    instructions: 'Add content using the rich text editor below.'
+  d5ce855c-704f-41c8-901a-a508693d5f5e:
+    field: 48c84a8c-3d97-463b-9630-24e04a503bf1
+    fieldLayout: 29d10a13-b00e-4179-923b-24f606827ac8
+    name: Links
+    instructions: 'Create an easy-to-manage list of links.'
     hideName: false
     hideInstructions: false
-  d770fb4b-2c36-4611-8ab0-636989189b0e:
-    field: b2ec5dbc-fac5-4c97-ba4a-71d69b2bb548
-    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
-    name: 'Enable Full Width'
-    instructions: 'Enable to make the button fill the parent container width.'
-    hideName: false
-    hideInstructions: false
-  d86e92ad-da8a-4be3-97fb-c48fca144a9d:
-    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
+  d5d833cf-8be9-4b7b-9e7b-556cd5cf668e:
+    field: c9e4b206-9207-408d-98f2-e83a531a8926
     fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
-    name: Content
-    instructions: 'Add the alert box content.'
+    name: 'Make Dismissable'
+    instructions: 'Allow users to dismiss the alert by clicking on a small "X" on the right side of the alert box.'
     hideName: false
     hideInstructions: false
   d89d3293-906e-471a-b6b4-c2cd89d84fd2:
@@ -395,11 +388,11 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  dba3778c-e18a-449e-a171-0336ce23a632:
-    field: 218bc7f4-79b1-4737-8696-94c74c2748a0
-    fieldLayout: 0e08a904-e337-4ab8-a042-3ceff5cc0802
-    name: Items
-    instructions: null
+  d9ee9965-2a62-4e6e-858d-86682796808d:
+    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
+    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
+    name: Destination
+    instructions: 'Select the button link destination.'
     hideName: false
     hideInstructions: false
   e2dde3dc-646c-46d6-8be8-7b4cc1d9551c:
@@ -416,25 +409,32 @@ fieldlabels:
     instructions: 'Build the features displayed above the footer area.'
     hideName: false
     hideInstructions: false
-  eca8a096-7707-4db6-b3ac-4739516c49ca:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
-    name: Destination
-    instructions: 'Select the button link destination.'
+  ea80f57f-622c-4569-80cc-60aa7dba65c7:
+    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
+    fieldLayout: efff9f96-046d-4372-bc6d-83a346ad1332
+    name: 'Media Title'
+    instructions: 'Add the media title.'
     hideName: false
     hideInstructions: false
-  f1bfd55f-dedd-4507-ba86-43fba259e238:
-    field: c9e4b206-9207-408d-98f2-e83a531a8926
-    fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
-    name: 'Make Dismissable'
-    instructions: 'Allow users to dismiss the alert by clicking on a small "X" on the right side of the alert box.'
+  f039dbab-ea54-4ef4-abb9-152f40dd5680:
+    field: 1f3b17f0-0877-4d0f-9e59-b3c6634ae9bc
+    fieldLayout: ee47b993-c8a7-4caa-a9e6-f558ec1045d4
+    name: 'HTML Editor'
+    instructions: 'Add custom HTML or JavaScript. WARNING! This field can break the site layout if not used properly.'
     hideName: false
     hideInstructions: false
-  f6290be8-9e81-42cc-9eed-e768c835cf0e:
+  f3c9bb76-1535-4ceb-9c36-bedf1f748d77:
     field: 23c028d6-eb8f-4d24-ac6c-0b05ca057912
     fieldLayout: 532b2199-4b05-4e5f-a2a8-a380e1a2e56c
     name: Style
     instructions: null
+    hideName: false
+    hideInstructions: false
+  f66015dd-a17a-4453-89a9-9b0691cde146:
+    field: 53af1a35-330a-4416-90db-2f0a579f880a
+    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
+    name: null
+    instructions: 'Select the image box asset below.'
     hideName: false
     hideInstructions: false
   f83cde1c-56bd-4678-8b8e-b2cad1645657:
@@ -444,11 +444,11 @@ fieldlabels:
     instructions: null
     hideName: false
     hideInstructions: false
-  fccd12c0-d84e-47df-ba16-d8955e9309e2:
-    field: 0ae291e1-1bb5-4b45-adf6-05df7e8ae743
-    fieldLayout: 152ec3af-4acc-43f0-9521-a0d594c7efac
+  fbd5b0c9-ff3e-4cc3-8d61-674c084d88c0:
+    field: 8ba38a42-f127-4c91-b255-996270788f99
+    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
     name: null
-    instructions: 'Define a container for tabular data.'
+    instructions: 'Use to identify the title of the source.'
     hideName: false
     hideInstructions: false
 fields:
@@ -2497,12 +2497,21 @@ imageTransforms:
     position: center-center
     quality: null
     width: 520
+neoBlockTypeGroups:
+  b4548737-9d15-42ef-8315-357f613b73c0:
+    field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
+    name: 'Media Blocks'
+    sortOrder: 17
+  d129da49-0ce4-42dd-ac66-3f8fea236013:
+    field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
+    name: 'Basic Blocks'
+    sortOrder: 3
 neoBlockTypes:
   0543c8c3-3fb5-4269-9945-8a6f07604db4:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
     name: 'Video Player'
     handle: videoPlayer
-    sortOrder: 21
+    sortOrder: 22
     maxBlocks: 0
     maxChildBlocks: 0
     childBlocks: ''
@@ -2555,7 +2564,8 @@ neoBlockTypes:
     sortOrder: 1
     maxBlocks: 0
     maxChildBlocks: 0
-    childBlocks: '["builderColumn"]'
+    childBlocks:
+      - builderColumn
     topLevel: true
     fieldLayouts:
       071d4dfc-e82b-4a7e-a158-345febe326f9:
@@ -2580,7 +2590,7 @@ neoBlockTypes:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
     name: Carousel
     handle: carousel
-    sortOrder: 17
+    sortOrder: 18
     maxBlocks: 0
     maxChildBlocks: 0
     childBlocks: ''
@@ -2621,7 +2631,7 @@ neoBlockTypes:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
     name: 'YouTube Player'
     handle: youtubePlayer
-    sortOrder: 22
+    sortOrder: 23
     maxBlocks: 0
     maxChildBlocks: 0
     childBlocks: ''
@@ -2690,33 +2700,11 @@ neoBlockTypes:
               c9e4b206-9207-408d-98f2-e83a531a8926:
                 required: false
                 sortOrder: 2
-  56a453c9-6255-4bc0-b53d-c3bb98c06230:
-    field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
-    name: Form
-    handle: form
-    sortOrder: 24
-    maxBlocks: 0
-    maxChildBlocks: 0
-    childBlocks: ''
-    topLevel: false
-    fieldLayouts:
-      5388fdbc-0785-46ca-8ee7-44d6990babc8:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-          -
-            name: Settings
-            sortOrder: 2
-            fields:
-              06502cfb-94fe-468d-8a8f-5db996e85eae:
-                required: false
-                sortOrder: 1
   57b8806a-5dc6-4f5e-9fb1-26e916f8f1c4:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
     name: Gallery
     handle: gallery
-    sortOrder: 18
+    sortOrder: 19
     maxBlocks: 0
     maxChildBlocks: 0
     childBlocks: ''
@@ -2800,7 +2788,7 @@ neoBlockTypes:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
     name: 'Audio Player'
     handle: audioPlayer
-    sortOrder: 20
+    sortOrder: 21
     maxBlocks: 0
     maxChildBlocks: 0
     childBlocks: ''
@@ -2882,7 +2870,26 @@ neoBlockTypes:
     sortOrder: 2
     maxBlocks: 0
     maxChildBlocks: 0
-    childBlocks: '["accordion","alert","blockquote","button","followBox","heading","imageBox","linkList","panel","text","table","tabs","carousel","gallery","image","audioPlayer","videoPlayer","youtubePlayer","form","html"]'
+    childBlocks:
+      - accordion
+      - alert
+      - blockquote
+      - button
+      - followBox
+      - heading
+      - imageBox
+      - linkList
+      - panel
+      - text
+      - table
+      - tabs
+      - html
+      - carousel
+      - gallery
+      - image
+      - audioPlayer
+      - videoPlayer
+      - youtubePlayer
     topLevel: false
     fieldLayouts:
       a2a7ca39-c6a8-4661-b0a1-506dc7fe092a:
@@ -2945,7 +2952,7 @@ neoBlockTypes:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
     name: HTML
     handle: html
-    sortOrder: 25
+    sortOrder: 16
     maxBlocks: 0
     maxChildBlocks: 0
     childBlocks: ''
@@ -3016,7 +3023,7 @@ neoBlockTypes:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
     name: Image
     handle: image
-    sortOrder: 19
+    sortOrder: 20
     maxBlocks: 0
     maxChildBlocks: 0
     childBlocks: ''
