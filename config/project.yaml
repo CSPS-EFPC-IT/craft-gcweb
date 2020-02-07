@@ -18,7 +18,11 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
+<<<<<<< HEAD
 dateModified: 1581040227
+=======
+dateModified: 1580757509
+>>>>>>> parent of ca6a6aa... Add Workflow plugin and configurations. Add Editor role. Add Publisher role.
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -3300,6 +3304,7 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.1.0
+<<<<<<< HEAD
   workflow:
     edition: standard
     enabled: true
@@ -3314,6 +3319,8 @@ plugins:
       publisherNotifications: '1'
       selectedPublishers: '*'
       enabledSections: '*'
+=======
+>>>>>>> parent of ca6a6aa... Add Workflow plugin and configurations. Add Editor role. Add Publisher role.
 sections:
   4cfe5098-3bd5-4647-87f0-f0965f9d8032:
     name: Search
@@ -4546,6 +4553,7 @@ users:
   defaultGroup: null
   photoVolumeUid: null
   photoSubpath: ''
+<<<<<<< HEAD
   groups:
     46a8d5c7-d1c9-4092-82bf-fa1d2fc485e2:
       name: Publishers
@@ -4636,6 +4644,8 @@ users:
         - 'createfoldersinvolume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
         - 'viewvolume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
         - 'workflow:overview'
+=======
+>>>>>>> parent of ca6a6aa... Add Workflow plugin and configurations. Add Editor role. Add Publisher role.
 volumes:
   47e2f3d9-7bf8-46d2-b3f7-31b171ec0220:
     name: Uploads
