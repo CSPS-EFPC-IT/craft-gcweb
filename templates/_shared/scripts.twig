@@ -38,4 +38,6 @@
     {% set customJavascript = customJavascript ~ entry.customJavascript %}
 {% endif %}
 
+{% if customJavascript|trim != '' %}
 {% js %} {{- customJavascript|raw -}} {% endjs %}
+{% endif %}

@@ -40,4 +40,7 @@
 {% if entry is defined and entry.customCss is not null %}
     {% set customCss = customCss ~ entry.customCss %}
 {% endif %}
+
+{% if customCss|trim != '' %}
 {% css %} {{- customCss|raw -}} {% endcss %}
+{% endif %}

@@ -6,10 +6,6 @@ categoryGroups:
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
       maxLevels: null
     siteSettings:
-      0e2c1c0e-c322-476a-8b6f-e0c7cfe275b4:
-        hasUrls: false
-        uriFormat: null
-        template: null
       40e085ce-64f0-41b2-83d5-18219817da5e:
         hasUrls: true
         uriFormat: 'categories/{slug}'
@@ -18,7 +14,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'categories/{slug}'
         template: index
-dateModified: 1580757509
+dateModified: 1581521226
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -344,13 +340,6 @@ fieldlabels:
     fieldLayout: 879dbba6-db25-4bf1-be76-f6ad623a6fb0
     name: 'Show Breadcrumb'
     instructions: null
-    hideName: false
-    hideInstructions: false
-  bc934036-82df-4dbc-b6d6-7bd7f092abf5:
-    field: 53af1a35-330a-4416-90db-2f0a579f880a
-    fieldLayout: 57dcee68-60b3-4f22-a72f-e797678dc1ef
-    name: 'Background Image'
-    instructions: 'Customize the Splash page background image.'
     hideName: false
     hideInstructions: false
   cb7d4256-549b-4dd0-88a5-cf41e260f36d:
@@ -3405,12 +3394,12 @@ sections:
         enabledByDefault: true
         hasUrls: true
         uriFormat: __home__
-        template: ''
+        template: index
       c9d485ad-7b3d-4d00-a41d-b6673509e6fc:
         enabledByDefault: true
         hasUrls: true
         uriFormat: __home__
-        template: ''
+        template: index
     entryTypes:
       e2acb9be-e64d-4fd9-a4d0-c1c9003db9eb:
         name: Home
@@ -3487,43 +3476,6 @@ sections:
                   df073578-a0ff-4b83-9d96-c396375d7eb2:
                     required: false
                     sortOrder: 6
-  aaf8bfaa-5c9a-4fe5-91df-551eb29bdfe5:
-    name: Splash
-    handle: splash
-    type: single
-    enableVersioning: true
-    propagationMethod: all
-    siteSettings:
-      0e2c1c0e-c322-476a-8b6f-e0c7cfe275b4:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: __home__
-        template: index
-    entryTypes:
-      13db1dee-53e7-4496-94f6-e68f4a051596:
-        name: Splash
-        handle: splash
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: '{section.name|raw}'
-        sortOrder: 1
-        fieldLayouts:
-          57dcee68-60b3-4f22-a72f-e797678dc1ef:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  53af1a35-330a-4416-90db-2f0a579f880a:
-                    required: false
-                    sortOrder: 1
-              -
-                name: SEO
-                sortOrder: 2
-                fields:
-                  6b7b9db6-bef6-4937-91b0-9e2528fc7795:
-                    required: false
-                    sortOrder: 2
   dd2e481d-9a68-4708-ad4c-868d145c11a1:
     name: 'Global Features'
     handle: globalFeatures
@@ -3662,22 +3614,13 @@ siteGroups:
   6831e458-ffef-46f7-8c27-99741a416193:
     name: 'Craft GCWeb'
 sites:
-  0e2c1c0e-c322-476a-8b6f-e0c7cfe275b4:
-    siteGroup: 6831e458-ffef-46f7-8c27-99741a416193
-    name: 'Craft GCWeb'
-    handle: default
-    language: en
-    hasUrls: true
-    baseUrl: $DEFAULT_SITE_URL
-    sortOrder: 1
-    primary: true
   40e085ce-64f0-41b2-83d5-18219817da5e:
     siteGroup: 6831e458-ffef-46f7-8c27-99741a416193
     name: 'Craft GCWeb FR'
     handle: fr
     language: fr
     hasUrls: true
-    baseUrl: '@web/fr'
+    baseUrl: /fr
     sortOrder: 3
     primary: false
   c9d485ad-7b3d-4d00-a41d-b6673509e6fc:
@@ -3686,9 +3629,9 @@ sites:
     handle: en
     language: en
     hasUrls: true
-    baseUrl: '@web/en'
+    baseUrl: /en
     sortOrder: 2
-    primary: false
+    primary: true
 superTableBlockTypes:
   508a8c7c-e7fc-4f60-8164-ccd671aa5713:
     field: 4d38f112-d27a-4bb5-aaa9-fd2477a93e73
