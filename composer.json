@@ -1,16 +1,16 @@
 {
   "require": {
-    "craftcms/cms": "3.3.18.2",
-    "craftcms/redactor": "2.4.0",
-    "ether/seo": "3.6.2",
+    "craftcms/cms": "3.4.5",
+    "craftcms/redactor": "2.5.0",
+    "ether/seo": "3.6.3",
     "fruitstudios/linkit": "1.1.11",
-    "luwes/craft3-codemirror": "1.0.1",
+    "luwes/craft3-codemirror": "1.0.2",
     "misterbk/mix": "1.5.2",
     "spicyweb/craft-fieldlabels": "1.1.8",
-    "spicyweb/craft-neo": "2.5.8",
+    "spicyweb/craft-neo": "2.6.1",
     "supercool/tablemaker": "2.0.1",
     "verbb/field-manager": "2.1.1",
-    "verbb/super-table": "2.3.1",
+    "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^2.4.0",
     "youandmedigital/breadcrumb": "1.1.0"
   },
