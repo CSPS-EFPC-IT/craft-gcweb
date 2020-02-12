@@ -43,6 +43,9 @@ Make sure Node.js and NPM is properly installated on your development environmen
 **How to reach Craft CMS control panel?**
 The URL to access the admin area is `/admin` but you can modify this value to a custom name in the `config/general.php` file.
 
+**How can I change the splash page?**
+We might consider creating an entry type for the splash page eventually. In the meantime, it's a static html file located in the `web` directory. Don't forget to update the dublin core metadata to reflect your project needs.
+
 ## Craft Links
 
 - [Craft CMS Website](https://craftcms.com/)
