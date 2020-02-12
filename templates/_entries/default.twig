@@ -12,12 +12,12 @@
     {% set showBreadcrumb, showLogin = settings.showBreadcrumbGlobal, settings.showLoginGlobal %}
 
     {# Local override for showBreadcrumb #}
-    {% if entry is defined and entry.showBreadcrumbLocal != 'default' %}
+    {% if entry is defined and entry.showBreadcrumbLocal is not null and entry.showBreadcrumbLocal != 'default' %}
         {% set showBreadcrumb = entry.showBreadcrumbLocal.value %}
     {% endif %}
 
     {# Local override for showLogin #}
-    {% if entry is defined and entry.showLoginLocal != 'default' %}
+    {% if entry is defined and entry.showBreadcrumbLocal is not null and entry.showLoginLocal != 'default' %}
         {% set showLogin = entry.showLoginLocal.value %}
     {% endif %}
 
@@ -39,9 +39,11 @@
 {% block main %}
     <main property="mainContentOfPage" typeof="WebPageElement">
         {# Include the page builder template #}
-        {% include '_pageBuilder/builder' with {
-            pageBuilder: entry.pageBuilder
-        } %}
+        {% if entry.pageBuilder is not null %}
+            {% include '_pageBuilder/builder' with {
+                pageBuilder: entry.pageBuilder
+            } %}
+        {% endif %}
     </main>
 {% endblock %}
 
@@ -56,12 +58,12 @@
     {% endif %}
 
     {# Local override for showReportAProblem #}
-    {% if entry is defined and entry.showReportAProblemLocal != 'default' %}
+    {% if entry is defined and entry.showReportAProblemLocal is not null and entry.showReportAProblemLocal != 'default' %}
         {% set showReportAProblem = entry.showReportAProblemLocal.value %}
     {% endif %}
 
     {# Local override for showShareThisPage #}
-    {% if entry is defined and entry.showShareThisPageLocal != 'default' %}
+    {% if entry is defined and entry.showReportAProblemLocal is not null and entry.showShareThisPageLocal != 'default' %}
         {% set showShareThisPage = entry.showShareThisPageLocal.value %}
     {% endif %}
 

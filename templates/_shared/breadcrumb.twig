@@ -17,30 +17,26 @@
     <h2 class="wb-inv">{{ 'You are here:'|t }}</h2>
     <div class="container">
         <ol class='breadcrumb'>
-            {% for crumb in breadcrumb  %}
-                {% set crumbTitle, crumbUrl = crumb.title, crumb.url %}
-                {% if crumb.title == 'Home' %}
-                    {# Send back to Canada.ca website #}
-                    {% if settings.pointHomeToCanadaCa %}
-                        {% set crumbUrl = 'https://www.canada.ca/' ~ LANG ~ '.html' %}
-                    {% endif %}
-                    {# Fix breadcrumb plugin label for french locale #}
-                    {% if LANG == 'fr' %}
-                        {% set crumbTitle = 'Accueil' %}
-                    {% endif %}
-                {% endif %}
+            {# If configured to do so, use Canada.ca as the home page link #}
+            {% if settings.pointHomeToCanadaCa %}
+                {% set crumbUrl = 'https://www.canada.ca/' ~ LANG ~ '.html' %}
+                {% set crumbTitle = 'Home'|t %}
                 <li class="c-breadcrumb__item">
                     <a class="c-breadcrumb__link" href="{{ crumbUrl }}">
                         <span>{{ crumbTitle }}</span>
                     </a>
                 </li>
-                {# Add current site homepage link if the home link is overwritten #}
-                {% if settings.pointHomeToCanadaCa and loop.first %}
-                <li class="c-breadcrumb__item">
-                    <a class="c-breadcrumb__link" href="{{ siteUrl }}">
-                        <span>{{ siteName }}</span>
-                    </a>
-                </li>
+            {% endif %}
+
+            {% for crumb in breadcrumb %}
+                {# Ignore last item (current page) #}
+                {% if not loop.last %}
+                    {% set crumbTitle, crumbUrl = crumb.title, crumb.url %}
+                    <li class="c-breadcrumb__item">
+                        <a class="c-breadcrumb__link" href="{{ crumbUrl }}">
+                            <span>{{ crumbTitle }}</span>
+                        </a>
+                    </li>
                 {% endif %}
             {% endfor %}
         </ol>
