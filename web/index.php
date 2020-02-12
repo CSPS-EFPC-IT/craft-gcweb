@@ -7,7 +7,7 @@
 // when request hits the root URL
 if ($_SERVER['REQUEST_URI'] === '/') {
     return require_once 'splash.html';
-};
+}
 
 // Set path constants
 define('CRAFT_BASE_PATH', dirname(__DIR__));
