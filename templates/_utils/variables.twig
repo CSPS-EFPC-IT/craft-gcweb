@@ -12,7 +12,7 @@
 
 {# Custom default site url #}
 {% set SITE_URL = siteUrl %}
-{% if settings.pointHomeToCanadaCa %}
+{% if headerSettings.pointHomeToCanadaCa %}
     {% set SITE_URL = 'https://www.canada.ca/' ~ LANG ~ '.html' %}
 {% endif %}
 

@@ -9,7 +9,7 @@
 
 {% block header %}
     {# Set defaults from global settings #}
-    {% set showBreadcrumb, showLogin = settings.showBreadcrumbGlobal, settings.showLoginGlobal %}
+    {% set showBreadcrumb, showLogin = headerSettings.showBreadcrumbGlobal, headerSettings.showLoginGlobal %}
 
     {# Local override for showBreadcrumb #}
     {% if entry is defined and entry.showBreadcrumbLocal is not null and entry.showBreadcrumbLocal != 'default' %}
@@ -21,17 +21,17 @@
         {% set showLogin = entry.showLoginLocal.value %}
     {% endif %}
 
-    {# Local override for showHeaderFeatures #}
+    {# Local override for showTopPageFeatures #}
     {% if entry is defined %}
-        {% set showHeaderFeatures = entry.showHeaderFeatures ?? true %}
+        {% set showTopPageFeatures = entry.showTopPageFeatures ?? true %}
     {% endif %}
 
     {# Include the header template #}
     {% include '_shared/header' with {
-        showAsArchived:     entry.showAsArchived ?? null,
-        showBreadcrumb:     showBreadcrumb,
-        showLogin:          showLogin,
-        showHeaderFeatures: showHeaderFeatures
+        showAsArchived:      entry.showAsArchived ?? null,
+        showBreadcrumb:      showBreadcrumb,
+        showLogin:           showLogin,
+        showTopPageFeatures: showTopPageFeatures
     } %}
 
 {% endblock %}
@@ -50,11 +50,11 @@
 {% block footer %}
     {# Set defaults from global settings #}
     {% set showReportAProblem, showShareThisPage =
-        settings.showReportAProblemGlobal, settings.showShareThisPageGlobal %}
+        footerSettings.showReportAProblemGlobal, footerSettings.showShareThisPageGlobal %}
 
-    {# Local override for showFooterFeatures #}
+    {# Local override for showBottomPageFeatures #}
     {% if entry is defined %}
-        {% set showFooterFeatures = entry.showFooterFeatures ?? true %}
+        {% set showBottomPageFeatures = entry.showBottomPageFeatures ?? true %}
     {% endif %}
 
     {# Local override for showReportAProblem #}
@@ -69,8 +69,8 @@
 
     {# Include the footer template #}
     {% include '_shared/footer' with {
-        showFooterFeatures: showFooterFeatures,
-        showReportAProblem: showReportAProblem,
-        showShareThisPage:  showShareThisPage
+        showBottomPageFeatures: showBottomPageFeatures,
+        showReportAProblem:     showReportAProblem,
+        showShareThisPage:      showShareThisPage
     } %}
 {% endblock %}

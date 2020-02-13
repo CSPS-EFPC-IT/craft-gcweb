@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1581611693
+dateModified: 1581627584
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -48,6 +48,13 @@ fieldGroups:
   f59b0921-c501-47da-9319-824555ec98c9:
     name: 'Grid System'
 fieldlabels:
+  0329d94d-a96f-442b-b2dc-46bdf796c00f:
+    field: bc138339-28bc-42f6-9828-c48cc89bc8cc
+    fieldLayout: 595e3691-ca62-4f85-91a4-c59fc64b86a3
+    hideInstructions: false
+    hideName: false
+    instructions: null
+    name: 'Show Login'
   044b8655-8aa3-4de1-b84f-df314aa80633:
     field: ecc57eef-63b0-46b5-b100-32ff374fba68
     fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
@@ -62,13 +69,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: Style
-  0d93a389-d908-4ff0-a5a6-f49b9a50a8be:
-    field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
-    fieldLayout: 879dbba6-db25-4bf1-be76-f6ad623a6fb0
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: Features
   0f66e378-414c-4f3e-9677-c4be7df148fe:
     field: 065ac092-3471-4177-8fe8-3172f0e19b74
     fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
@@ -153,6 +153,13 @@ fieldlabels:
     hideName: false
     instructions: 'Use to identify the title of the source.'
     name: null
+  4b18094d-a646-4b15-a026-ed3346485298:
+    field: 012e8adb-5e09-467a-af68-a4396b24f7ad
+    fieldLayout: 595e3691-ca62-4f85-91a4-c59fc64b86a3
+    hideInstructions: false
+    hideName: false
+    instructions: null
+    name: 'Show Breadcrumb'
   4f066762-d433-4df2-bfec-56f1737b639c:
     field: 53af1a35-330a-4416-90db-2f0a579f880a
     fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
@@ -160,13 +167,6 @@ fieldlabels:
     hideName: false
     instructions: 'Select the image box asset below.'
     name: null
-  51ec4085-8cd7-4726-b069-7ee63e9b2e2e:
-    field: bc138339-28bc-42f6-9828-c48cc89bc8cc
-    fieldLayout: 879dbba6-db25-4bf1-be76-f6ad623a6fb0
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: 'Show Login'
   5c741e84-fdc9-467b-a994-e358dcf13ebe:
     field: 92a1a689-113a-4579-be6f-d4c00ef293e7
     fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
@@ -174,6 +174,13 @@ fieldlabels:
     hideName: false
     instructions: 'Turn the heading into a link. You may override the title text with this link text.'
     name: Destination
+  6036ac27-608e-4e2a-929e-43b6256b4f39:
+    field: 1cd1f161-0c3c-4d9c-ade7-461dc507a396
+    fieldLayout: 770fe812-c1a5-4457-9ed2-96f6c75b2525
+    hideInstructions: false
+    hideName: false
+    instructions: 'Edit the metadata information at the site level. Any values entered here will be used as default for all entries.'
+    name: null
   62fd7705-2dd6-4296-a44d-779dd871b605:
     field: b060d78a-870c-49d5-a80c-d59a833db114
     fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
@@ -244,6 +251,13 @@ fieldlabels:
     hideName: false
     instructions: 'Click the "Add an item" button below to add content to your accordion block.'
     name: 'Accordion Items'
+  840920c4-6715-4eb4-a27d-db0f2055b96d:
+    field: 41b7a218-d38a-4b71-b0e5-cd4b038ef56c
+    fieldLayout: f03e34d0-adf6-4053-93e2-562f6e00949a
+    hideInstructions: false
+    hideName: false
+    instructions: null
+    name: 'Show Share This Page'
   8a4eb422-e07b-4d40-bb0f-3b77b105ce56:
     field: a0eca15e-2867-4cd0-8bde-da408d7616cb
     fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
@@ -265,13 +279,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Login'
-  96f4da9c-84fe-4315-b446-4b9bc2626576:
-    field: 941bb1a3-edcf-4268-bb8a-e4294946e8f6
-    fieldLayout: 879dbba6-db25-4bf1-be76-f6ad623a6fb0
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: 'Show Report A Problem'
   984675e9-490c-4537-a531-794f14089718:
     field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
     fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
@@ -335,13 +342,13 @@ fieldlabels:
     hideName: false
     instructions: 'Turn the heading into a link.'
     name: Destination
-  bc0c9106-6cfe-4bea-a734-f0e0283c1a94:
-    field: 012e8adb-5e09-467a-af68-a4396b24f7ad
-    fieldLayout: 879dbba6-db25-4bf1-be76-f6ad623a6fb0
+  c42d75d9-52fd-491f-832e-627df7f96934:
+    field: 941bb1a3-edcf-4268-bb8a-e4294946e8f6
+    fieldLayout: f03e34d0-adf6-4053-93e2-562f6e00949a
     hideInstructions: false
     hideName: false
     instructions: null
-    name: 'Show Breadcrumb'
+    name: 'Show Report A Problem'
   cb7d4256-549b-4dd0-88a5-cf41e260f36d:
     field: b3812fb5-1952-43f8-91fb-c6567aac02cb
     fieldLayout: 5f96beb8-6dc7-45c0-927a-309b3fa13c9c
@@ -377,13 +384,6 @@ fieldlabels:
     hideName: false
     instructions: 'Add the alert box content.'
     name: Content
-  d89d3293-906e-471a-b6b4-c2cd89d84fd2:
-    field: 41b7a218-d38a-4b71-b0e5-cd4b038ef56c
-    fieldLayout: 879dbba6-db25-4bf1-be76-f6ad623a6fb0
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: 'Show Share This Page'
   dba3778c-e18a-449e-a171-0336ce23a632:
     field: 218bc7f4-79b1-4737-8696-94c74c2748a0
     fieldLayout: 0e08a904-e337-4ab8-a042-3ceff5cc0802
@@ -456,10 +456,10 @@ fields:
   01e9a1fe-b10e-4d95-a2f1-8080fc602f64:
     contentColumnType: string
     fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
-    handle: headerFeatures
+    handle: topPageFeatures
     instructions: 'Select a global feature entry that you would like to display at the top of every pages.'
-    name: 'Header Features'
-    searchable: false
+    name: 'Top Page Features'
+    searchable: true
     settings:
       limit: ''
       localizeRelations: ''
@@ -1580,10 +1580,10 @@ fields:
   33ec7f73-5f7b-46b9-b44a-678217c63a17:
     contentColumnType: string
     fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
-    handle: footerFeatures
+    handle: bottomPageFeatures
     instructions: 'Select a global feature entry that you would like to display at the bottom of every pages.'
-    name: 'Footer Features'
-    searchable: false
+    name: 'Bottom Page Features'
+    searchable: true
     settings:
       limit: ''
       localizeRelations: ''
@@ -2783,10 +2783,10 @@ fields:
   900e0771-e897-4f9e-8bc0-2dcac207c01c:
     contentColumnType: boolean
     fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
-    handle: showHeaderFeatures
-    instructions: 'Whether or not the global header features area should be displayed.'
-    name: 'Show Header Features'
-    searchable: false
+    handle: showTopPageFeatures
+    instructions: 'Whether or not the top page features area should be displayed.'
+    name: 'Show Top Page Features'
+    searchable: true
     settings:
       default: '1'
     translationKeyFormat: null
@@ -3642,10 +3642,10 @@ fields:
   df073578-a0ff-4b83-9d96-c396375d7eb2:
     contentColumnType: boolean
     fieldGroup: b02488ea-d46d-4999-8d4c-8523d17793cc
-    handle: showFooterFeatures
-    instructions: 'Whether or not the global footer features area should be displayed.'
-    name: 'Show Footer Features'
-    searchable: false
+    handle: showBottomPageFeatures
+    instructions: 'Whether or not the bottom page features area should be displayed.'
+    name: 'Show Bottom Page Features'
+    searchable: true
     settings:
       default: '1'
     translationKeyFormat: null
@@ -3924,51 +3924,6 @@ fields:
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
 globalSets:
-  0d242488-6d80-47dc-9bcb-9681e57f0546:
-    fieldLayouts:
-      879dbba6-db25-4bf1-be76-f6ad623a6fb0:
-        tabs:
-          -
-            fields:
-              1cd1f161-0c3c-4d9c-ade7-461dc507a396:
-                required: false
-                sortOrder: 1
-            name: Website
-            sortOrder: 1
-          -
-            fields:
-              012e8adb-5e09-467a-af68-a4396b24f7ad:
-                required: false
-                sortOrder: 1
-              3d866192-d67e-4506-9065-02788453fc3e:
-                required: false
-                sortOrder: 4
-              bc138339-28bc-42f6-9828-c48cc89bc8cc:
-                required: false
-                sortOrder: 2
-              e7915740-ecce-4124-8d54-14a9bf2299d4:
-                required: false
-                sortOrder: 3
-            name: Header
-            sortOrder: 2
-          -
-            fields:
-              41b7a218-d38a-4b71-b0e5-cd4b038ef56c:
-                required: false
-                sortOrder: 2
-              4ff61d6d-6f1b-4847-a62c-6950e915378b:
-                required: false
-                sortOrder: 3
-              941bb1a3-edcf-4268-bb8a-e4294946e8f6:
-                required: false
-                sortOrder: 1
-              fc809261-7c70-44d0-ae05-eab8c3dc4bcc:
-                required: false
-                sortOrder: 4
-            name: Footer
-            sortOrder: 3
-    handle: settings
-    name: Settings
   36a24084-a744-4040-add6-a31c39e71517:
     fieldLayouts:
       6a8c6dbd-b9db-4d8d-b7dc-ec6808ceb7fd:
@@ -4001,6 +3956,50 @@ globalSets:
             sortOrder: 2
     handle: customCode
     name: 'Custom Code'
+  7bc97b7d-969b-4d92-9ef6-ead0f0e6ba70:
+    fieldLayouts:
+      f03e34d0-adf6-4053-93e2-562f6e00949a:
+        tabs:
+          -
+            fields:
+              41b7a218-d38a-4b71-b0e5-cd4b038ef56c:
+                required: false
+                sortOrder: 2
+              4ff61d6d-6f1b-4847-a62c-6950e915378b:
+                required: false
+                sortOrder: 3
+              941bb1a3-edcf-4268-bb8a-e4294946e8f6:
+                required: false
+                sortOrder: 1
+              fc809261-7c70-44d0-ae05-eab8c3dc4bcc:
+                required: false
+                sortOrder: 4
+            name: Footer
+            sortOrder: 1
+    handle: footerSettings
+    name: Footer
+  84df2c31-3cfb-4c7e-bcd2-97808c80fef4:
+    fieldLayouts:
+      595e3691-ca62-4f85-91a4-c59fc64b86a3:
+        tabs:
+          -
+            fields:
+              012e8adb-5e09-467a-af68-a4396b24f7ad:
+                required: false
+                sortOrder: 1
+              3d866192-d67e-4506-9065-02788453fc3e:
+                required: false
+                sortOrder: 4
+              bc138339-28bc-42f6-9828-c48cc89bc8cc:
+                required: false
+                sortOrder: 2
+              e7915740-ecce-4124-8d54-14a9bf2299d4:
+                required: false
+                sortOrder: 3
+            name: Header
+            sortOrder: 1
+    handle: headerSettings
+    name: Header
   88bb6b3a-44ac-4232-bdaf-e503d3407018:
     fieldLayouts:
       1778ef26-c5a5-4105-897e-758cd7501d4d:
@@ -4017,6 +4016,19 @@ globalSets:
             sortOrder: 1
     handle: features
     name: Features
+  b3f54fc6-b3ef-4f53-8d4a-8849fc014b6f:
+    fieldLayouts:
+      770fe812-c1a5-4457-9ed2-96f6c75b2525:
+        tabs:
+          -
+            fields:
+              1cd1f161-0c3c-4d9c-ade7-461dc507a396:
+                required: false
+                sortOrder: 1
+            name: Metadata
+            sortOrder: 1
+    handle: metadata
+    name: Metadata
 imageTransforms:
   4f8f849e-da10-4f9a-b0f1-f5b58b83fe8b:
     format: null

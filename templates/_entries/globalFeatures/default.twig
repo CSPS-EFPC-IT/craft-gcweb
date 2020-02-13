@@ -4,10 +4,10 @@
 {% block header %}
     {# Include the header template #}
     {% include '_shared/header' with {
-        showAsArchived:     false,
-        showBreadcrumb:     false,
-        showLogin:          false,
-        showHeaderFeatures: false
+        showAsArchived:      false,
+        showBreadcrumb:      false,
+        showLogin:           false,
+        showTopPageFeatures: false
     } %}
 {% endblock %}
 
@@ -23,8 +23,8 @@
 {% block footer %}
     {# Include the footer template #}
     {% include '_shared/footer' with {
-        showFooterFeatures: false,
-        showReportAProblem: false,
-        showShareThisPage:  false
+        showBottomPageFeatures: false,
+        showReportAProblem:     false,
+        showShareThisPage:      false
     } %}
 {% endblock %}
