@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1a5a61af717a40a01deb195137927b2",
+    "content-hash": "8f57d82f3da382bab641e5fa529f17c2",
     "packages": [
         {
             "name": "cakephp/core",
@@ -3077,6 +3077,37 @@
             ],
             "description": "PHP package for converting file extensions to MIME types and vice versa.",
             "time": "2017-01-27T20:57:22+00:00"
+        },
+        {
+            "name": "sebastianlenz/linkfield",
+            "version": "1.0.20",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastian-lenz/craft-linkfield/zipball/8e12cf38767a0c9214bc6fbe3bce77175db970e6",
+                "reference": "8e12cf38767a0c9214bc6fbe3bce77175db970e6",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "php": "^7.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "typedlinkfield",
+                "name": "Typed link field",
+                "developer": "Sebastian Lenz",
+                "developerUrl": "https://github.com/sebastian-lenz/"
+            },
+            "autoload": {
+                "psr-4": {
+                    "typedlinkfield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Craft field type for selecting links",
+            "time": "2020-02-07T20:24:27+00:00"
         },
         {
             "name": "seld/cli-prompt",
