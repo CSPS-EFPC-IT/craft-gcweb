@@ -5,12 +5,12 @@
 
 {# Use metadata from entry if set, otherwise default to global config #}
 {% set title = entry.title %}
-{% set description = entry.metadata.description ?? settings.metadata.description %}
-{% set spatial = entry.metadata.spatial ?? settings.metadata.spatial %}
-{% set keywords = entry.metadata.keywords ?? settings.metadata.keywords %}
-{% set creator = entry.metadata.creator ?? settings.metadata.creator %}
-{% set dctype = entry.metadata.dctype ?? settings.metadata.dctype %}
-{% set subject = entry.metadata.subject ?? settings.metadata.subject %}
+{% set description = entry.metadata.description ?? metadata.metadata.description %}
+{% set spatial = entry.metadata.spatial ?? metadata.metadata.spatial %}
+{% set keywords = entry.metadata.keywords ?? metadata.metadata.keywords %}
+{% set creator = entry.metadata.creator ?? metadata.metadata.creator %}
+{% set dctype = entry.metadata.dctype ?? metadata.metadata.dctype %}
+{% set subject = entry.metadata.subject ?? metadata.metadata.subject %}
 {% set issued = entry.metadata.issued ?? entry.dateCreated %}
 {% set modified = entry.metadata.modified ?? entry.dateUpdated %}
 

@@ -18,7 +18,7 @@
     <div class="container">
         <ol class='breadcrumb'>
             {# If configured to do so, use Canada.ca as the home page link #}
-            {% if settings.pointHomeToCanadaCa %}
+            {% if headerSettings.pointHomeToCanadaCa %}
                 {% set crumbUrl = 'https://www.canada.ca/' ~ LANG ~ '.html' %}
                 {% set crumbTitle = 'Home'|t %}
                 <li class="c-breadcrumb__item">

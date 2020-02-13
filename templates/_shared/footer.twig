@@ -14,9 +14,9 @@
  |------------------------------------------------------------------------------
 #}
 
-{# Global footer features #}
-{% set features = features.footerFeatures.all() %}
-{% if showFooterFeatures and features|length %}
+{# Bottom Page Features #}
+{% set features = features.bottomPageFeatures.all() %}
+{% if showBottomPageFeatures and features|length %}
     {% for feature in features %}
         {% include '_pageBuilder/builder' with {
             pageBuilder: feature.pageBuilder
@@ -51,7 +51,7 @@
             <h2 class="wb-inv">{{ 'About government'|t }}</h2>
             <ul class="list-unstyled colcount-sm-2 colcount-md-3">
             {# Override primary footer links if defined in globals #}
-            {% set primaryFooterLinkItems = settings.primaryFooterLinkItems.all() %}
+            {% set primaryFooterLinkItems = footerSettings.primaryFooterLinkItems.all() %}
             {% if primaryFooterLinkItems|length %}
                 {% for item in primaryFooterLinkItems %}
                     <li>{{ item.footerLink.getLink() }}</li>
@@ -78,7 +78,7 @@
                     <h2 class="wb-inv">{{ 'About this site'|t }}</h2>
                     <ul>
                     {# Override secondary footer links if defined in globals #}
-                    {% set secondaryFooterLinkItems = settings.secondaryFooterLinkItems.all() %}
+                    {% set secondaryFooterLinkItems = footerSettings.secondaryFooterLinkItems.all() %}
                     {% if secondaryFooterLinkItems|length %}
                         {% for item in secondaryFooterLinkItems %}
                             <li>{{ item.footerLink.getLink() }}</li>

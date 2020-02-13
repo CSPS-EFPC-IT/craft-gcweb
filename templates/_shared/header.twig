@@ -59,9 +59,9 @@
                 <h2>{{ 'Search'|t }}</h2>
 
                 {% set searchAction, searchLabel = craft.entries.section('search').one().url() ?? null, 'Search this website'|t %}
-                {% if settings.customSearchQueryUrl|length %}
+                {% if headerSettings.customSearchQueryUrl|length %}
                     {% set searchLabel = 'Search Canada.ca'|t %}
-                    {% set searchAction = settings.customSearchQueryUrl %}
+                    {% set searchAction = headerSettings.customSearchQueryUrl %}
                 {% endif %}
 
                 <form action="{{ searchAction }}" method="get" name="cse-search-box" role="search" class="form-inline">
@@ -113,9 +113,9 @@
     {% endif %}
 </header>
 
-{# Global header features #}
-{% set features = features.headerFeatures.all() %}
-{% if showHeaderFeatures and features|length %}
+{# Top Page Features #}
+{% set features = features.topPageFeatures.all() %}
+{% if showTopPageFeatures and features|length %}
     {% for feature in features %}
         {% include '_pageBuilder/builder' with {
             pageBuilder: feature.pageBuilder
