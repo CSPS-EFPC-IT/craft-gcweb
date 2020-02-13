@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1581537942
+dateModified: 1581611693
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -1794,6 +1794,33 @@ fields:
       minRows: ''
       propagationMethod: all
       selectionLabel: 'Add an item'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  4ff61d6d-6f1b-4847-a62c-6950e915378b:
+    contentColumnType: string
+    fieldGroup: 5307297a-3699-496a-a207-4658515902f4
+    handle: primaryFooterLinkItems
+    instructions: 'Customize the links displayed in the primary footer area. Adding links here will override the default ones. '
+    name: 'Primary Footer Links'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 6dcf65d3-0f3d-4eb8-8d1f-323bcd33a318
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_primaryfooterlinkitems}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a link'
       staticField: ''
     translationKeyFormat: null
     translationMethod: site
@@ -3869,6 +3896,33 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  fc809261-7c70-44d0-ae05-eab8c3dc4bcc:
+    contentColumnType: string
+    fieldGroup: 5307297a-3699-496a-a207-4658515902f4
+    handle: secondaryFooterLinkItems
+    instructions: 'Customize the links displayed in the secondary footer area. Adding links here will override the default ones. '
+    name: 'Secondary Footer Links'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 6dcf65d3-0f3d-4eb8-8d1f-323bcd33a318
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_secondaryfooterlinkitems}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a link'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
 globalSets:
   0d242488-6d80-47dc-9bcb-9681e57f0546:
     fieldLayouts:
@@ -3902,9 +3956,15 @@ globalSets:
               41b7a218-d38a-4b71-b0e5-cd4b038ef56c:
                 required: false
                 sortOrder: 2
+              4ff61d6d-6f1b-4847-a62c-6950e915378b:
+                required: false
+                sortOrder: 3
               941bb1a3-edcf-4268-bb8a-e4294946e8f6:
                 required: false
                 sortOrder: 1
+              fc809261-7c70-44d0-ae05-eab8c3dc4bcc:
+                required: false
+                sortOrder: 4
             name: Footer
             sortOrder: 3
     handle: settings
@@ -3988,6 +4048,135 @@ imageTransforms:
     position: center-center
     quality: null
     width: 520
+matrixBlockTypes:
+  a211e1a0-893b-400d-92f5-e4fe8ce6a35a:
+    field: 263cf86b-21f2-4984-bec5-c50d629c9bc4
+    fieldLayouts:
+      3f2f209e-b717-43f0-a369-e1740bf562f4:
+        tabs:
+          -
+            fields:
+              e3dc975c-3a26-4cc5-88f5-1201c0c357b6:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      e3dc975c-3a26-4cc5-88f5-1201c0c357b6:
+        contentColumnType: text
+        fieldGroup: null
+        handle: footerLink
+        instructions: ''
+        name: 'Footer Link'
+        searchable: false
+        settings:
+          allowCustomText: ''
+          allowTarget: '1'
+          allowedLinkNames:
+            3: entry
+            9: url
+          autoNoReferrer: ''
+          defaultLinkName: url
+          defaultText: ''
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            __assoc__:
+              -
+                - asset
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - category
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - entry
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      -
+                        - singles
+                        - 'section:ddf6106c-f60d-401c-885f-4825a894f8ef'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - site
+                -
+                  __assoc__:
+                    -
+                      - sites
+                      - '*'
+              -
+                - user
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - custom
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - email
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - tel
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - url
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+        translationKeyFormat: null
+        translationMethod: site
+        type: typedlinkfield\fields\LinkField
+    handle: links
+    name: Links
+    sortOrder: 1
 neoBlockTypeGroups:
   4373a0eb-1306-4a4d-b83e-814bbecddc92:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
@@ -4788,6 +4977,10 @@ plugins:
     enabled: true
     schemaVersion: 2.2.1
   tablemaker:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  typedlinkfield:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -5766,6 +5959,132 @@ superTableBlockTypes:
         translationKeyFormat: null
         translationMethod: site
         type: craft\fields\PlainText
+  d6f40b5e-8e00-48c0-b097-dbd2bc7b45a6:
+    field: fc809261-7c70-44d0-ae05-eab8c3dc4bcc
+    fieldLayouts:
+      40de28fe-df9b-4468-8244-d7141985e48b:
+        tabs:
+          -
+            fields:
+              a6f014df-9f46-4ca1-bb31-b533cd6ed14c:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      a6f014df-9f46-4ca1-bb31-b533cd6ed14c:
+        contentColumnType: text
+        fieldGroup: null
+        handle: footerLink
+        instructions: ''
+        name: Link
+        searchable: true
+        settings:
+          allowCustomText: '1'
+          allowTarget: '1'
+          allowedLinkNames:
+            3: entry
+            7: email
+            9: url
+          autoNoReferrer: ''
+          defaultLinkName: url
+          defaultText: ''
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            __assoc__:
+              -
+                - asset
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - category
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - entry
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      -
+                        - singles
+                        - 'section:ddf6106c-f60d-401c-885f-4825a894f8ef'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - site
+                -
+                  __assoc__:
+                    -
+                      - sites
+                      - '*'
+              -
+                - user
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - custom
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - email
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - tel
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - url
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+        translationKeyFormat: null
+        translationMethod: site
+        type: typedlinkfield\fields\LinkField
   e9581456-dac8-490b-b6c2-c2c8c1f70316:
     field: eefb0a7c-6c02-4b1f-8e48-631f818ff3bd
     fieldLayouts:
@@ -6407,6 +6726,132 @@ superTableBlockTypes:
         translationKeyFormat: null
         translationMethod: language
         type: fruitstudios\linkit\fields\LinkitField
+  f5184551-3f7f-4166-b67a-fd9392688912:
+    field: 4ff61d6d-6f1b-4847-a62c-6950e915378b
+    fieldLayouts:
+      c6e39748-d524-4cf1-912a-db9c5869f910:
+        tabs:
+          -
+            fields:
+              6dcf65d3-0f3d-4eb8-8d1f-323bcd33a318:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      6dcf65d3-0f3d-4eb8-8d1f-323bcd33a318:
+        contentColumnType: text
+        fieldGroup: null
+        handle: footerLink
+        instructions: ''
+        name: Link
+        searchable: false
+        settings:
+          allowCustomText: '1'
+          allowTarget: '1'
+          allowedLinkNames:
+            3: entry
+            7: email
+            9: url
+          autoNoReferrer: ''
+          defaultLinkName: url
+          defaultText: ''
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            __assoc__:
+              -
+                - asset
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - category
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - entry
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      -
+                        - singles
+                        - 'section:ddf6106c-f60d-401c-885f-4825a894f8ef'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - site
+                -
+                  __assoc__:
+                    -
+                      - sites
+                      - '*'
+              -
+                - user
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - custom
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - email
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - tel
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - url
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+        translationKeyFormat: null
+        translationMethod: site
+        type: typedlinkfield\fields\LinkField
 system:
   edition: pro
   live: true
