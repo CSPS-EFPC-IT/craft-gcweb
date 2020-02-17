@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1581956563
+dateModified: 1581972383
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -1756,7 +1756,7 @@ fields:
       cleanupHtml: true
       columnType: text
       purifierConfig: ''
-      purifyHtml: '1'
+      purifyHtml: ''
       redactorConfig: Standard.json
       removeEmptyTags: '1'
       removeInlineStyles: '1'
@@ -3196,7 +3196,7 @@ fields:
       cleanupHtml: true
       columnType: text
       purifierConfig: ''
-      purifyHtml: '1'
+      purifyHtml: ''
       redactorConfig: Simple.json
       removeEmptyTags: '1'
       removeInlineStyles: '1'
