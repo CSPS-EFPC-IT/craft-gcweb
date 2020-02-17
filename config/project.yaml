@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1581627584
+dateModified: 1581956563
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -4060,135 +4060,6 @@ imageTransforms:
     position: center-center
     quality: null
     width: 520
-matrixBlockTypes:
-  a211e1a0-893b-400d-92f5-e4fe8ce6a35a:
-    field: 263cf86b-21f2-4984-bec5-c50d629c9bc4
-    fieldLayouts:
-      3f2f209e-b717-43f0-a369-e1740bf562f4:
-        tabs:
-          -
-            fields:
-              e3dc975c-3a26-4cc5-88f5-1201c0c357b6:
-                required: false
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    fields:
-      e3dc975c-3a26-4cc5-88f5-1201c0c357b6:
-        contentColumnType: text
-        fieldGroup: null
-        handle: footerLink
-        instructions: ''
-        name: 'Footer Link'
-        searchable: false
-        settings:
-          allowCustomText: ''
-          allowTarget: '1'
-          allowedLinkNames:
-            3: entry
-            9: url
-          autoNoReferrer: ''
-          defaultLinkName: url
-          defaultText: ''
-          enableAriaLabel: ''
-          enableTitle: ''
-          typeSettings:
-            __assoc__:
-              -
-                - asset
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - category
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - entry
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      -
-                        - singles
-                        - 'section:ddf6106c-f60d-401c-885f-4825a894f8ef'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - site
-                -
-                  __assoc__:
-                    -
-                      - sites
-                      - '*'
-              -
-                - user
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - custom
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - email
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - tel
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - url
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-        translationKeyFormat: null
-        translationMethod: site
-        type: typedlinkfield\fields\LinkField
-    handle: links
-    name: Links
-    sortOrder: 1
 neoBlockTypeGroups:
   4373a0eb-1306-4a4d-b83e-814bbecddc92:
     field: b57c758b-2835-41f8-b8dd-4d5f7a071e5c
@@ -5347,7 +5218,7 @@ sites:
     siteGroup: 6831e458-ffef-46f7-8c27-99741a416193
     sortOrder: 3
   c9d485ad-7b3d-4d00-a41d-b6673509e6fc:
-    baseUrl: /en
+    baseUrl: $DEFAULT_SITE_URL
     handle: en
     hasUrls: true
     language: en
@@ -6892,7 +6763,7 @@ volumes:
     hasUrls: true
     name: Uploads
     settings:
-      path: uploads
+      path: '@webroot/uploads'
     sortOrder: 1
     type: craft\volumes\Local
     url: /uploads
