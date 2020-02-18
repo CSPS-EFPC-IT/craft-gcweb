@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1582044064
+dateModified: 1582046092
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -6731,7 +6731,7 @@ system:
   timeZone: America/New_York
 users:
   allowPublicRegistration: false
-  defaultGroup: null
+  defaultGroup: ''
   groups:
     b16e153a-e65f-40e1-819e-576c8e600c8c:
       handle: editors
@@ -6831,8 +6831,8 @@ users:
         - managesitemap
         - manageredirects
         - 'workflow:overview'
-  photoSubpath: ''
-  photoVolumeUid: null
+  photoSubpath: photos
+  photoVolumeUid: 47e2f3d9-7bf8-46d2-b3f7-31b171ec0220
   requireEmailVerification: true
 volumes:
   47e2f3d9-7bf8-46d2-b3f7-31b171ec0220:
