@@ -4,17 +4,20 @@
 # PHPStorm project folder
 /.idea
 
-# Composer dependencies
-/vendor
+# VSCode project folder
+/.vscode
 
 # IOS generated file
 .DS_Store
 
-# VSCode project folder
-.vscode/
+# Composer dependencies
+/vendor
 
 # NPM dependencies
 /node_modules
 
 # Remove license from git
-config/license.key
+/config/license.key
+
+# Laravel Mix build artifacts
+/web/mix-manifest.json
