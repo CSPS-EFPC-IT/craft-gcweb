@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1582046092
+dateModified: 1582052114
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -47,6 +47,8 @@ fieldGroups:
     name: Button
   f59b0921-c501-47da-9319-824555ec98c9:
     name: 'Grid System'
+  f8256823-d1bc-402c-a647-b43e4f959cee:
+    name: 'Page Information'
 fieldlabels:
   0329d94d-a96f-442b-b2dc-46bdf796c00f:
     field: bc138339-28bc-42f6-9828-c48cc89bc8cc
@@ -1683,6 +1685,24 @@ fields:
     translationKeyFormat: null
     translationMethod: language
     type: craft\fields\Url
+  3dec6fc5-b7e3-41b5-9a1c-475c372e9b00:
+    contentColumnType: text
+    fieldGroup: f8256823-d1bc-402c-a647-b43e4f959cee
+    handle: owners
+    instructions: 'Add the name of the page owner(s).'
+    name: Owners
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   41b7a218-d38a-4b71-b0e5-cd4b038ef56c:
     contentColumnType: boolean
     fieldGroup: 5307297a-3699-496a-a207-4658515902f4
@@ -3452,6 +3472,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  da60d335-bd27-464b-9afd-b71f02c7e405:
+    contentColumnType: text
+    fieldGroup: f8256823-d1bc-402c-a647-b43e4f959cee
+    handle: contributors
+    instructions: 'Add the name of the page contributor(s).'
+    name: Contributors
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   dd8f4ad3-4b7c-4c14-a437-8e88a6671091:
     contentColumnType: text
     fieldGroup: c4665fa7-f0b6-442f-a69a-1c4df8f04751
@@ -3896,6 +3934,29 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  fb60f61d-70f9-4f05-a2b6-afe11ba8ea9a:
+    contentColumnType: text
+    fieldGroup: f8256823-d1bc-402c-a647-b43e4f959cee
+    handle: notes
+    instructions: 'Add page notes for contributor(s).'
+    name: Notes
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\redactor\Field
   fc809261-7c70-44d0-ae05-eab8c3dc4bcc:
     contentColumnType: string
     fieldGroup: 5307297a-3699-496a-a207-4658515902f4
@@ -4928,6 +4989,19 @@ sections:
                     sortOrder: 6
                 name: Settings
                 sortOrder: 5
+              -
+                fields:
+                  3dec6fc5-b7e3-41b5-9a1c-475c372e9b00:
+                    required: false
+                    sortOrder: 1
+                  da60d335-bd27-464b-9afd-b71f02c7e405:
+                    required: false
+                    sortOrder: 2
+                  fb60f61d-70f9-4f05-a2b6-afe11ba8ea9a:
+                    required: false
+                    sortOrder: 3
+                name: 'Page Information'
+                sortOrder: 6
         handle: search
         hasTitleField: false
         name: Search
@@ -5025,6 +5099,19 @@ sections:
                     sortOrder: 6
                 name: Settings
                 sortOrder: 5
+              -
+                fields:
+                  3dec6fc5-b7e3-41b5-9a1c-475c372e9b00:
+                    required: false
+                    sortOrder: 1
+                  da60d335-bd27-464b-9afd-b71f02c7e405:
+                    required: false
+                    sortOrder: 2
+                  fb60f61d-70f9-4f05-a2b6-afe11ba8ea9a:
+                    required: false
+                    sortOrder: 3
+                name: 'Page Information'
+                sortOrder: 6
         handle: home
         hasTitleField: false
         name: Home
@@ -5164,6 +5251,19 @@ sections:
                     sortOrder: 7
                 name: Settings
                 sortOrder: 5
+              -
+                fields:
+                  3dec6fc5-b7e3-41b5-9a1c-475c372e9b00:
+                    required: false
+                    sortOrder: 1
+                  da60d335-bd27-464b-9afd-b71f02c7e405:
+                    required: false
+                    sortOrder: 2
+                  fb60f61d-70f9-4f05-a2b6-afe11ba8ea9a:
+                    required: false
+                    sortOrder: 3
+                name: 'Page Information'
+                sortOrder: 6
         handle: default
         hasTitleField: true
         name: Default
