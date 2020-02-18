@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f57d82f3da382bab641e5fa529f17c2",
+    "content-hash": "5eff50560d3e95ce2efd171fc3f90228",
     "packages": [
         {
             "name": "cakephp/core",
@@ -4486,6 +4486,57 @@
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
             "time": "2020-02-03T01:25:40+00:00"
+        },
+        {
+            "name": "verbb/workflow",
+            "version": "1.4.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/workflow/zipball/0563725947dc50359405fc37257acfefff8a47e4",
+                "reference": "0563725947dc50359405fc37257acfefff8a47e4",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.4.0",
+                "verbb/base": "^1.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Workflow",
+                "handle": "workflow",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/workflow/craft-3/CHANGELOG.md",
+                "class": "verbb\\workflow\\Workflow"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\workflow\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "A Craft CMS plugin to create a workflow for publishing entries.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "workflow"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/workflow/issues?state=open",
+                "source": "https://github.com/verbb/workflow",
+                "docs": "https://github.com/verbb/workflow",
+                "rss": "https://github.com/verbb/workflow/commits/v2.atom"
+            },
+            "time": "2020-02-15T03:46:00+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
