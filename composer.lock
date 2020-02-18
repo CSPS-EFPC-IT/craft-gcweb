@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eff50560d3e95ce2efd171fc3f90228",
+    "content-hash": "e567cb7175c05a1fc7822a69843295ef",
     "packages": [
         {
             "name": "cakephp/core",
@@ -597,11 +597,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.5.0",
+            "version": "2.6.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/b11b0625c3f84e00ee28739856ce96cd9823fed5",
-                "reference": "b11b0625c3f84e00ee28739856ce96cd9823fed5",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/c8cc5b6bd6ac0258666744a4a530496da8d966c3",
+                "reference": "c8cc5b6bd6ac0258666744a4a530496da8d966c3",
                 "shasum": ""
             },
             "require": {
@@ -642,7 +642,7 @@
                 "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2020-01-18T00:14:28+00:00"
+            "time": "2020-02-17T15:25:01+00:00"
         },
         {
             "name": "craftcms/server-check",
