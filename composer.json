@@ -12,6 +12,7 @@
     "supercool/tablemaker": "2.0.1",
     "verbb/field-manager": "2.1.1",
     "verbb/super-table": "2.4.4",
+    "verbb/workflow": "1.4.2",
     "vlucas/phpdotenv": "^2.4.0",
     "youandmedigital/breadcrumb": "1.1.0"
   },
