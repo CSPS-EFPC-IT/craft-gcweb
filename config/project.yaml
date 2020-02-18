@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1582033674
+dateModified: 1582036994
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -6782,11 +6782,6 @@ users:
         - 'editentries:ddf6106c-f60d-401c-885f-4825a894f8ef'
         - 'editpeerentrydrafts:4cfe5098-3bd5-4647-87f0-f0965f9d8032'
         - 'editentries:4cfe5098-3bd5-4647-87f0-f0965f9d8032'
-        - 'editglobalset:36a24084-a744-4040-add6-a31c39e71517'
-        - 'editglobalset:88bb6b3a-44ac-4232-bdaf-e503d3407018'
-        - 'editglobalset:7bc97b7d-969b-4d92-9ef6-ead0f0e6ba70'
-        - 'editglobalset:84df2c31-3cfb-4c7e-bcd2-97808c80fef4'
-        - 'editglobalset:b3f54fc6-b3ef-4f53-8d4a-8849fc014b6f'
         - 'editcategories:89e55a21-8780-4379-bfec-3b3c9c81b132'
         - 'saveassetinvolume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
         - 'createfoldersinvolume:47e2f3d9-7bf8-46d2-b3f7-31b171ec0220'
