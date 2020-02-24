@@ -1,0 +1,60 @@
+{#
+# Search Results Page
+# This will return all the entries with the client keyword.
+# excludeSearchEngine will exclude any page that has Exclude Search checked
+#}
+
+{# Import the Macro for search #}
+{% import "_macros/utils" as searchMacro %}
+
+    {% if searchQuery %}
+        {# Results Query #}
+        {%
+            set entries = craft.entries()
+            .search(searchWhere ~ searchQuery)
+            .dateUpdated('>=' ~ searchUpdatedDate)
+            .orderBy('score')
+            .limit(10)
+        %}
+
+        {# Paginate the entries by pages #}
+        {% paginate entries as pageInfo, pageEntries %}
+
+        {% if entries|length %}
+            <HR>
+            {# This is outputing number of results found for search query #}
+            <p>
+                <strong>
+                    {{ 'About {numberOfEntry} search results for "{searchQuery}"'|t(params={
+                        'searchQuery' :  searchQuery,
+                        'numberOfEntry' :  entries|length,
+                }) }}
+                </strong>
+            </p>
+
+            <article>
+                {% for entry in pageEntries %}
+                    <h3 class="h4">
+                        <a href="{{ entry.url }}" data-dtm-srchlnknm="{{ loop.index }}">{{ entry.title }}</a>
+                    </h3>
+                    <p class="mrgn-bttm-0">
+                        <span class="text-success">{{ entry.url }}</span>
+                    </p>
+                   {{ searchMacro.getPageBuilderBlockContent(entry, searchQuery|lower) }}
+                {% endfor %}
+            </article>
+                {# Pagination Button, # Prev, Page #, Next #}
+                {{ searchMacro.pagination(pageInfo) }}
+            {% else %}
+                {# No search Result found, return not found String message #}
+                <p>
+                    <strong>
+                        {{ 'Your search for “{searchQuery}” didn’t return any results.'|t
+                            (params={
+                                'searchQuery' :  searchQuery,
+                            })
+                        }}
+                    </strong>
+                </p>
+        {% endif %}
+    {% endif %}
