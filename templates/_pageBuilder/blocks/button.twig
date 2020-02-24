@@ -21,7 +21,7 @@
         "btn-" ~ block.buttonStyle,
         (block.blockLevelButton ? "btn-block": "")
     ],
-    target: block.elementLink.target
+    target: block.elementLink.getTarget()
 } %}
 
 {# Set the custom attributes for the block #}
