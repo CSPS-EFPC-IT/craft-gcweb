@@ -32,7 +32,7 @@
             <figcaption>{{ image.caption }}</figcaption>
         {% endif %}
     </figure>
-    {% if block.elementLink|length %}
+    {% if block.elementLink.getUrl()|length %}
     </a>
     {% endif %}
 {% endif %}
