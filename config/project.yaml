@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1582052114
+dateModified: 1582556188
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -64,27 +64,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Breadcrumb'
-  0f815efc-e78a-4c1c-a0b9-8b47289968bc:
-    field: 1427d166-f002-4ebd-85c4-8f616db21c31
-    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
-    hideInstructions: false
-    hideName: false
-    instructions: 'Use to identify the content author.'
-    name: null
-  153c90b3-b7ce-4aa6-a00b-7029fff1e262:
-    field: 0ae291e1-1bb5-4b45-adf6-05df7e8ae743
-    fieldLayout: 152ec3af-4acc-43f0-9521-a0d594c7efac
-    hideInstructions: false
-    hideName: false
-    instructions: 'Define a container for tabular data.'
-    name: null
-  177b5035-62a2-493d-96c8-6bb197d32f7f:
-    field: b060d78a-870c-49d5-a80c-d59a833db114
-    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add content to the panel footer.'
-    name: Footer
   1c8889a3-46e5-4c8b-ad92-f31821d92d10:
     field: d596f3b3-de66-40cd-a902-6080a701cc39
     fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
@@ -106,48 +85,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
-  20d7b564-38bf-45b0-9b88-41eee193c798:
-    field: ecc57eef-63b0-46b5-b100-32ff374fba68
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select one of the following image box style.'
-    name: Style
-  239a2413-4bb7-4200-8410-83b246f9eec5:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 532b2199-4b05-4e5f-a2a8-a380e1a2e56c
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: Destination
-  274089d8-ed00-4808-9069-63b36130f32b:
-    field: 2bfe488a-9a8f-4e52-a748-132e9f741d3c
-    fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select one of the alert style below.'
-    name: 'Alert Style'
-  313ef1bd-fe3d-49ac-812f-3e8a80019604:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the panel header title.'
-    name: Header
-  33ed83a8-4114-4d08-8484-93e67e1a836c:
-    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
-    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add content to the panel body.'
-    name: Content
-  362221ab-f94c-45b1-af46-579a41cb674b:
-    field: b060d78a-870c-49d5-a80c-d59a833db114
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the image box content below.'
-    name: Content
   39e1586c-c131-4a87-84a3-e2999c10381b:
     field: cbb1fdcd-7843-45df-b514-778dabc00c38
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -155,20 +92,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
-  3ca9f978-b6d6-47de-be0a-a73deb5212ca:
-    field: 23c028d6-eb8f-4d24-ac6c-0b05ca057912
-    fieldLayout: 532b2199-4b05-4e5f-a2a8-a380e1a2e56c
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: Style
-  3dcfcb42-3562-49a2-a32a-13d00dd06c7a:
-    field: 8ba38a42-f127-4c91-b255-996270788f99
-    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
-    hideInstructions: false
-    hideName: false
-    instructions: 'Use to identify the title of the source.'
-    name: null
   4b18094d-a646-4b15-a026-ed3346485298:
     field: 012e8adb-5e09-467a-af68-a4396b24f7ad
     fieldLayout: 595e3691-ca62-4f85-91a4-c59fc64b86a3
@@ -176,20 +99,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Breadcrumb'
-  52bb3d8f-2576-40f5-8cad-562237b9619c:
-    field: b060d78a-870c-49d5-a80c-d59a833db114
-    fieldLayout: d52a7314-ed06-4d6c-ad0d-66e1fea1c11b
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the blockquote content in the textarea below.'
-    name: Quote
-  5e332daa-a5c2-4c56-abd7-e3f3a29d31cd:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: a3547ca6-c068-4262-94fe-d17555ddcfc1
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the media title.'
-    name: 'Media Title'
   6036ac27-608e-4e2a-929e-43b6256b4f39:
     field: 1cd1f161-0c3c-4d9c-ade7-461dc507a396
     fieldLayout: 770fe812-c1a5-4457-9ed2-96f6c75b2525
@@ -197,27 +106,6 @@ fieldlabels:
     hideName: false
     instructions: 'Edit the metadata information at the site level. Any values entered here will be used as default for all entries.'
     name: null
-  64a8c054-5c4c-4cdd-9d99-3c30e59f6bca:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    hideInstructions: false
-    hideName: false
-    instructions: 'Turn the heading into a link. You may override the title text with this link text.'
-    name: Destination
-  67e1453b-6f83-48e3-973c-be8ab2b9bb8d:
-    field: b3812fb5-1952-43f8-91fb-c6567aac02cb
-    fieldLayout: eb22934c-c5aa-49ff-b2b0-c5b92c1c5056
-    hideInstructions: false
-    hideName: false
-    instructions: 'Click the "Add an item" button below to add content to your accordion block.'
-    name: 'Accordion Items'
-  6a45f7eb-fe2d-4ec5-93c0-f014dce82e22:
-    field: b354614e-8a9f-4dfc-b6af-7ab6c6961564
-    fieldLayout: 4c9d47be-8ec8-4464-8e5a-f1a4ba122d0d
-    hideInstructions: false
-    hideName: false
-    instructions: 'The carousel allows you to create a slider of images.'
-    name: 'Carousel Items'
   70775d4b-da7a-4fc0-b520-94b13b89b634:
     field: 9f06a8fd-2861-49d4-8622-cf4a97e95214
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -225,27 +113,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Login'
-  71eb704a-9d87-455c-8a22-2d087a408944:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select the button link destination.'
-    name: Destination
-  7509e128-e614-480a-83d2-57b9bce122cb:
-    field: b2ec5dbc-fac5-4c97-ba4a-71d69b2bb548
-    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
-    hideInstructions: false
-    hideName: false
-    instructions: 'Enable to make the button fill the parent container width.'
-    name: 'Enable Full Width'
-  7b0fbaaa-439b-4b8d-9a19-1b2e1ac4e67b:
-    field: b3812fb5-1952-43f8-91fb-c6567aac02cb
-    fieldLayout: 5f96beb8-6dc7-45c0-927a-309b3fa13c9c
-    hideInstructions: false
-    hideName: false
-    instructions: 'Divide your content into tabs horizontally.'
-    name: 'Tab Items'
   7d24a549-7c05-481e-ae00-d1feb7be9eb9:
     field: d596f3b3-de66-40cd-a902-6080a701cc39
     fieldLayout: d4b2f764-60c1-419f-9b75-39a5145ce926
@@ -260,13 +127,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
-  85584238-005a-41b3-b593-ee5021b2ef3b:
-    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
-    fieldLayout: e1b4eeda-c69f-48f1-a17a-74a26ba30a6f
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add content using the rich text editor below.'
-    name: 'Text Editor'
   8aeb41f5-9538-42eb-b5b8-c2b1399dbe4b:
     field: 065ac092-3471-4177-8fe8-3172f0e19b74
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -274,13 +134,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Breacrumb'
-  8e618416-7609-4077-95f8-efcbe7339a39:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the image box title below.'
-    name: Title
   8f0e4e1d-893f-4f6f-9f51-cf376b1720f9:
     field: 9f06a8fd-2861-49d4-8622-cf4a97e95214
     fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
@@ -288,41 +141,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Login'
-  8f2825a6-8769-4540-9c0b-a2b51d89a8cf:
-    field: 218bc7f4-79b1-4737-8696-94c74c2748a0
-    fieldLayout: 0e08a904-e337-4ab8-a042-3ceff5cc0802
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: Items
-  9ba2de53-4fcc-4150-869d-0b356234689e:
-    field: 0cc58fb5-1c9b-4c27-8b4f-d9523f657fc0
-    fieldLayout: 29d10a13-b00e-4179-923b-24f606827ac8
-    hideInstructions: false
-    hideName: false
-    instructions: null
-    name: Style
-  a48a5d69-96fb-4678-ad33-60f5b88c2488:
-    field: 4b9b13ab-60b9-4801-b47e-2911f5880a72
-    fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the alert box content.'
-    name: Content
-  aceee07a-22a8-41a5-a363-cd83f6ae73a0:
-    field: a0eca15e-2867-4cd0-8bde-da408d7616cb
-    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select the heading size (H1, H2, H3, etc).'
-    name: Size
-  b222aca8-49e0-41ec-b1b6-02d0d7257c05:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: efff9f96-046d-4372-bc6d-83a346ad1332
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the media title.'
-    name: 'Media Title'
   b2238e9f-b57a-4133-bc15-76d0b0e56fde:
     field: 065ac092-3471-4177-8fe8-3172f0e19b74
     fieldLayout: d4b2f764-60c1-419f-9b75-39a5145ce926
@@ -330,48 +148,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Breadcrumb'
-  b5b6ba70-73c2-48ed-a2c0-0ad74c28cbc0:
-    field: dd8f4ad3-4b7c-4c14-a437-8e88a6671091
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    hideInstructions: false
-    hideName: false
-    instructions: 'Turn the image box into a link.'
-    name: Destination
-  b8e0b179-3184-4852-9e9a-328cc6952756:
-    field: c9e4b206-9207-408d-98f2-e83a531a8926
-    fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
-    hideInstructions: false
-    hideName: false
-    instructions: 'Allow users to dismiss the alert by clicking on a small "X" on the right side of the alert box.'
-    name: 'Make Dismissable'
-  ba3d8b46-da5c-4077-b22d-177fdd35b727:
-    field: 5167d3b3-8938-426b-923c-562dbbf8aaab
-    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select one of the following button styles.'
-    name: Style
-  bb353ff6-a6b4-4b01-9e9c-6890e8ba1e29:
-    field: 1f3b17f0-0877-4d0f-9e59-b3c6634ae9bc
-    fieldLayout: ee47b993-c8a7-4caa-a9e6-f558ec1045d4
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add custom HTML or JavaScript. WARNING! This field can break the site layout if not used properly.'
-    name: 'HTML Editor'
-  bc930c93-b912-4f79-9ea9-770f04b05194:
-    field: f9a5fcd0-1509-423c-a64e-010bddbc39bd
-    fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select one of the following button sizes.'
-    name: Size
-  bf94af93-4632-426b-8014-444dbeff10b9:
-    field: 2bfe488a-9a8f-4e52-a748-132e9f741d3c
-    fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select one of the following panel style.'
-    name: Style
   c42d75d9-52fd-491f-832e-627df7f96934:
     field: 941bb1a3-edcf-4268-bb8a-e4294946e8f6
     fieldLayout: f03e34d0-adf6-4053-93e2-562f6e00949a
@@ -379,34 +155,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Report A Problem'
-  cf57d8d1-904d-449f-8634-6cf36eac53a6:
-    field: dd8f4ad3-4b7c-4c14-a437-8e88a6671091
-    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    hideInstructions: false
-    hideName: false
-    instructions: 'Turn the heading into a link.'
-    name: Destination
-  d400f719-72b6-4f9a-963b-524f2975b0bf:
-    field: 53af1a35-330a-4416-90db-2f0a579f880a
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select the image box asset below.'
-    name: null
-  d80e6ed5-5738-42dd-a699-659066a55283:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: e8f5123c-a8d8-45a1-834c-6e3109cce226
-    hideInstructions: false
-    hideName: false
-    instructions: 'Add the media title.'
-    name: 'Media Title'
-  da96b59c-f359-4ce0-9f91-12f226d102fa:
-    field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
-    fieldLayout: 6e8293cc-66fa-4a32-804c-f422e0ed5bfa
-    hideInstructions: false
-    hideName: false
-    instructions: 'Fill the title text field below.'
-    name: Title
   e2dde3dc-646c-46d6-8be8-7b4cc1d9551c:
     field: d596f3b3-de66-40cd-a902-6080a701cc39
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -421,13 +169,6 @@ fieldlabels:
     hideName: false
     instructions: 'Build the features displayed above the footer area.'
     name: Features
-  e8f7b8f5-581b-45dc-be14-a53b4624d24c:
-    field: 92a1a689-113a-4579-be6f-d4c00ef293e7
-    fieldLayout: 1ca7df09-44fc-41a4-a185-73de5ef4b6ea
-    hideInstructions: false
-    hideName: false
-    instructions: 'Select the image box link. You may override the title text with this link text.'
-    name: Destination
   f83cde1c-56bd-4678-8b8e-b2cad1645657:
     field: cbb1fdcd-7843-45df-b514-778dabc00c38
     fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
@@ -435,13 +176,6 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
-  fbdce515-9511-4eaa-9b12-6bcacc17eb80:
-    field: 48c84a8c-3d97-463b-9630-24e04a503bf1
-    fieldLayout: 29d10a13-b00e-4179-923b-24f606827ac8
-    hideInstructions: false
-    hideName: false
-    instructions: 'Create an easy-to-manage list of links.'
-    name: Links
 fields:
   012e8adb-5e09-467a-af68-a4396b24f7ad:
     contentColumnType: boolean
