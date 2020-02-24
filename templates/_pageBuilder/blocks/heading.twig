@@ -18,7 +18,7 @@
 
 {# Output the block #}
 <{{ block.headingSize }}{{ utils.attr(defaultAttr, customAttr) }}>
-    {%- if block.elementLink -%}
+    {%- if block.elementLink.getUrl()|length -%}
         {# Output title link #}
         <a href="{{ block.elementLink.getUrl() }}"
             target="{{ block.elementLink.getTarget() }}">

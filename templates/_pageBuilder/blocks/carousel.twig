@@ -39,7 +39,7 @@
             <div role="tabpanel"
                 id="carousel{{ block.id }}-tabpanel{{ loop.index }}"
                 class="{{ loop.first ? 'in':'out' }} {{ block.carouselTransition }}">
-                {% if item.destination|length %}
+                {% if item.destination.getUrl()|length %}
                 <a href="{{ item.destination.getUrl() }}" target="{{ item.destination.getTarget() }}">
                 {% endif %}
                     <figure>
@@ -53,7 +53,7 @@
                             </figcaption>
                         {% endif %}
                     </figure>
-                {% if item.destination|length %}
+                {% if item.destination.getUrl()|length %}
                 </a>
                 {% endif %}
             </div>

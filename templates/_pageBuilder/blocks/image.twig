@@ -23,7 +23,7 @@
 
 {# Output the block #}
 {% if image %}
-    {% if block.elementLink|length %}
+    {% if block.elementLink.getUrl()|length %}
     <a href="{{ block.elementLink.getUrl() }}" target="{{ block.elementLink.getTarget() }}" title="{{ block.elementLink.getText() }}">
     {% endif %}
     <figure{{ utils.attr(defaultAttr, customAttr) }}>
