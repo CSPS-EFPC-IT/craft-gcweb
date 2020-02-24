@@ -138,9 +138,9 @@
                 {% set break = true %}
             {% endif %}
         {% endfor %}
+
         {% set firstPeriod = 0 %}
         {% set break = false %}
-
         {# find first position of the last period before search keyword. This makes the summary nicer  #}
         {% for text in texts if not break %}
             {% if '.' in text %}
