@@ -23,8 +23,8 @@
 
 {# Output the block #}
 {% if image %}
-    {% if block.elementLink|length %}
-    <a href="{{ block.elementLink.url }}" target="{{ block.elementLink.target }}" title="{{ block.elementLink.text }}">
+    {% if block.elementLink.getUrl()|length %}
+    <a href="{{ block.elementLink.getUrl() }}" target="{{ block.elementLink.getTarget() }}" title="{{ block.elementLink.getText() }}">
     {% endif %}
     <figure{{ utils.attr(defaultAttr, customAttr) }}>
         <img src="{{ image.url }}" alt="{{ image.title }}" witdh="{{ image.width }}" height="{{ image.height }}" class="img-responsive img-{{ block.imageStyle }}">
@@ -32,7 +32,7 @@
             <figcaption>{{ image.caption }}</figcaption>
         {% endif %}
     </figure>
-    {% if block.elementLink|length %}
+    {% if block.elementLink.getUrl()|length %}
     </a>
     {% endif %}
 {% endif %}

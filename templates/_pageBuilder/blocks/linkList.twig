@@ -22,7 +22,7 @@
 
         <ul{{ utils.attr(defaultAttr, customAttr) }}>
             {% for link in block.linkListItems.all() %}
-                <li>{{ link.itemLink.link }}</li>
+                <li>{{ link.itemLink.getLink() }}</li>
             {% endfor %}
         </ul>
 
@@ -32,7 +32,7 @@
 
         <ul{{ utils.attr(defaultAttr, customAttr) }}>
             {% for link in block.linkListItems.all() %}
-                <li>{{ link.itemLink.link }}</li>
+                <li>{{ link.itemLink.getLink() }}</li>
             {% endfor %}
         </ul>
 
@@ -42,7 +42,7 @@
 
         <div{{ utils.attr(defaultAttr, customAttr) }}>
             {% for link in block.linkListItems.all() %}
-                {{ link.itemLink.link(linkAttributes) }}
+                {{ link.itemLink.getLink(linkAttributes) }}
             {% endfor %}
         </div>
 
@@ -52,7 +52,7 @@
 
         <ul{{ utils.attr(defaultAttr, customAttr) }}>
             {% for link in block.linkListItems.all() %}
-                <li>{{ link.itemLink.link }}</li>
+                <li>{{ link.itemLink.getLink() }}</li>
             {% endfor %}
         </ul>
 
