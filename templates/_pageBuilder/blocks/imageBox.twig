@@ -34,8 +34,8 @@
 
             {# Set default html attributes for the block #}
             {% set defaultAttr = {
-                href: block.elementLinkSimple.url ?? "#",
-                target: block.elementLinkSimple.target ?? null,
+                href: block.elementLink.getUrl() ?? "#",
+                target: block.elementLink.getTarget() ?? null,
                 class: [ "title-above" ]
             } %}
 
@@ -57,8 +57,8 @@
 
             {# Set default html attributes for the block #}
             {% set defaultAttr = {
-                href: block.elementLinkSimple.url ?? "#",
-                target: block.elementLinkSimple.target ?? null,
+                href: block.elementLink.getUrl() ?? "#",
+                target: block.elementLink.getTarget() ?? null,
                 class: [ "title-below" ]
             } %}
 
@@ -93,7 +93,7 @@
 
             {# Output the image box #}
             <figure{{ utils.attr(defaultAttr, customAttr) }}>
-                <a href="{{ block.elementLinkSimple.url ?? '#' }}" target="{{ block.elementLinkSimple.target ?? null }}">
+                <a href="{{ block.elementLink.getUrl() ?? '#' }}" target="{{ block.elementLink.getTarget() ?? null }}">
                     {{ utils.getTransformedImage(image, imageTransform, "img-responsive full-width") }}
                 </a>
                 <figcaption class="caption">
@@ -103,10 +103,10 @@
 
                     {{- blockContent -}}
 
-                    {% if block.elementLinkSimple %}
+                    {% if block.elementLink %}
                         <ul class="list-inline">
                             <li>
-                                <a href="{{ block.elementLinkSimple.url }}"
+                                <a href="{{ block.elementLink.getUrl() }}"
                                     class="btn btn-primary"
                                     role="button">
                                     {{- "Learn more"|t -}}
@@ -122,8 +122,8 @@
             {# @see https://wet-boew.github.io/themes-dist/GCWeb/home-en.html under "Government initiatives" #}
             {# Set default html attributes for the block #}
             {% set defaultAttr = {
-                href: block.elementLinkSimple.url ?? null,
-                target: block.elementLinkSimple.target ?? null,
+                href: block.elementLink.getUrl() ?? null,
+                target: block.elementLink.getTarget() ?? null,
                 class: [
                     "figcaption"
                 ]
@@ -157,7 +157,7 @@
 
             {# Output the image box #}
             <section{{ utils.attr(defaultAttr, customAttr) }}>
-                <a href="{{ block.elementLinkSimple.url ?? '#' }}" target="{{ block.elementLinkSimple.target ?? null }}" class="pull-left">
+                <a href="{{ block.elementLink.getUrl() ?? '#' }}" target="{{ block.elementLink.getTarget() ?? null }}" class="pull-left">
                     {{ utils.getTransformedImage(image, imageTransform, "media-object") }}
                 </a>
                 <div class="media-body">
@@ -182,7 +182,7 @@
 
             {# Output the image box #}
             <section{{ utils.attr(defaultAttr, customAttr) }}>
-                <a href="{{ block.elementLinkSimple.url ?? '#' }}" target="{{ block.elementLinkSimple.target ?? null }}" class="pull-right">
+                <a href="{{ block.elementLink.getUrl() ?? '#' }}" target="{{ block.elementLink.getTarget() ?? null }}" class="pull-right">
                     {{ utils.getTransformedImage(image, imageTransform, "media-object") }}
                 </a>
                 <div class="media-body">

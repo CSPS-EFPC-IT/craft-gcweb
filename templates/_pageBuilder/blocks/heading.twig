@@ -18,10 +18,10 @@
 
 {# Output the block #}
 <{{ block.headingSize }}{{ utils.attr(defaultAttr, customAttr) }}>
-    {%- if block.elementLinkSimple -%}
+    {%- if block.elementLink -%}
         {# Output title link #}
-        <a href="{{ block.elementLinkSimple.url }}"
-            target="{{ block.elementLinkSimple.target }}">
+        <a href="{{ block.elementLink.getUrl() }}"
+            target="{{ block.elementLink.getTarget() }}">
             {# Override title text with fallback #}
             {{- block.elementTitle -}}
         </a>

@@ -30,7 +30,7 @@
         {# Loop through result set and output links#}
         {% for item in followBoxItems %}
             <li>
-                <a href="{{ item.destination.url }}" class="{{ item.icon }}" rel="external">
+                <a href="{{ item.destination.getUrl() }}" class="{{ item.icon }}" rel="external">
                     <span class="wb-inv">{{ item.icon|capitalize }}</span>
                 </a>
             </li>

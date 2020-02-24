@@ -40,7 +40,7 @@
                 id="carousel{{ block.id }}-tabpanel{{ loop.index }}"
                 class="{{ loop.first ? 'in':'out' }} {{ block.carouselTransition }}">
                 {% if item.destination|length %}
-                <a href="{{ item.destination.url }}" target="{{ item.destination.target }}">
+                <a href="{{ item.destination.getUrl() }}" target="{{ item.destination.getTarget() }}">
                 {% endif %}
                     <figure>
                         {% set image = item.image.one() ?? null %}

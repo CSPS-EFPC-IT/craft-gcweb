@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e567cb7175c05a1fc7822a69843295ef",
+    "content-hash": "8b1ccb79a6f0722331f8ed0efbdcc967",
     "packages": [
         {
             "name": "cakephp/core",
@@ -462,58 +462,6 @@
             "time": "2020-02-07T20:26:40+00:00"
         },
         {
-            "name": "craftcms/contact-form",
-            "version": "2.2.5",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/a645df88d757d620bc29bc6dd3d748374b791093",
-                "reference": "a645df88d757d620bc29bc6dd3d748374b791093",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC11"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Contact Form",
-                "handle": "contact-form",
-                "documentationUrl": "https://github.com/craftcms/contact-form/blob/v2/README.md",
-                "components": {
-                    "mailer": "craft\\contactform\\Mailer"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "craft\\contactform\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pixel & Tonic",
-                    "homepage": "https://pixelandtonic.com/"
-                }
-            ],
-            "description": "Add a simple contact form to your Craft CMS site",
-            "keywords": [
-                "cms",
-                "contact",
-                "craftcms",
-                "form",
-                "yii2"
-            ],
-            "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/contact-form/issues?state=open",
-                "source": "https://github.com/craftcms/contact-form",
-                "docs": "https://github.com/craftcms/contact-form/blob/v2/README.md",
-                "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
-            },
-            "time": "2019-05-31T22:56:39+00:00"
-        },
-        {
             "name": "craftcms/oauth2-craftid",
             "version": "1.0.0.1",
             "dist": {
@@ -969,62 +917,6 @@
                 "html"
             ],
             "time": "2019-10-28T03:44:26+00:00"
-        },
-        {
-            "name": "fruitstudios/linkit",
-            "version": "1.1.11",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fruitstudios/craft-linkit/zipball/354ec959094c6e8ae05af1ff345709e4776a7f66",
-                "reference": "354ec959094c6e8ae05af1ff345709e4776a7f66",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.1.8"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Linkit",
-                "handle": "linkit",
-                "hasCpSettings": false,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/fruitstudios/craft-linkit/master/CHANGELOG.md",
-                "class": "fruitstudios\\linkit\\Linkit",
-                "components": {
-                    "services": "fruitstudios\\linkit\\services\\LinkitService"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "fruitstudios\\linkit\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Fruit Studios",
-                    "homepage": "https://fruitstudios.co.uk"
-                }
-            ],
-            "description": "One link field to rule them all.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "fruit studios",
-                "link it",
-                "linkit"
-            ],
-            "support": {
-                "email": "hi@fruitstudios.co.uk",
-                "issues": "https://github.com/fruitstudios/craft-linkit/issues?state=open",
-                "source": "https://github.com/fruitstudios/craft-linkit",
-                "docs": "https://github.com/fruitstudios/craft-linkit"
-            },
-            "time": "2019-04-03T09:54:55+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
