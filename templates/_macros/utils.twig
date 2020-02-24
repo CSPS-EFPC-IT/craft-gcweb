@@ -79,12 +79,10 @@
         {% if total > 1 %}
             <div class="row text-center">
                 <ul class="pagination">
-
                 {# Pagination Previous Button #}
                 {% if pageInfo.prevUrl %}
                     <li><a href="{{ pageInfo.prevUrl }}" rel="prev">Previous</a></li>
                 {% endif %}
-
                 {% for i in 1..total %}
                     {% if 0 == (current - nearbyPagesLimit) - loop.index %}
                         <li><a href="{{ pageInfo.getPageUrl( 1 ) }}">1</a></li>
@@ -105,12 +103,10 @@
                         </li>
                     {% endif %}
                 {% endfor %}
-
                 {# Pagination Last Page Number #}
                 {% if current != total  and (current + nearbyPagesLimit) < total %}
                     <li><a href="{{ pageInfo.getPageUrl( total ) }}">{{ total }}</a></li>
                 {% endif %}
-
                 {# Pagination Next Button #}
                 {% if pageInfo.nextUrl %}
                     <li class="next"><a href="{{ pageInfo.nextUrl }}" rel="next">Next</a></li>
@@ -127,29 +123,25 @@
  |------------------------------------------------------------------------------
 #}
 
-{% macro setSummaryBold(entry, text, word, numWord = 50) %}
+{% macro setSummaryBold(entry, text, word, numWord = 70) %}
     {% set output = "" %}
     {% set texts = text|split(' ') %}
     {% set words = word|split(' ') %}
 
-    {# Check to make sure content has more word than the maximum #}
     {% if texts|length > numWord %}
         {% set firstMatchingWord = 0 %}
         {% set break = false %}
-        {# find first position of the word in array #}
         {% for text in texts %}
+            {# find first position of the word in array #}
             {% if words[0] in text|lower %}
                 {% set firstMatchingWord = loop.index - 1 %}
                 {% set break = true %}
             {% endif %}
         {% endfor %}
-
         {% set firstPeriod = 0 %}
         {% set break = false %}
-        {#
-            find first position of a period in array to make the summary nicer.
-            Should start at the end of a period of the last period
-        #}
+
+        {# find first position of the last period before search keyword. This makes the summary nicer  #}
         {% for text in texts if not break %}
             {% if '.' in text %}
                 {% set firstPeriod = loop.index %}
@@ -160,14 +152,13 @@
             {% endif %}
         {% endfor %}
 
-        {% for t in texts|slice(firstPeriod, numWord) %}
-            {% set output = output ~ ' ' ~ t %}
+        {% for text in texts|slice(firstPeriod, numWord) %}
+            {% set output = output ~ ' ' ~ text %}
         {% endfor %}
 
     {% else %}
         {% set output = texts|join(' ') %}
     {% endif %}
-
     {# Make the searching keyword bold #}
     {% set output = output|lower|replace(word|lower, '<strong>' ~ word ~ '</strong>') %}
 
@@ -178,23 +169,19 @@
 
 {% macro getPageBuilderBlockContent(entry, searchQuery) %}
     {% import _self as searchMacro %}
-
     {% set output = []  %}
-
-    {% for block in entry.pageBuilder %}
-
+    {% set findMatchWord = false %}
+    {% for block in entry.pageBuilder.all() %}
         {# Check if element title had the search keyword #}
         {% if searchQuery in block.elementTitle|lower %}
+            {% set findMatchWord = true %}
             {% set output = output|merge([block.elementTitle|striptags]) %}
         {% endif %}
 
-        {# Check if page body has the search keyword #}
-        {% if searchQuery in block.redactor|lower %}
+        {% if block.redactor %}
             {% set output = output|merge([block.redactor|striptags('<p>')|replace({'<p>':'', '</p>':'\n' })]) %}
         {% endif %}
 
     {% endfor %}
-
     {{ searchMacro.setSummaryBold(entry, output|join(', '), searchQuery) }}
-
 {% endmacro %}
