@@ -71,6 +71,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Breadcrumb'
+<<<<<<< HEAD
   0f954a87-12a1-477d-bc11-552ef231b95a:
     field: 2bfe488a-9a8f-4e52-a748-132e9f741d3c
     fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
@@ -78,6 +79,8 @@ fieldlabels:
     hideName: false
     instructions: 'Select one of the alert style below.'
     name: 'Alert Style'
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   1c8889a3-46e5-4c8b-ad92-f31821d92d10:
     field: d596f3b3-de66-40cd-a902-6080a701cc39
     fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
@@ -99,6 +102,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
+<<<<<<< HEAD
   2b49cf46-a039-471f-b8b3-fc457f52a927:
     field: f9a5fcd0-1509-423c-a64e-010bddbc39bd
     fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
@@ -120,6 +124,8 @@ fieldlabels:
     hideName: false
     instructions: 'Turn the image box into a link.'
     name: Destination
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   39e1586c-c131-4a87-84a3-e2999c10381b:
     field: cbb1fdcd-7843-45df-b514-778dabc00c38
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -127,6 +133,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
+<<<<<<< HEAD
   3e769330-f318-43a7-a2a8-9c8e42a78f24:
     field: 92a1a689-113a-4579-be6f-d4c00ef293e7
     fieldLayout: 532b2199-4b05-4e5f-a2a8-a380e1a2e56c
@@ -155,6 +162,8 @@ fieldlabels:
     hideName: false
     instructions: 'Add content using the rich text editor below.'
     name: 'Text Editor'
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   4b18094d-a646-4b15-a026-ed3346485298:
     field: 012e8adb-5e09-467a-af68-a4396b24f7ad
     fieldLayout: 595e3691-ca62-4f85-91a4-c59fc64b86a3
@@ -162,6 +171,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Breadcrumb'
+<<<<<<< HEAD
   4f4dc202-b79e-4f07-be27-007c826a8bb0:
     field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
     fieldLayout: e8f5123c-a8d8-45a1-834c-6e3109cce226
@@ -176,6 +186,8 @@ fieldlabels:
     hideName: false
     instructions: 'Divide your content into tabs horizontally.'
     name: 'Tab Items'
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   6036ac27-608e-4e2a-929e-43b6256b4f39:
     field: 1cd1f161-0c3c-4d9c-ade7-461dc507a396
     fieldLayout: 770fe812-c1a5-4457-9ed2-96f6c75b2525
@@ -183,6 +195,7 @@ fieldlabels:
     hideName: false
     instructions: 'Edit the metadata information at the site level. Any values entered here will be used as default for all entries.'
     name: null
+<<<<<<< HEAD
   6110ecb7-2368-4f6b-b1a9-16ed31a40312:
     field: b2ec5dbc-fac5-4c97-ba4a-71d69b2bb548
     fieldLayout: 648e59ec-8077-4562-a75d-4445bf6a2612
@@ -197,6 +210,8 @@ fieldlabels:
     hideName: false
     instructions: 'Add the image box title below.'
     name: Title
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   70775d4b-da7a-4fc0-b520-94b13b89b634:
     field: 9f06a8fd-2861-49d4-8622-cf4a97e95214
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -225,6 +240,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
+<<<<<<< HEAD
   8596bad6-11b1-4c8c-ab09-98ba5a81a4ee:
     field: c9e4b206-9207-408d-98f2-e83a531a8926
     fieldLayout: e5561741-a57c-4c1e-8888-6e1fce6046d6
@@ -253,6 +269,8 @@ fieldlabels:
     hideName: false
     instructions: 'Use to identify the content author.'
     name: null
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   8aeb41f5-9538-42eb-b5b8-c2b1399dbe4b:
     field: 065ac092-3471-4177-8fe8-3172f0e19b74
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -260,6 +278,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Breacrumb'
+<<<<<<< HEAD
   8befa9ae-064f-4aa9-b1e2-fbcfc45ec7b0:
     field: 48c84a8c-3d97-463b-9630-24e04a503bf1
     fieldLayout: 29d10a13-b00e-4179-923b-24f606827ac8
@@ -267,6 +286,8 @@ fieldlabels:
     hideName: false
     instructions: 'Create an easy-to-manage list of links.'
     name: Links
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   8f0e4e1d-893f-4f6f-9f51-cf376b1720f9:
     field: 9f06a8fd-2861-49d4-8622-cf4a97e95214
     fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
@@ -274,6 +295,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Login'
+<<<<<<< HEAD
   99dcce21-dcf7-4675-b2c5-62743a2cb5bd:
     field: b060d78a-870c-49d5-a80c-d59a833db114
     fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
@@ -386,6 +408,22 @@ fieldlabels:
     hideName: false
     instructions: 'Select the heading size (H1, H2, H3, etc).'
     name: Size
+=======
+  b2238e9f-b57a-4133-bc15-76d0b0e56fde:
+    field: 065ac092-3471-4177-8fe8-3172f0e19b74
+    fieldLayout: d4b2f764-60c1-419f-9b75-39a5145ce926
+    hideInstructions: false
+    hideName: false
+    instructions: null
+    name: 'Show Breadcrumb'
+  c42d75d9-52fd-491f-832e-627df7f96934:
+    field: 941bb1a3-edcf-4268-bb8a-e4294946e8f6
+    fieldLayout: f03e34d0-adf6-4053-93e2-562f6e00949a
+    hideInstructions: false
+    hideName: false
+    instructions: null
+    name: 'Show Report A Problem'
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   e2dde3dc-646c-46d6-8be8-7b4cc1d9551c:
     field: d596f3b3-de66-40cd-a902-6080a701cc39
     fieldLayout: 5cc11de6-59db-47e9-b039-397d1ae633fa
@@ -400,6 +438,7 @@ fieldlabels:
     hideName: false
     instructions: 'Build the features displayed above the footer area.'
     name: Features
+<<<<<<< HEAD
   f25326a3-5f33-4d32-9592-2670e0811812:
     field: b3812fb5-1952-43f8-91fb-c6567aac02cb
     fieldLayout: eb22934c-c5aa-49ff-b2b0-c5b92c1c5056
@@ -407,6 +446,8 @@ fieldlabels:
     hideName: false
     instructions: 'Click the "Add an item" button below to add content to your accordion block.'
     name: 'Accordion Items'
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
   f83cde1c-56bd-4678-8b8e-b2cad1645657:
     field: cbb1fdcd-7843-45df-b514-778dabc00c38
     fieldLayout: 5891fc89-c4da-48e9-93ec-e8b2a5fff119
@@ -414,6 +455,7 @@ fieldlabels:
     hideName: false
     instructions: null
     name: 'Show Share This Page'
+<<<<<<< HEAD
   f8d0d247-4d4c-4858-bacf-dfdf1b49d945:
     field: 6d03b705-11a7-498c-bd81-f6ae2b83ff35
     fieldLayout: 3268b0ec-a3e5-4eab-bc74-57119c2305ba
@@ -428,6 +470,8 @@ fieldlabels:
     hideName: false
     instructions: 'Select one of the following button styles.'
     name: Style
+=======
+>>>>>>> 0dcbaf6b681f7deb1e69e0054f9bf8d471a5a1d6
 fields:
   012e8adb-5e09-467a-af68-a4396b24f7ad:
     contentColumnType: boolean
