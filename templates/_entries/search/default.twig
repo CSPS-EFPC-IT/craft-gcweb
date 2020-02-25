@@ -4,7 +4,7 @@
 {% set searchWhere = craft.app.request.getParam('searchWhere') %}
 
 {# Date for search select option list #}
-{% set yesturdayDate = "now"|date_modify("-1 day")|date('Y-m-d') %}
+{% set yesterdayDate = "now"|date_modify("-1 day")|date('Y-m-d') %}
 {% set pastWeekDate = "now"|date_modify("-7 day")|date('Y-m-d') %}
 {% set pastMonthDate = "now"|date_modify("-1 month")|date('Y-m-d') %}
 {% set pastYearDate = "now"|date_modify("-1 year")|date('Y-m-d') %}
@@ -12,14 +12,14 @@
 {# Check if advanced search panel need to be open or closed #}
 {% set openAdvancedSearch = false %}
 {% if searchSection or searchUpdatedDate or searchWhere %}
-    {% set openAdvancedSearch = true %}
+	{% set openAdvancedSearch = true %}
 {% endif %}
 
 {# Configuration of the search URL and label that need to be use #}
 {% set searchAction, searchLabel = craft.entries.section('search').one().url() ?? null, 'Search this website'|t %}
 {% if headerSettings.customSearchQueryUrl|length %}
-    {% set searchLabel = 'Search Canada.ca'|t %}
-    {% set searchAction = headerSettings.customSearchQueryUrl %}
+	{% set searchLabel = 'Search Canada.ca'|t %}
+	{% set searchAction = headerSettings.customSearchQueryUrl %}
 {% endif %}
 
 {# Sections select option #}
@@ -31,84 +31,82 @@
 
 {% extends '_entries/default' %}
 
-{# IN CONSTRUCTION #}
 {% block main %}
-    {% include '_pageBuilder/builder' with {
+	{% include '_pageBuilder/builder' with {
         pageBuilder: entry.pageBuilder
     } %}
 
-        <div class="container">
-            <form action="{{ searchAction }}" method="get" name="cse-search-box" role="search">
-            <div class="row">
-                <div class="col-md-12">
-                    <BR>
-                        <div class="input-group input-group-lg">
-                            <label for="wb-srch-q" class="wb-inv">{{ searchLabel }}</label>
-                            <input class="wb-srch-q form-control"  list="wb-srch-q-ac" maxlength="200" name="q" type="search" placeholder="{{ searchLabel }}" value="{{searchQuery}}">
-                            <datalist></datalist>
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary btn-small" name="wb-srch-sub" type="submit">
-                                    <span class="glyphicon-search glyphicon"></span>
-                                    <span class="wb-inv">{{ 'search-txt'|t }}</span>
-                                </button>
-                            </span>
-                        </div>
-                </div>
-            </div>
+	<div class="container">
+		<form action="{{ searchAction }}" method="get" name="cse-search-box" role="search">
+			<div class="row">
+				<div class="col-md-12">
+					<br>
+					<div class="input-group input-group-lg">
+						<label for="wb-srch-q" class="wb-inv">{{ searchLabel }}</label>
+						<input class="wb-srch-q form-control" list="wb-srch-q-ac" maxlength="200" name="q" type="search" placeholder="{{ searchLabel }}" value="{{searchQuery}}">
+						<span class="input-group-btn">
+							<button class="btn btn-primary btn-small" name="wb-srch-sub" type="submit">
+								<span class="glyphicon-search glyphicon"></span>
+								<span class="wb-inv">{{ searchLabel }}</span>
+							</button>
+						</span>
+					</div>
+				</div>
+			</div>
 
-            <div class = "row">
-                <div class="col-md-12">
-                    <ul class="list-unstyled">
-                        <li>
-                            <details {{ openAdvancedSearch ? ' open '}} >
-                                <summary>{{ 'Advanced Search'|t }}</summary>
-                                <legend class="h3 mrgn-tp-sm">{{'Narrow your results by...'|t}}</legend>
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="list-unstyled">
+						<li>
+							<details {{ openAdvancedSearch ? ' open '}}>
+								<summary>{{ 'Advanced Search'|t }}</summary>
+								<legend class="h3 mrgn-tp-sm">{{ 'Narrow your results by...'|t }}</legend>
 
-                                {# Filter Craft CMS section for advanced search #}
-                                <div class="form-group">
-                                    <label for="section">{{ 'filter section:'|t }}</label>
-                                    <select class = "form-control" name = "section" >
-                                        <option value = "" selected>All</option>
-                                        {% for section in allSections %}
-                                            <option value = "{{ section.handle }}" {{ section.handle == searchSection ? ' selected ' }}>
-                                                {{ section.name }}
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
+								{# Filter Craft CMS section for advanced search #}
+								<div class="form-group">
+									<label for="section">{{ 'filter section:'|t }}</label>
+									<select class="form-control" name="section">
+										<option value="" selected>All</option>
+										{% for section in allSections %}
+											<option value="{{ section.handle }}" {{ section.handle == searchSection ? ' selected ' }}>
+												{{ section.name }}
+											</option>
+										{% endfor %}
+									</select>
+								</div>
 
-                                {# Date filter for advanced search #}
-                                <div class="form-group">
-                                <label for="updatedDate">{{ 'pages updated date:'|t }}</label>
-                                    <select class="form-control" name="updatedDate">
-                                        <option value="" {{ searchUpdatedDate == '' ? ' selected ' }}>{{ 'anytime'|t }}</option>
-                                        <option value="{{ yesturdayDate }}" {{ searchUpdatedDate == yesturdayDate ? ' selected="selected" ' }}>{{ 'past 24 hours'|t }}</option>
-                                        <option value="{{ pastWeekDate }}" {{ searchUpdatedDate == pastWeekDate ? ' selected="selected" ' }}>{{ 'past week'|t }}</option>
-                                        <option value="{{ pastMonthDate }}" {{ searchUpdatedDate == pastMonthDate ? ' selected="selected" ' }}>{{ 'past month'|t }}</option>
-                                        <option value="{{ pastYearDate }}" {{ searchUpdatedDate == pastYearDate ? ' selected="selected" ' }}>{{ 'past year'|t }}</option>
-                                    </select>
-                                </div>
+								{# Date filter for advanced search #}
+								<div class="form-group">
+									<label for="updatedDate">{{ 'pages updated date:'|t }}</label>
+									<select class="form-control" name="updatedDate">
+										<option value="" {{ searchUpdatedDate == '' ? ' selected ' }}>{{ 'anytime'|t }}</option>
+										<option value="{{ yesterdayDate }}" {{ searchUpdatedDate == yesterdayDate ? ' selected="selected" ' }}>{{ 'past 24 hours'|t }}</option>
+										<option value="{{ pastWeekDate }}" {{ searchUpdatedDate == pastWeekDate ? ' selected="selected" ' }}>{{ 'past week'|t }}</option>
+										<option value="{{ pastMonthDate }}" {{ searchUpdatedDate == pastMonthDate ? ' selected="selected" ' }}>{{ 'past month'|t }}</option>
+										<option value="{{ pastYearDate }}" {{ searchUpdatedDate == pastYearDate ? ' selected="selected" ' }}>{{ 'past year'|t }}</option>
+									</select>
+								</div>
 
-                                {# Terms appearing filter for advanced search #}
-                                <div class="form-group">
-                                <label for="searchWhere">{{ 'terms appearing:'|t }}</label>
-                                    <select class="form-control" name="searchWhere">
-                                        <option value="" {{ searchWhere == '' ? ' selected ' }}>{{ 'anywhere in the page'|t }}</option>
-                                        <option value="title:" {{ searchWhere == 'title:' ? ' selected ' }}>{{ 'in the title of the page'|t }}</option>
-                                    </select>
-                                </div>
-                            </details>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            </form>
+								{# Terms appearing filter for advanced search #}
+								<div class="form-group">
+									<label for="searchWhere">{{ 'terms appearing:'|t }}</label>
+									<select class="form-control" name="searchWhere">
+										<option value="" {{ searchWhere == '' ? ' selected ' }}>{{ 'anywhere in the page'|t }}</option>
+										<option value="title:" {{ searchWhere == 'title:' ? ' selected ' }}>{{ 'in the title of the page'|t }}</option>
+									</select>
+								</div>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</form>
 
-            {# Search Results Section #}
-            <div class="row">
-                <div class="col-md-12">
-                   {% include "_entries/search/results" %}
-                </div>
-            </div>
-        </div>
+		{# Search Results Section #}
+		<div class="row">
+			<div class="col-md-12">
+				{% include "_entries/search/results" %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
