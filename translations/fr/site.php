@@ -145,6 +145,6 @@ return [
     "past year" => "au cours des 365 derniers jours",
     "anywhere in the page" => "n'importe où dans la page",
     "in the title of the page" => "dans le titre de la page",
-    "Next" => "Page suivante",
-    "Previous" => "Page précédente",
+    "Next Page" => "Page suivante",
+    "Previous Page" => "Page précédente",
 ];

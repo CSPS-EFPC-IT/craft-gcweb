@@ -22,16 +22,22 @@
 	{% set searchAction = headerSettings.customSearchQueryUrl %}
 {% endif %}
 
-{# Sections select option #}
+{#
+	Sections select option
+	Search page ID = 2
+	Home page ID = 3
+	GlobalFeatures page ID = 4
+#}
 {%  set allSections = craft.query()
     .select('id, name, handle')
     .from('sections')
-    .all()
+	.where('id not in (2,3,4)')
+	.all()
 %}
-
 {% extends '_entries/default' %}
 
 {% block main %}
+
 	{% include '_pageBuilder/builder' with {
         pageBuilder: entry.pageBuilder
     } %}
@@ -92,7 +98,7 @@
 									<label for="searchWhere">{{ 'terms appearing:'|t }}</label>
 									<select class="form-control" name="searchWhere">
 										<option value="" {{ searchWhere == '' ? ' selected ' }}>{{ 'anywhere in the page'|t }}</option>
-										<option value="title:" {{ searchWhere == 'title:' ? ' selected ' }}>{{ 'in the title of the page'|t }}</option>
+										<option value="title" {{ searchWhere == 'title' ? ' selected ' }}>{{ 'in the title of the page'|t }}</option>
 									</select>
 								</div>
 							</details>
