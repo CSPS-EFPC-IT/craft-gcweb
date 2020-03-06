@@ -14,7 +14,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: d0e84615-a3c1-4138-a994-31dc83cf5c4e
-dateModified: 1582556426
+dateModified: 1583421840
 email:
   fromEmail: $SYSTEM_EMAIL_ADDRESS
   fromName: $SYSTEM_EMAIL_SENDER_NAME
@@ -6065,6 +6065,17 @@ superTableBlockTypes:
                 -
                   - value
                   - periscope
+                -
+                  - default
+                  - ''
+            -
+              __assoc__:
+                -
+                  - label
+                  - Newsletter
+                -
+                  - value
+                  - eupdate
                 -
                   - default
                   - ''
