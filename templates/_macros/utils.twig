@@ -8,43 +8,43 @@
  |------------------------------------------------------------------------------
 #}
 {% macro attr(attributes, customAttributes) %}
-	{% if customAttributes|length %}
-		{% for item in customAttributes %}
-			{% set attrName, attrValue, a = item.attributeName, item.attributeValue, {} %}
-			{# Format the attribute array to pass to CraftCMS attr() function #}
-			{% switch attrName %}
-				{% case 'style' %}
-					{# Split the style value statement every ';' found #}
-					{% set customStyles, allStyles = attrValue|split(';', -1), {} %}
-					{% for style in customStyles %}
-						{# Extract the name:value #}
-						{% set styleParts = style|split(':') %}
-						{% set allStyles = allStyles|merge({
+    {% if customAttributes|length %}
+        {% for item in customAttributes %}
+            {% set attrName, attrValue, a = item.attributeName, item.attributeValue, {} %}
+            {# Format the attribute array to pass to CraftCMS attr() function #}
+            {% switch attrName %}
+                {% case 'style' %}
+                    {# Split the style value statement every ';' found #}
+                    {% set customStyles, allStyles = attrValue|split(';', -1), {} %}
+                    {% for style in customStyles %}
+                        {# Extract the name:value #}
+                        {% set styleParts = style|split(':') %}
+                        {% set allStyles = allStyles|merge({
                             (styleParts[0]|trim):styleParts[1]|trim })
                         %}
-					{% endfor %}
-					{% set a = { 'style': allStyles } %}
-				{% case 'class' %}
-					{# Each class name are added to an array of strings #}
-					{% set a = { 'class' : [ attrValue ] } %}
-				{% default %}
-					{# Defacto name:value array formatting #}
-					{% set a = { (attrName) : attrValue } %}
-			{% endswitch %}
+                    {% endfor %}
+                    {% set a = { 'style': allStyles } %}
+                {% case 'class' %}
+                    {# Each class name are added to an array of strings #}
+                    {% set a = { 'class' : [ attrValue ] } %}
+                {% default %}
+                    {# Defacto name:value array formatting #}
+                    {% set a = { (attrName) : attrValue } %}
+            {% endswitch %}
 
-			{% if attributes[attrName] is defined %}
-				{# Add the custom values to the existing array for the given key #}
-				{% set subArray = { (attrName): attributes[attrName]|merge(a[attrName]) } %}
-				{% set attributes = attributes|merge(subArray) %}
-			{% else %}
-				{# Add the custom values to the array with a new key #}
-				{% set attributes = attributes|merge(a) %}
-			{% endif %}
+            {% if attributes[attrName] is defined %}
+                {# Add the custom values to the existing array for the given key #}
+                {% set subArray = { (attrName): attributes[attrName]|merge(a[attrName]) } %}
+                {% set attributes = attributes|merge(subArray) %}
+            {% else %}
+                {# Add the custom values to the array with a new key #}
+                {% set attributes = attributes|merge(a) %}
+            {% endif %}
 
-		{% endfor %}
-	{% endif %}
-	{# Output the html attributes #}
-	{{ attr(attributes) }}
+        {% endfor %}
+    {% endif %}
+    {# Output the html attributes #}
+    {{ attr(attributes) }}
 {% endmacro %}
 
 {#
@@ -53,12 +53,16 @@
  |------------------------------------------------------------------------------
 #}
 {% macro getTransformedImage(image, transform, class) %}
-	{% if image %}
-		{# Only transform if necessary #}
-		{% if image.width > image.getWidth(transform) %}
-			{% do image.setTransform(transform) %}
-		{% endif %}
-		{# Output the image #}
-		<img src="{{ image.url }}" alt="{{ image.caption ?? image.title }}" class="{{ class }}" width="{{ image.width }}" height="{{ image.height }}">
-	{% endif %}
+    {% if image %}
+        {# Only transform if necessary #}
+        {% if image.width > image.getWidth(transform) %}
+            {% do image.setTransform(transform) %}
+        {% endif %}
+        {# Output the image #}
+        <img src="{{ image.url }}"
+            alt="{{ image.caption ?? image.title }}"
+            class="{{ class }}"
+            width="{{ image.width }}"
+            height="{{ image.height }}">
+    {% endif %}
 {% endmacro %}
