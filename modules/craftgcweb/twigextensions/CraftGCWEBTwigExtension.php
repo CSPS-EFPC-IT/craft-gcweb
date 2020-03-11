@@ -56,7 +56,6 @@ class CraftGCWEBTwigExtension extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFunction('findWordPosition', [$this, 'findWordPositionFunction']),
-            new \Twig_SimpleFunction('findPeriodPosition', [$this, 'findPeriodPositionFunction']),
             new \Twig_SimpleFunction('setKeywordBold', [$this, 'setKeywordBoldFunction']),
         ];
     }
