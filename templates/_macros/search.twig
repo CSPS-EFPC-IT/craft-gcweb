@@ -47,27 +47,28 @@
  | Make searching keyword bold and with a maximum of word for the summary
  |------------------------------------------------------------------------------
 #}
-{% macro setSummaryBold(entry, text, keyword, numWord = 70) %}
+{% macro setSummary(entry, text, keyword, numWord = 70) %}
 	{% set output = "" %}
 	{% set texts = text|split(' ') %}
 
 	{% if texts|length >= numWord %}
 		{# Find first position of the keyword in the text #}
 		{% set firstMatchingWord = findWordPosition(text, keyword) %}
-
 		{% set firstPeriod = 0 %}
 		{% set break = false %}
 		{# Find first position of the last period before search keyword. This makes the summary nicer #}
-		{% for text in texts if not break %}
-			{% if '.' in text %}
-				{% set firstPeriod = loop.index %}
-				{% if (firstMatchingWord - firstPeriod) < numWord %}
+		{% if firstMatchingWord >= numWord %}
+			{% for text in texts if not break %}
+				{% if '.' in text %}
 					{% set firstPeriod = loop.index %}
-					{# When we find the first period, we can get out of the loop #}
-                    {% set break = true %}
+					{% if (firstMatchingWord - firstPeriod) < numWord %}
+						{% set firstPeriod = loop.index %}
+						{# When we find the first period, we can get out of the loop #}
+						{% set break = true %}
+					{% endif %}
 				{% endif %}
-			{% endif %}
-		{% endfor %}
+			{% endfor %}
+		{% endif %}
 
 		{# Concatenate string to the maximum number of word allowed from the end of the last sentence #}
 		{% for text in texts|slice(firstPeriod, numWord) %}
@@ -115,5 +116,5 @@
 		{% endif %}
 	{% endfor %}
 
-    {{ searchMacro.setSummaryBold(entry, output, searchQuery) }}
+    {{ searchMacro.setSummary(entry, output, searchQuery) }}
 {% endmacro %}
