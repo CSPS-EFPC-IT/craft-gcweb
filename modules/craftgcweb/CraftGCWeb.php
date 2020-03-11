@@ -10,6 +10,8 @@
 
 namespace modules\craftgcweb;
 
+use modules\craftgcweb\twigextensions\CraftGCWEBTwigExtension;
+
 use Craft;
 use craft\events\RegisterUrlRulesEvent;
 use craft\web\UrlManager;
@@ -50,6 +52,9 @@ class CraftGCWeb extends Module
         parent::init();
 
         self::$instance = $this;
+
+        //Register twig extensions
+        Craft::$app->view->registerTwigExtension(new CraftGCWEBTwigExtension());
 
         // Register site routes
         Event::on(

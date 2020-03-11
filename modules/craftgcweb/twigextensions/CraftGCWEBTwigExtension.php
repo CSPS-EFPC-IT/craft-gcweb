@@ -1,42 +1,34 @@
 <?php
 /**
- * twigExtensions module for Craft CMS 3.x
+ * craftGCWEB module for Craft CMS 3.x
  *
- * Extending Twig for more functionality.
+ * New fitler and function in to use in Twig
  *
  * @copyright Copyright (c) 2020 Francis Drouin
  */
 
-namespace modules\twigextensionsmodule\twigextensions;
+namespace modules\craftgcweb\twigextensions;
 
-use modules\twigextensionsmodule\TwigExtensionsModule;
+use modules\craftgcweb\CraftGCWEB;
 
 use Craft;
 
 /**
- * Twig can be extended in many ways; you can add extra tags, filters, tests, operators,
- * global variables, and functions. You can even extend the parser itself with
- * node visitors.
- *
- * http://twig.sensiolabs.org/doc/advanced.html
- *
  * @author    Francis Drouin
- * @package   TwigExtensionsModule
+ * @package   CraftGCWEBModule
  * @since     1.0.0
  */
-class TwigExtensionsModuleTwigExtension extends \Twig_Extension
+class CraftGCWEBTwigExtension extends \Twig_Extension
 {
     // Public Methods
     // =========================================================================
 
     /**
-     * Returns the name of the extension.
-     *
-     * @return string The extension name
+     * @inheritdoc
      */
     public function getName()
     {
-        return 'TwigExtensionsModule';
+        return 'CraftGCWEB';
     }
 
     /**

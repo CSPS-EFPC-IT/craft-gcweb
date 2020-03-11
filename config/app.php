@@ -20,12 +20,6 @@
 return [
     'modules' => [
         'craftgcweb' => \modules\craftgcweb\CraftGCWeb::class,
-        'twig-extensions-module' => [
-            'class' => \modules\twigextensionsmodule\TwigExtensionsModule::class,
-        ],
     ],
-    'bootstrap' => [
-        'craftgcweb',
-        'twig-extensions-module'
-    ],
+    'bootstrap' => ['craftgcweb'],
 ];
