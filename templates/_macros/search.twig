@@ -47,23 +47,17 @@
  | Make searching keyword bold and with a maximum of word for the summary
  |------------------------------------------------------------------------------
 #}
-{% macro setSummaryBold(entry, text, word, numWord = 70) %}
+{% macro setSummaryBold(entry, text, keyword, numWord = 70) %}
 	{% set output = "" %}
 	{% set texts = text|split(' ') %}
-	{% set words = word|split(' ') %}
 
-	{% if texts|length > numWord %}
-		{% set firstMatchingWord = 0 %}
-		{% for text in texts %}
-			{# Find first position of the word in array #}
-			{% if words[0]|lower in text|lower %}
-			    {% set firstMatchingWord = loop.index - 1 %}
-			{% endif %}
-		{% endfor %}
+	{% if texts|length >= numWord %}
+		{# Find first position of the keyword in the text #}
+		{% set firstMatchingWord = findWordPosition(text, keyword) %}
 
 		{% set firstPeriod = 0 %}
 		{% set break = false %}
-		{# Find first position of the last period before search keyword. This makes the summary nicer  #}
+		{# Find first position of the last period before search keyword. This makes the summary nicer #}
 		{% for text in texts if not break %}
 			{% if '.' in text %}
 				{% set firstPeriod = loop.index %}
@@ -74,6 +68,7 @@
 				{% endif %}
 			{% endif %}
 		{% endfor %}
+
 		{# Concatenate string to the maximum number of word allowed from the end of the last sentence #}
 		{% for text in texts|slice(firstPeriod, numWord) %}
 			{% set output = output ~ ' ' ~ text %}
@@ -84,7 +79,8 @@
 	{% endif %}
 
     {# Make the searching keyword bold #}
-	{% set output = output|lower|replace(word|lower, '<strong>' ~ word ~ '</strong>') %}
+	{% set output = setKeywordBold(keyword, output) %}
+
 	{# Output the summary with the updated date, Canada.ca output the date and ... even if the summary is empty #}
 	<p>
         {{ entry.dateUpdated|date("Y-m-d") }}...
@@ -102,17 +98,22 @@
 {% macro getPageBuilderBlockContent(entry, searchQuery) %}
 	{% import _self as searchMacro %}
     {% set output = ""  %}
-	{% set findMatchWord = false %}
+
 	{% for block in entry.pageBuilder.all() %}
 		{# Check if element title had the search keyword #}
 		{% if searchQuery|lower in block.elementTitle|lower %}
-			{% set findMatchWord = true %}
             {% set output = output ~ ' ' ~ block.elementTitle|striptags %}
 		{% endif %}
-        {# Append block.redactor to string #}
-		{% if searchQuery|lower in block.redactor|lower %}
-            {% set output = output ~ ' ' ~ block.redactor|striptags %}
+
+		{# Append block.redactor to string #}
+		{% if block.redactor %}
+			{# Add commas to seperate different redactor block #}
+			{% if output %}
+				{% set output = output|trim ~ ', ' %}
+			{% endif %}
+			{% set output = output ~ ' ' ~ block.redactor|striptags %}
 		{% endif %}
 	{% endfor %}
+
     {{ searchMacro.setSummaryBold(entry, output, searchQuery) }}
 {% endmacro %}

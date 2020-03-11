@@ -17,7 +17,8 @@
   },
   "autoload": {
     "psr-4": {
-      "modules\\": "modules/"
+      "modules\\": "modules/",
+      "modules\\twigextensionsmodule\\": "modules/twigextensionsmodule/src/"
     }
   },
   "config": {
