@@ -10,11 +10,10 @@
 
 namespace modules\craftgcweb;
 
-use modules\craftgcweb\twigextensions\CraftGCWEBTwigExtension;
-
 use Craft;
 use craft\events\RegisterUrlRulesEvent;
 use craft\web\UrlManager;
+use modules\craftgcweb\twigextensions\CraftGCWebTwigExtension;
 use yii\base\Event;
 use yii\base\Module;
 
@@ -53,14 +52,14 @@ class CraftGCWeb extends Module
 
         self::$instance = $this;
 
-        //Register twig extensions
+        // Register twig extensions
         Craft::$app->view->registerTwigExtension(new CraftGCWEBTwigExtension());
 
         // Register site routes
         Event::on(
             UrlManager::class,
             UrlManager::EVENT_REGISTER_SITE_URL_RULES,
-            function(RegisterUrlRulesEvent $event) {
+            function (RegisterUrlRulesEvent $event) {
                 $event->rules = array_merge($event->rules, [
                     // URL => Module/Controller/Method
                     'actions/craftgcweb/report-problem' => 'craftgcweb/report-problem/index',

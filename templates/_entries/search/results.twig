@@ -1,15 +1,9 @@
 {#
-# Search Results Page
-# This will return all the entries with the client keyword.
-# ExcludeSearchEngine will exclude any page that has Exclude Search checked
-{% set testString = 'Bonjour les AMIS. comment sa va.'%}
-{{ findWordPosition(testString, 'comment') }}
+ |------------------------------------------------------------------------------
+ | Search results page
+ |------------------------------------------------------------------------------
 #}
 
-
-
-
-{# Import the Macro for search #}
 {% import "_macros/search" as searchMacro %}
 
 {% if searchQuery %}
@@ -28,18 +22,14 @@
     {% if entries|length %}
         <hr>
         {# This is outputing number of results found for search query #}
-        <p>
-            <strong>
-                {{ 'About {numberOfEntry} search results for "{searchQuery}"'|t
-                    (params={
-                        'searchQuery' :  searchQuery,
-                        'numberOfEntry' :  entries|length,
-                    })
-                }}
-            </strong>
-        </p>
-
-
+        <h2 class="h4" tabindex="-1">
+            {{ 'About {numberOfEntry} search results for "{searchQuery}"'|t
+                (params={
+                    'searchQuery' : searchQuery,
+                    'numberOfEntry' : entries|length,
+                 })
+            }}
+        </h2>
         {% for entry in pageEntries %}
             <article>
                 <h3 class="h4">
@@ -58,9 +48,9 @@
         {# No search Result found, return not found String message #}
         <p>
             <strong>
-                 {{ 'Your search for “{searchQuery}” didn’t return any results.'|t
+                {{ 'Your search for “{searchQuery}” didn’t return any results.'|t
                     (params={
-                        'searchQuery' :  searchQuery,
+                        'searchQuery' : searchQuery,
                     })
                 }}
             </strong>

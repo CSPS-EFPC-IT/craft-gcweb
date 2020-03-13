@@ -9,16 +9,12 @@
 
 namespace modules\craftgcweb\twigextensions;
 
-use modules\craftgcweb\CraftGCWEB;
-
-use Craft;
-
 /**
  * @author    Francis Drouin
  * @package   CraftGCWEBModule
  * @since     1.0.0
  */
-class CraftGCWEBTwigExtension extends \Twig_Extension
+class CraftGCWEBTwigExtension extends \Twig\Extension\AbstractExtension
 {
     // Public Methods
     // =========================================================================
@@ -32,31 +28,17 @@ class CraftGCWEBTwigExtension extends \Twig_Extension
     }
 
     /**
-     * Returns an array of Twig filters, used in Twig templates via:
-     *
-     *      {{ 'something' | someFilter }}
-     *
-     * @return array
-     */
-    public function getFilters()
-    {
-        return [
-            new \Twig_SimpleFilter('something', [$this, 'someFilter']),
-        ];
-    }
-
-    /**
      * Returns an array of Twig functions, used in Twig templates via:
      *
-     *      {% set this = someFunction('something') %}
+     * {% set this = someFunction('something') %}
      *
-    * @return array
+     * @return array
      */
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('findWordPosition', [$this, 'findWordPositionFunction']),
-            new \Twig_SimpleFunction('setKeywordBold', [$this, 'setKeywordBoldFunction']),
+            new \Twig\TwigFunction('findWordPosition', [$this, 'findWordPositionFunction']),
+            new \Twig\TwigFunction('setKeywordBold', [$this, 'setKeywordBoldFunction']),
         ];
     }
 
@@ -73,9 +55,9 @@ class CraftGCWEBTwigExtension extends \Twig_Extension
      *
      * @return string
      */
-
     public function setKeywordBoldFunction($search, $subject)
     {
+        $search = str_replace(['/', '\\'], '', $search); // This will remove back slash and foward slash character
         return preg_replace("/\b($search)\b/i", "<strong>$1</strong>", $subject);
     }
 
@@ -88,14 +70,13 @@ class CraftGCWEBTwigExtension extends \Twig_Extension
      * @param needle
      * The keyword that we are looking for
      *
-     * @return int
+     * @return mixed
      */
     public function findWordPositionFunction($haystack, $needle)
     {
-        $haystack = str_replace(['.',','],'',$haystack); //This will remove the period and comma form a word
-        $arrHaystack = explode(" ", $haystack);
-        $arrNeedle = explode(" ", $needle);
-        return array_search(strtolower($arrNeedle[0]),  array_map('strtolower', $arrHaystack));
+        $haystack = str_replace(['.', ','], '', $haystack); // This will remove the period and comma form a word
+        $arrHaystack = explode(' ', $haystack);
+        $arrNeedle = explode(' ', $needle);
+        return array_search(strtolower($arrNeedle[0]), array_map('strtolower', $arrHaystack));
     }
-
 }

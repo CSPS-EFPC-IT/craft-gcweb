@@ -84,10 +84,10 @@
 
 	{# Output the summary with the updated date, Canada.ca output the date and ... even if the summary is empty #}
 	<p>
-        {{ entry.dateUpdated|date("Y-m-d") }}...
-        {% if output %}
-            {{ output|raw }}...
-        {% endif %}
+    {{ entry.dateUpdated|date("Y-m-d") }}...
+    {% if output %}
+        {{ output|raw }}...
+    {% endif %}
     </p>
 {% endmacro %}
 
@@ -103,7 +103,7 @@
 	{% for block in entry.pageBuilder.all() %}
 		{# Check if element title had the search keyword #}
 		{% if searchQuery|lower in block.elementTitle|lower %}
-            {% set output = output ~ ' ' ~ block.elementTitle|striptags %}
+        	{% set output = output ~ ' ' ~ block.elementTitle|striptags %}
 		{% endif %}
 
 		{# Append block.redactor to string #}
@@ -115,6 +115,5 @@
 			{% set output = output ~ ' ' ~ block.redactor|striptags %}
 		{% endif %}
 	{% endfor %}
-
-    {{ searchMacro.setSummary(entry, output, searchQuery) }}
+	{{ searchMacro.setSummary(entry, output, searchQuery) }}
 {% endmacro %}
