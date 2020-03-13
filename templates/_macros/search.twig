@@ -5,41 +5,41 @@
  |------------------------------------------------------------------------------
 #}
 {% macro pagination(pageInfo, nearbyPagesLimit = 4) %}
-	{% set total = pageInfo.totalPages %}
-	{% set current = pageInfo.currentPage %}
-	{% if total > 1 %}
-		<div class="row text-center">
-			<ul class="pagination">
-				{# Pagination Previous Button, Output only if first button is not active #}
-				{% if pageInfo.prevUrl %}
-					<li>
-						<a href="{{ pageInfo.prevUrl }}" rel="prev">{{ 'Previous Page'|t }}</a>
-					</li>
-				{% endif %}
+    {% set total = pageInfo.totalPages %}
+    {% set current = pageInfo.currentPage %}
+    {% if total > 1 %}
+        <div class="row text-center">
+            <ul class="pagination">
+                {# Pagination Previous Button, Output only if first button is not active #}
+                {% if pageInfo.prevUrl %}
+                    <li>
+                        <a href="{{ pageInfo.prevUrl }}" rel="prev">{{ 'Previous Page'|t }}</a>
+                    </li>
+                {% endif %}
 
                 {# Output pagination number #}
-				{% for i in 1..total %}
+                {% for i in 1..total %}
                     {% if not(0 < (current - nearbyPagesLimit) - loop.index) and not(0 > (current + nearbyPagesLimit) - loop.index) %}
-						{# Output pagination Last Page Number #}
-						<li {{ current == loop.index ? 'class="active"' }}>
-							{% if current == loop.index  %}
-								<span>{{ loop.index }}</span>
-							{% else %}
-								<a href="{{ pageInfo.getPageUrl( loop.index ) }}">{{ loop.index }}</a>
-							{% endif %}
-						</li>
-					{% endif %}
-				{% endfor %}
+                        {# Output pagination Last Page Number #}
+                        <li {{ current == loop.index ? 'class="active"' }}>
+                            {% if current == loop.index  %}
+                                <span>{{ loop.index }}</span>
+                            {% else %}
+                                <a href="{{ pageInfo.getPageUrl( loop.index ) }}">{{ loop.index }}</a>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
 
-				{# Output pagination next button #}
-				{% if pageInfo.nextUrl %}
-					<li class="next">
-						<a href="{{ pageInfo.nextUrl }}" rel="next">{{ 'Next Page'|t }}</a>
-					</li>
-				{% endif %}
-			</ul>
-		</div>
-	{% endif %}
+                {# Output pagination next button #}
+                {% if pageInfo.nextUrl %}
+                    <li class="next">
+                        <a href="{{ pageInfo.nextUrl }}" rel="next">{{ 'Next Page'|t }}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    {% endif %}
 {% endmacro %}
 
 {#
@@ -48,42 +48,42 @@
  |------------------------------------------------------------------------------
 #}
 {% macro setSummary(entry, text, keyword, numWord = 70) %}
-	{% set output = "" %}
-	{% set texts = text|split(' ') %}
+    {% set output = "" %}
+    {% set texts = text|split(' ') %}
 
-	{% if texts|length >= numWord %}
-		{# Find first position of the keyword in the text #}
-		{% set firstMatchingWord = findWordPosition(text, keyword) %}
-		{% set firstPeriod = 0 %}
-		{% set break = false %}
-		{# Find first position of the last period before search keyword. This makes the summary nicer #}
-		{% if firstMatchingWord >= numWord %}
-			{% for text in texts if not break %}
-				{% if '.' in text %}
-					{% set firstPeriod = loop.index %}
-					{% if (firstMatchingWord - firstPeriod) < numWord %}
-						{% set firstPeriod = loop.index %}
-						{# When we find the first period, we can get out of the loop #}
-						{% set break = true %}
-					{% endif %}
-				{% endif %}
-			{% endfor %}
-		{% endif %}
+    {% if texts|length >= numWord %}
+        {# Find first position of the keyword in the text #}
+        {% set firstMatchingWord = findWordPosition(text, keyword) %}
+        {% set firstPeriod = 0 %}
+        {% set break = false %}
+        {# Find first position of the last period before search keyword. This makes the summary nicer #}
+        {% if firstMatchingWord >= numWord %}
+            {% for text in texts if not break %}
+                {% if '.' in text %}
+                    {% set firstPeriod = loop.index %}
+                    {% if (firstMatchingWord - firstPeriod) < numWord %}
+                        {% set firstPeriod = loop.index %}
+                        {# When we find the first period, we can get out of the loop #}
+                        {% set break = true %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
-		{# Concatenate string to the maximum number of word allowed from the end of the last sentence #}
-		{% for text in texts|slice(firstPeriod, numWord) %}
-			{% set output = output ~ ' ' ~ text %}
-		{% endfor %}
-	{% else %}
-		{# Join string if number of word in that page is less than the maxmium number of word allowed #}
-		{% set output = texts|join(' ') %}
-	{% endif %}
+        {# Concatenate string to the maximum number of word allowed from the end of the last sentence #}
+        {% for text in texts|slice(firstPeriod, numWord) %}
+            {% set output = output ~ ' ' ~ text %}
+        {% endfor %}
+    {% else %}
+        {# Join string if number of word in that page is less than the maxmium number of word allowed #}
+        {% set output = texts|join(' ') %}
+    {% endif %}
 
     {# Make the searching keyword bold #}
-	{% set output = setKeywordBold(keyword, output) %}
+    {% set output = setKeywordBold(keyword, output) %}
 
-	{# Output the summary with the updated date, Canada.ca output the date and ... even if the summary is empty #}
-	<p>
+    {# Output the summary with the updated date, Canada.ca output the date and ... even if the summary is empty #}
+    <p>
     {{ entry.dateUpdated|date("Y-m-d") }}...
     {% if output %}
         {{ output|raw }}...
@@ -97,23 +97,23 @@
  |------------------------------------------------------------------------------
 #}
 {% macro getPageBuilderBlockContent(entry, searchQuery) %}
-	{% import _self as searchMacro %}
+    {% import _self as searchMacro %}
     {% set output = ""  %}
 
-	{% for block in entry.pageBuilder.all() %}
-		{# Check if element title had the search keyword #}
-		{% if searchQuery|lower in block.elementTitle|lower %}
-        	{% set output = output ~ ' ' ~ block.elementTitle|striptags %}
-		{% endif %}
+    {% for block in entry.pageBuilder.all() %}
+        {# Check if element title had the search keyword #}
+        {% if searchQuery|lower in block.elementTitle|lower %}
+            {% set output = output ~ ' ' ~ block.elementTitle|striptags %}
+        {% endif %}
 
-		{# Append block.redactor to string #}
-		{% if block.redactor %}
-			{# Add commas to seperate different redactor block #}
-			{% if output %}
-				{% set output = output|trim ~ ', ' %}
-			{% endif %}
-			{% set output = output ~ ' ' ~ block.redactor|striptags %}
-		{% endif %}
-	{% endfor %}
-	{{ searchMacro.setSummary(entry, output, searchQuery) }}
+        {# Append block.redactor to string #}
+        {% if block.redactor %}
+            {# Add commas to seperate different redactor block #}
+            {% if output %}
+                {% set output = output|trim ~ ', ' %}
+            {% endif %}
+            {% set output = output ~ ' ' ~ block.redactor|striptags %}
+        {% endif %}
+    {% endfor %}
+    {{ searchMacro.setSummary(entry, output, searchQuery) }}
 {% endmacro %}
