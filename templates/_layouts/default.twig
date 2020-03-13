@@ -4,10 +4,11 @@
  |------------------------------------------------------------------------------
 #}
 
-{% extends '_utils/variables' %}
+{% extends '_layouts/base' %}
 
 {% block html %}
-    <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="{{ LANG }}" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+    <!DOCTYPE html>
+    <!--[if lt IE 9]><html class="no-js lt-ie9" lang="{{ LANG }}" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
     <html class="no-js" lang="{{ LANG }}" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -17,7 +18,7 @@
         {% block styles %}{% endblock %}
         {{ head() }}
     </head>
-    <body vocab="http://schema.org/" typeof="WebPage" class="{{ BODY_CLASS }}">
+    <body vocab="http://schema.org/" typeof="WebPage">
         {{ beginBody() }}
         {% block page %}{% endblock %}
         {% block scripts %}{% endblock %}

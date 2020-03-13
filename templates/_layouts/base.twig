@@ -1,0 +1,22 @@
+{#
+ |------------------------------------------------------------------------------
+ | Base layout
+ |------------------------------------------------------------------------------
+ | This is the base layout that all other layouts should extend from.
+ | Here you can define variables that will be shared across other template files.
+ |------------------------------------------------------------------------------
+#}
+
+{% spaceless %}
+    {# Set a short language variable #}
+    {% set LANG = currentSite.language|slice(0,2) %}
+
+    {# Custom default site url #}
+    {% set SITE_URL = siteUrl %}
+    {% if headerSettings.pointHomeToCanadaCa %}
+        {% set SITE_URL = 'https://www.canada.ca/' ~ LANG ~ '.html' %}
+    {% endif %}
+
+    {# HTML block #}
+    {% block html %}{% endblock %}
+{% endspaceless %}
