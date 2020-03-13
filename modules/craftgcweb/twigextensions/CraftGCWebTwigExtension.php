@@ -14,7 +14,7 @@ namespace modules\craftgcweb\twigextensions;
  * @package   CraftGCWEBModule
  * @since     1.0.0
  */
-class CraftGCWEBTwigExtension extends \Twig\Extension\AbstractExtension
+class CraftGCWebTwigExtension extends \Twig\Extension\AbstractExtension
 {
     // Public Methods
     // =========================================================================
@@ -24,7 +24,7 @@ class CraftGCWEBTwigExtension extends \Twig\Extension\AbstractExtension
      */
     public function getName()
     {
-        return 'CraftGCWEB';
+        return 'CraftGCWeb';
     }
 
     /**

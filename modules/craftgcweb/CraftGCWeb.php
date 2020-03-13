@@ -53,7 +53,7 @@ class CraftGCWeb extends Module
         self::$instance = $this;
 
         // Register twig extensions
-        Craft::$app->view->registerTwigExtension(new CraftGCWEBTwigExtension());
+        Craft::$app->view->registerTwigExtension(new CraftGCWebTwigExtension());
 
         // Register site routes
         Event::on(
