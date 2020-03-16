@@ -1,19 +1,14 @@
 <?php
 /**
- * craftGCWEB module for Craft CMS 3.x
+ * Add some custom twig functions to be used in template files.
  *
- * New fitler and function in to use in Twig
- *
- * @copyright Copyright (c) 2020 Francis Drouin
- */
-
-namespace modules\craftgcweb\twigextensions;
-
-/**
  * @author    Francis Drouin
  * @package   CraftGCWebModule
  * @since     1.0.0
  */
+
+namespace modules\craftgcweb\twigextensions;
+
 class CraftGCWebTwigExtension extends \Twig\Extension\AbstractExtension
 {
     // Public Methods
@@ -61,7 +56,7 @@ class CraftGCWebTwigExtension extends \Twig\Extension\AbstractExtension
         return preg_replace("/\b($search)\b/i", "<strong>$1</strong>", $subject);
     }
 
-     /**
+    /**
      *  Find the position of the first occurrence of a substring in a string
      *
      * @param haystack
