@@ -11,7 +11,7 @@ namespace modules\craftgcweb\twigextensions;
 
 /**
  * @author    Francis Drouin
- * @package   CraftGCWEBModule
+ * @package   CraftGCWebModule
  * @since     1.0.0
  */
 class CraftGCWebTwigExtension extends \Twig\Extension\AbstractExtension
