@@ -1,0 +1,59 @@
+{#
+ |------------------------------------------------------------------------------
+ | Search results page
+ |------------------------------------------------------------------------------
+#}
+
+{% import "_macros/search" as searchMacro %}
+
+{% if searchQuery %}
+    {# Results Query #}
+    {%
+        set entries = craft.entries()
+        .search(searchWhere ~ ':' ~searchQuery)
+        .dateUpdated('>=' ~ searchUpdatedDate)
+        .orderBy('score')
+        .limit(10)
+    %}
+
+    {# Paginate the entries by pages #}
+    {% paginate entries as pageInfo, pageEntries %}
+
+    {% if entries|length %}
+        <hr>
+        {# This is outputing number of results found for search query #}
+        <h2 class="h4" tabindex="-1">
+            {{ 'About {numberOfEntry} search results for "{searchQuery}"'|t
+                (params={
+                    'searchQuery' : searchQuery,
+                    'numberOfEntry' : entries|length,
+                 })
+            }}
+        </h2>
+        {% for entry in pageEntries %}
+            <article>
+                <h3 class="h4">
+                    <a href="{{ entry.url }}" data-dtm-srchlnknm="{{ loop.index }}">{{ entry.title }}</a>
+                </h3>
+                <p class="mrgn-bttm-0">
+                    <span class="text-success">{{ entry.url }}</span>
+                </p>
+                {{ searchMacro.getPageBuilderBlockContent(entry, searchQuery) }}
+            </article>
+        {% endfor %}
+
+        {# Pagination Button, # Prev, Page #, Next #}
+        {{ searchMacro.pagination(pageInfo) }}
+    {% else %}
+        {# No search Result found, return not found String message #}
+        <p>
+            <strong>
+                {{ 'Your search for “{searchQuery}” didn’t return any results.'|t
+                    (params={
+                        'searchQuery' : searchQuery,
+                    })
+                }}
+            </strong>
+        </p>
+    {% endif %}
+{% endif %}

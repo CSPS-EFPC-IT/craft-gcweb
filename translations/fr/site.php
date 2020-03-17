@@ -129,4 +129,22 @@ return [
     "English" => "Français",
     "All forms" => "Tous les formulaires",
     "Send" => "Envoyer",
+
+    // Search
+    "Advanced Search" => "Recherche avancée",
+    'About {numberOfEntry} search results for "{searchQuery}"' => "Environ {numberOfEntry} résultats de recherche pour « {searchQuery} »",
+    "Your search for “{searchQuery}” didn’t return any results." => "Votre recherche pour « {searchQuery} » n’a donné aucun résultat.",
+    "Narrow your results by..." => "Affinez la recherche par…",
+    "pages updated date:"=> "dernière mise à jour :",
+    "terms appearing:" => "termes paraissant :",
+    "filter section:" => "filtrer par section : ",
+    "anytime" => "à une date indifférente",
+    "past 24 hours" => "au cours des dernières 24 heures",
+    "past week" => "au cours des 7 derniers jours",
+    "past month" => "au cours des 31 derniers jours",
+    "past year" => "au cours des 365 derniers jours",
+    "anywhere in the page" => "n'importe où dans la page",
+    "in the title of the page" => "dans le titre de la page",
+    "Next Page" => "Page suivante",
+    "Previous Page" => "Page précédente",
 ];
