@@ -26,7 +26,8 @@
             <h2>{{ 'We have archived this page and will not be updating it.'|t }}</h2>
             <p>{{ 'You can use it for research or reference.'|t }}</p>
         </div>
-    <button type="button" class="mfp-close overlay-close" title="{{ 'Close overlay'|t }}">×<span class="wb-inv"> {{ 'Close overlay'|t }}</span></button></section>
+        <button type="button" class="mfp-close overlay-close" title="{{ 'Close overlay'|t }}">×<span class="wb-inv"> {{ 'Close overlay'|t }}</span></button>
+    </section>
 {% endif %}
 
 {# Skip links #}
@@ -58,9 +59,9 @@
                 <h2>{{ 'Search'|t }}</h2>
 
                 {% set searchAction, searchLabel = craft.entries.section('search').one().url() ?? null, 'Search this website'|t %}
-                {% if settings.customSearchQueryUrl|length %}
+                {% if headerSettings.customSearchQueryUrl|length %}
                     {% set searchLabel = 'Search Canada.ca'|t %}
-                    {% set searchAction = settings.customSearchQueryUrl %}
+                    {% set searchAction = headerSettings.customSearchQueryUrl %}
                 {% endif %}
 
                 <form action="{{ searchAction }}" method="get" name="cse-search-box" role="search" class="form-inline">
@@ -111,3 +112,13 @@
         {% include '_shared/login' %}
     {% endif %}
 </header>
+
+{# Top Page Features #}
+{% set features = features.topPageFeatures.all() %}
+{% if showTopPageFeatures and features|length %}
+    {% for feature in features %}
+        {% include '_pageBuilder/builder' with {
+            pageBuilder: feature.pageBuilder
+        } %}
+    {% endfor %}
+{% endif %}

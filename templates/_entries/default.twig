@@ -9,23 +9,29 @@
 
 {% block header %}
     {# Set defaults from global settings #}
-    {% set showBreadcrumb, showLogin = settings.showBreadcrumbGlobal, settings.showLoginGlobal %}
+    {% set showBreadcrumb, showLogin = headerSettings.showBreadcrumbGlobal, headerSettings.showLoginGlobal %}
 
     {# Local override for showBreadcrumb #}
-    {% if entry is defined and entry.showBreadcrumbLocal != 'default' %}
+    {% if entry is defined and entry.showBreadcrumbLocal is not null and entry.showBreadcrumbLocal != 'default' %}
         {% set showBreadcrumb = entry.showBreadcrumbLocal.value %}
     {% endif %}
 
     {# Local override for showLogin #}
-    {% if entry is defined and entry.showLoginLocal != 'default' %}
+    {% if entry is defined and entry.showBreadcrumbLocal is not null and entry.showLoginLocal != 'default' %}
         {% set showLogin = entry.showLoginLocal.value %}
+    {% endif %}
+
+    {# Local override for showTopPageFeatures #}
+    {% if entry is defined %}
+        {% set showTopPageFeatures = entry.showTopPageFeatures ?? true %}
     {% endif %}
 
     {# Include the header template #}
     {% include '_shared/header' with {
-        showAsArchived: entry.showAsArchived ?? null,
-        showBreadcrumb: showBreadcrumb,
-        showLogin:      showLogin
+        showAsArchived:      entry.showAsArchived ?? null,
+        showBreadcrumb:      showBreadcrumb,
+        showLogin:           showLogin,
+        showTopPageFeatures: showTopPageFeatures
     } %}
 
 {% endblock %}
@@ -33,36 +39,38 @@
 {% block main %}
     <main property="mainContentOfPage" typeof="WebPageElement">
         {# Include the page builder template #}
-        {% include '_pageBuilder/builder' with {
-            pageBuilder: entry.pageBuilder
-        } %}
+        {% if entry.pageBuilder is not null %}
+            {% include '_pageBuilder/builder' with {
+                pageBuilder: entry.pageBuilder
+            } %}
+        {% endif %}
     </main>
 {% endblock %}
 
 {% block footer %}
     {# Set defaults from global settings #}
-    {% set showFeatures, showReportAProblem, showShareThisPage =
-        settings.showFeaturesGlobal, settings.showReportAProblemGlobal, settings.showShareThisPageGlobal %}
+    {% set showReportAProblem, showShareThisPage =
+        footerSettings.showReportAProblemGlobal, footerSettings.showShareThisPageGlobal %}
 
-    {# Local override for showFeatures #}
-    {% if entry is defined and entry.showFeaturesLocal != 'default' %}
-        {% set showFeatures = entry.showFeaturesLocal.value %}
+    {# Local override for showBottomPageFeatures #}
+    {% if entry is defined %}
+        {% set showBottomPageFeatures = entry.showBottomPageFeatures ?? true %}
     {% endif %}
 
     {# Local override for showReportAProblem #}
-    {% if entry is defined and entry.showReportAProblemLocal != 'default' %}
+    {% if entry is defined and entry.showReportAProblemLocal is not null and entry.showReportAProblemLocal != 'default' %}
         {% set showReportAProblem = entry.showReportAProblemLocal.value %}
     {% endif %}
 
     {# Local override for showShareThisPage #}
-    {% if entry is defined and entry.showShareThisPageLocal != 'default' %}
+    {% if entry is defined and entry.showReportAProblemLocal is not null and entry.showShareThisPageLocal != 'default' %}
         {% set showShareThisPage = entry.showShareThisPageLocal.value %}
     {% endif %}
 
     {# Include the footer template #}
     {% include '_shared/footer' with {
-        showFeatures:       showFeatures,
-        showReportAProblem: showReportAProblem,
-        showShareThisPage:  showShareThisPage
+        showBottomPageFeatures: showBottomPageFeatures,
+        showReportAProblem:     showReportAProblem,
+        showShareThisPage:      showShareThisPage
     } %}
 {% endblock %}

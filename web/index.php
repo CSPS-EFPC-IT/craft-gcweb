@@ -3,6 +3,12 @@
  * Craft web bootstrap file
  */
 
+// Bypass Craft bootstrap process and load static splash page
+// when request hits the root URL
+if ($_SERVER['REQUEST_URI'] === '/') {
+    return require_once 'splash.html';
+}
+
 // Set path constants
 define('CRAFT_BASE_PATH', dirname(__DIR__));
 define('CRAFT_VENDOR_PATH', CRAFT_BASE_PATH.'/vendor');

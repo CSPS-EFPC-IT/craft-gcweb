@@ -21,7 +21,7 @@
         "btn-" ~ block.buttonStyle,
         (block.blockLevelButton ? "btn-block": "")
     ],
-    target: block.elementLink.target
+    target: block.elementLink.getTarget()
 } %}
 
 {# Set the custom attributes for the block #}
@@ -29,5 +29,5 @@
 
 {# Output the button block #}
 <a{{ utils.attr(defaultAttr, customAttr) }}>
-    {{- block.elementLink.text -}}
+    {{- block.elementLink.getText() -}}
 </a>

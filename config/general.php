@@ -30,18 +30,19 @@ return [
         // Path to error templates
         'errorTemplatePrefix' => '_errors/',
 
-        // Allow XML file upload in assets
-        'extraAllowedFileExtensions' => 'xml',
+        // Allow extra file types to be uploaded in assets
+        'extraAllowedFileExtensions' => ['xml', 'css'],
+
+        // List of additional file types Craft should support
+        'extraFileKinds' => [
+            'stylesheet' => [
+                'label' => 'CSS',
+                'extensions' => ['css'],
+            ],
+        ],
 
         // Aliases
-        'aliases' => [
-            '@default_site_url'    => getenv('DEFAULT_SITE_URL'),
-            '@default_site_url_en' => getenv('DEFAULT_SITE_URL') . '/en',
-            '@default_site_url_fr' => getenv('DEFAULT_SITE_URL') . '/fr',
-            '@project_root_path'   => getenv('ROOT_PATH'),
-            '@server_root_path'    => getenv('ROOT_PATH') . '/web',
-            '@uploads_path'        => getenv('ROOT_PATH') . '/web/uploads',
-        ],
+        'aliases' => [],
     ],
 
     // Dev environment settings
