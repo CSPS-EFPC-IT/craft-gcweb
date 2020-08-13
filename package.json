@@ -24,7 +24,7 @@
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.5",
     "terser-webpack-plugin": "^1.4.2",
-    "serialize-javascript": ">=2.1.1",
+    "serialize-javascript": ">=3.1.0",
     "cross-env": "^5.2.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
